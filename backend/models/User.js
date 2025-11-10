@@ -24,6 +24,12 @@ const userSchema = new mongoose.Schema(
       enum: ["user", "admin"],
       default: "user",
     },
+    avatar: {
+      type: String, 
+      required: false,
+      default:
+        "https://res.cloudinary.com/demo/image/upload/v1700000000/default-avatar.png",
+    },
   },
   {
     timestamps: true,
@@ -31,5 +37,5 @@ const userSchema = new mongoose.Schema(
 );
 
 const User = mongoose.model("User", userSchema);
-
 export default User;
+
