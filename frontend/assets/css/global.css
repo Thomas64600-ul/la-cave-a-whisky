@@ -1,0 +1,46 @@
+:root {
+ 
+  --light-bg: #faf3e0;
+  --light-surface: #fff8ee;
+  --light-border: #c19a6b;
+  --light-text: #2b2118;
+  --light-subtext: #6b3e26;
+  --light-accent: #6b3e26;
+
+
+  --dark-bg: #1a120b;
+  --dark-surface: #2a1f14;
+  --dark-border: #3c2f23;
+  --dark-text: #ffd700;
+  --dark-subtext: #e8dcca;
+  --dark-accent: #d9a86c;
+
+  --radius: 10px;
+  --transition: all 0.4s ease-in-out;
+  --font-body: "Lato", sans-serif;
+  --font-title: "Playfair Display", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  transition: var(--transition);
+}
+
+body.dark {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
