@@ -1,0 +1,31 @@
+.tasting-card {
+  background-color: var(--light-surface);
+  border: 1px solid var(--light-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.tasting-card .tasting-header {
+  font-weight: bold;
+  color: var(--light-accent);
+  margin-bottom: 0.5rem;
+}
+
+.tasting-card p {
+  color: var(--light-subtext);
+}
+
+body.dark .tasting-card {
+  background-color: var(--dark-surface);
+  border-color: var(--dark-border);
+}
+
+body.dark .tasting-card .tasting-header {
+  color: var(--dark-accent);
+}
+
+body.dark .tasting-card p {
+  color: var(--dark-subtext);
+}
