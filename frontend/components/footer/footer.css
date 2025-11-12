@@ -1,0 +1,13 @@
+.site-footer {
+  background-color: var(--light-surface);
+  color: var(--light-subtext);
+  border-top: 1px solid var(--light-border);
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+body.dark .site-footer {
+  background-color: var(--dark-surface);
+  color: var(--dark-subtext);
+  border-top: 1px solid var(--dark-border);
+}
