@@ -2,6 +2,7 @@ import express from "express";
 import {
   getAllTastings,
   getTastingById,
+  getUserTastings,
   createTasting,
   updateTasting,
   deleteTasting,
@@ -14,13 +15,12 @@ import { protect } from "../middlewares/authMiddleware.js";
 const router = express.Router();
 
 router.get("/", getAllTastings);
-
 router.get("/:id", getTastingById);
 
+router.get("/mine", protect, getUserTastings); 
 router.post("/", protect, validate(tastingSchema), createTasting);
-
 router.put("/:id", protect, validate(tastingSchema), updateTasting);
-
 router.delete("/:id", protect, deleteTasting);
 
 export default router;
+

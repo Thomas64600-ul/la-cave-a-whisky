@@ -10,8 +10,8 @@ import {
 import { validate } from "../middlewares/validationMiddleware.js";
 import { whiskySchema } from "../schemas/whiskySchema.js";
 import { protect } from "../middlewares/authMiddleware.js";
-import { authorizeRoles } from "../middlewares/roleMiddleware.js";
-import upload from "../middlewares/uploadMiddleware.js";
+import { authorizeRoles } from "../middlewares/authorizeRoles.js";
+import upload, { handleUploadError } from "../middlewares/uploadMiddleware.js";
 
 const router = express.Router();
 
@@ -24,6 +24,7 @@ router.post(
   protect,
   authorizeRoles("admin"),
   upload.single("image"),
+  handleUploadError,
   validate(whiskySchema),
   createWhisky
 );
@@ -33,6 +34,7 @@ router.put(
   protect,
   authorizeRoles("admin"),
   upload.single("image"),
+  handleUploadError,
   validate(whiskySchema),
   updateWhisky
 );
