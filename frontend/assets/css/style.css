@@ -1,0 +1,30 @@
+@import url("global.css"); 
+
+@import url("../../components/header/header.css");
+@import url("../../components/footer/footer.css");
+@import url("../../components/whisky-card/whisky-card.css");
+@import url("../../components/tasting-card/tasting-card.css");
+
+
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+  padding: 2rem;
+}
+
+footer {
+  grid-area: footer;
+}
