@@ -1,8 +1,9 @@
 import express from "express";
 import {
+  registerUser,
+  loginUser,
   getAllUsers,
   getUserById,
-  createUser,
   updateUser,
   deleteUser,
 } from "../controllers/userController.js";
@@ -17,16 +18,24 @@ import { authLimiter } from "../middlewares/rateLimiter.js";
 
 const router = express.Router();
 
+router.post("/register", authLimiter, validate(userSchema), registerUser);
+router.post("/login", authLimiter, loginUser);
+
 router.get("/", protect, authorizeRoles("admin"), getAllUsers);
 
 router.get("/:id", protect, getUserById);
 
-router.post("/", authLimiter, validate(userSchema), createUser);
-
 router.put("/:id", protect, validate(userUpdateSchema), updateUser);
 
-router.put("/:id/avatar", protect, upload.single("avatar"), handleUploadError, updateUser);
+router.put(
+  "/:id/avatar",
+  protect,
+  upload.single("avatar"),
+  handleUploadError,
+  updateUser
+);
 
 router.delete("/:id", protect, authorizeRoles("admin"), deleteUser);
 
 export default router;
+
