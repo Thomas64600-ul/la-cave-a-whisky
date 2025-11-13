@@ -9,8 +9,7 @@ import {
 } from "../controllers/userController.js";
 
 import { validate } from "../middlewares/validationMiddleware.js";
-import { userSchema } from "../schemas/userSchema.js";
-import { userUpdateSchema } from "../schemas/userUpdateSchema.js";
+import { userSchema, userUpdateSchema } from "../schemas/userSchema.js"; // ✔ un seul fichier
 import { protect } from "../middlewares/authMiddleware.js";
 import { authorizeRoles } from "../middlewares/authorizeRoles.js";
 import upload, { handleUploadError } from "../middlewares/uploadMiddleware.js";
@@ -19,6 +18,7 @@ import { authLimiter } from "../middlewares/rateLimiter.js";
 const router = express.Router();
 
 router.post("/register", authLimiter, validate(userSchema), registerUser);
+
 router.post("/login", authLimiter, loginUser);
 
 router.get("/", protect, authorizeRoles("admin"), getAllUsers);
