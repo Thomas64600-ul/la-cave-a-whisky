@@ -6,14 +6,16 @@ export function authorizeRoles(...allowedRoles) {
       if (!user) {
         return res.status(401).json({
           success: false,
-          error: "Utilisateur non authentifié.",
+          status: 401,
+          message: "Utilisateur non authentifié.",
         });
       }
 
       if (!user.role || typeof user.role !== "string") {
         return res.status(403).json({
           success: false,
-          error: "Rôle utilisateur invalide ou manquant.",
+          status: 403,
+          message: "Rôle utilisateur invalide ou manquant.",
         });
       }
 
@@ -23,9 +25,11 @@ export function authorizeRoles(...allowedRoles) {
             `Accès refusé à ${user.email || "inconnu"} (rôle: ${user.role})`
           );
         }
+
         return res.status(403).json({
           success: false,
-          error: "Accès refusé : rôle non autorisé.",
+          status: 403,
+          message: "Accès refusé : rôle non autorisé.",
         });
       }
 
@@ -37,10 +41,14 @@ export function authorizeRoles(...allowedRoles) {
 
       next();
     } catch (error) {
+      console.error("Erreur authorizeRoles :", error.message);
+
       res.status(500).json({
         success: false,
-        error: "Erreur interne dans le middleware d'autorisation.",
+        status: 500,
+        message: "Erreur interne dans le middleware d'autorisation.",
       });
     }
   };
 }
+
