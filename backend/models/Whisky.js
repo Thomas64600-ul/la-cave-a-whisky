@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-
 const whiskySchema = new mongoose.Schema(
   {
     name: {
@@ -10,7 +9,7 @@ const whiskySchema = new mongoose.Schema(
     },
     origin: {
       type: String,
-      required: [true, "L'origine est obligatoire"],
+      required: [true, "L'origine du whisky est obligatoire"],
       trim: true,
     },
     degree: {
@@ -21,20 +20,25 @@ const whiskySchema = new mongoose.Schema(
     },
     description: {
       type: String,
-      required: false,
       trim: true,
+      default: "",
     },
-    imageUrl: {
+    image: {
       type: String,
+      default:
+        "https://res.cloudinary.com/demo/image/upload/v1700000000/default-whisky.png",
+    },
+  
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
       required: false,
     },
   },
   {
-    timestamps: true, 
+    timestamps: true,
   }
 );
 
-
 const Whisky = mongoose.model("Whisky", whiskySchema);
-
 export default Whisky;

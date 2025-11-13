@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
 
 const userSchema = new mongoose.Schema(
   {
@@ -18,6 +19,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Le mot de passe est obligatoire"],
       minlength: [6, "Le mot de passe doit faire au moins 6 caractères"],
+      select: false, 
     },
     role: {
       type: String,
@@ -25,17 +27,29 @@ const userSchema = new mongoose.Schema(
       default: "user",
     },
     avatar: {
-      type: String, 
-      required: false,
+      type: String,
       default:
         "https://res.cloudinary.com/demo/image/upload/v1700000000/default-avatar.png",
     },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
+
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) return next();
+  try {
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+    return next();
+  } catch (error) {
+    return next(error);
+  }
+});
+
+userSchema.methods.matchPassword = async function (enteredPassword) {
+  if (!this.password) return false;
+  return await bcrypt.compare(enteredPassword, this.password);
+};
 
 const User = mongoose.model("User", userSchema);
 export default User;
-

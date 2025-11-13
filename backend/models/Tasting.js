@@ -3,14 +3,14 @@ import mongoose from "mongoose";
 const tastingSchema = new mongoose.Schema(
   {
     user: {
-      type: mongoose.Schema.Types.ObjectId, 
+      type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
+      required: [true, "L'utilisateur est requis"],
     },
     whisky: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Whisky",
-      required: true,
+      required: [true, "Le whisky est requis"],
     },
     rating: {
       type: Number,
@@ -22,13 +22,15 @@ const tastingSchema = new mongoose.Schema(
       type: String,
       trim: true,
       maxlength: [500, "Le commentaire ne peut pas dépasser 500 caractères"],
+      default: "",
     },
   },
   {
-    timestamps: true, 
+    timestamps: true,
   }
 );
 
-const Tasting = mongoose.model("Tasting", tastingSchema);
+tastingSchema.index({ user: 1, whisky: 1 }, { unique: true });
 
+const Tasting = mongoose.model("Tasting", tastingSchema);
 export default Tasting;
