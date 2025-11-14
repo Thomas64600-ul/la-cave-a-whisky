@@ -7,16 +7,31 @@ const whiskySchema = new mongoose.Schema(
       required: [true, "Le nom du whisky est obligatoire"],
       trim: true,
     },
-    origin: {
+    brand: {
       type: String,
-      required: [true, "L'origine du whisky est obligatoire"],
-      trim: true,
+      required: [true, "La marque du whisky est obligatoire"],
+      trim: true
+    },
+    country: {
+      type: String,
+      required: [true, "Le pays d'origine est obligatoire"],
+      trim: true
+    },
+    category: {
+      type: String,
+      required: [true, "La catégorie est obligatoire"],
+      trim: true
     },
     degree: {
       type: Number,
       required: [true, "Le degré d'alcool est obligatoire"],
       min: [0, "Le degré ne peut pas être négatif"],
       max: [100, "Le degré ne peut pas dépasser 100"],
+    },
+    year: {
+      type: Number,
+      required: false,
+      default: null
     },
     description: {
       type: String,
@@ -28,7 +43,6 @@ const whiskySchema = new mongoose.Schema(
       default:
         "https://res.cloudinary.com/demo/image/upload/v1700000000/default-whisky.png",
     },
-  
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
