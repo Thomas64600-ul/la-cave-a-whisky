@@ -1,12 +1,30 @@
 export function createWhiskyCard(whisky) {
-  const card = document.createElement("div");
-  card.classList.add("whisky-card");
+  const template = document.createElement("div");
+  template.innerHTML = `
+    <div class="whisky-card">
+      <img class="whisky-image" src="${whisky.image}" alt="${whisky.name}" />
 
-  card.innerHTML = `
-    <img src="${whisky.image}" alt="${whisky.name}" />
-    <h3>${whisky.name}</h3>
-    <p>${whisky.origin}</p>
+      <h3 class="whisky-name">${whisky.name}</h3>
+
+      <p class="whisky-info">
+        <strong>Marque :</strong> ${whisky.brand}<br />
+        <strong>Pays :</strong> ${whisky.country}<br />
+        <strong>Catégorie :</strong> ${whisky.category}<br />
+        <strong>Degré :</strong> ${whisky.degree}%
+      </p>
+
+      <button class="details-btn" data-id="${whisky.id}">
+        Voir détails
+      </button>
+    </div>
   `;
 
-  return card;
+  const button = template.querySelector(".details-btn");
+  button.addEventListener("click", () => {
+    window.location.href = `details.html?id=${whisky.id}`;
+  });
+
+  return template.firstElementChild;
 }
+
+
