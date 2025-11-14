@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajouter un whisky</title>
+
+  <link rel="stylesheet" href="./assets/css/global.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <link rel="stylesheet" href="./assets/css/add-whisky.css" />
+</head>
+
+<body>
+
+  <div class="layout-header">
+    <header id="site-header"></header>
+  </div>
+
+  <main class="add-container">
+    <h1>Ajouter un whisky</h1>
+    <p class="subtitle">Complétez les informations ci-dessous :</p>
+
+    <form id="add-whisky-form" class="add-form">
+
+      <div class="form-group">
+        <label for="name">Nom du whisky</label>
+        <input type="text" id="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="brand">Marque</label>
+        <input type="text" id="brand" required />
+      </div>
+
+      <div class="form-group">
+        <label for="country">Pays</label>
+        <input type="text" id="country" required />
+      </div>
+
+      <div class="form-group">
+        <label for="category">Catégorie</label>
+        <input type="text" id="category" required />
+      </div>
+
+      <div class="form-group">
+        <label for="degree">Degré (%)</label>
+        <input type="number" id="degree" min="20" max="80" required />
+      </div>
+
+      <div class="form-group">
+        <label for="year">Année</label>
+        <input type="number" id="year" />
+      </div>
+
+      <div class="form-group">
+        <label for="image">URL de l'image</label>
+        <input type="text" id="image" required />
+      </div>
+
+      <div class="form-group form-full">
+        <label for="description">Description</label>
+        <textarea id="description" rows="6" required></textarea>
+      </div>
+
+      <button type="submit" class="btn-action">Ajouter</button>
+      <a href="cave.html" class="btn-secondary">Retour à la cave</a>
+
+    </form>
+  </main>
+
+  <div class="layout-footer">
+    <footer id="site-footer"></footer>
+  </div>
+
+  <script type="module" src="./js/main.js"></script>
+  <script type="module" src="./js/add-whisky.js"></script>
+
+</body>
+</html>
