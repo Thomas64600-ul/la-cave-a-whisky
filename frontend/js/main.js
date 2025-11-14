@@ -2,8 +2,8 @@ import { loadComponent } from "./utils/loadComponent.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
  
-  await loadComponent("header", "./components/header/header.html");
-  await loadComponent("footer", "./components/footer/footer.html");
+  await loadComponent("site-header", "./components/header/header.html");
+  await loadComponent("site-footer", "./components/footer/footer.html");
 
   const toggle = document.getElementById("toggle-theme");
   if (toggle) {

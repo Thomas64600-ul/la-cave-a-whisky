@@ -1,0 +1,57 @@
+.tasting-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.tasting-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tasting-form, .recent-tastings {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 2.5rem;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: .4rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: .6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  margin-bottom: 1.2rem;
+}
+
+.btn-submit {
+  background: var(--accent);
+  color: white;
+  padding: .7rem 1.4rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.tasting-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.tasting-card {
+  background: var(--card-bg);
+  padding: 1.4rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
+}
+
+.tasting-card strong {
+  color: var(--accent);
+}
