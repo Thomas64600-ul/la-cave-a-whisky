@@ -1,7 +1,5 @@
+import "dotenv/config";
 import { v2 as cloudinary } from "cloudinary";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const {
   CLOUDINARY_CLOUD_NAME,
@@ -11,30 +9,27 @@ const {
 } = process.env;
 
 if (!CLOUDINARY_CLOUD_NAME || !CLOUDINARY_API_KEY || !CLOUDINARY_API_SECRET) {
-  const msg = `
- Cloudinary non configuré correctement.
+  console.warn(`
+Cloudinary n'est pas correctement configuré.
 Vérifie ton fichier .env :
+
   CLOUDINARY_CLOUD_NAME = ${CLOUDINARY_CLOUD_NAME ? "présent" : "manquant"}
   CLOUDINARY_API_KEY    = ${CLOUDINARY_API_KEY ? "présent" : "manquant"}
   CLOUDINARY_API_SECRET = ${CLOUDINARY_API_SECRET ? "présent" : "manquant"}
-  `;
-  console.warn(msg);
+`);
 }
 
 cloudinary.config({
   cloud_name: CLOUDINARY_CLOUD_NAME,
   api_key: CLOUDINARY_API_KEY,
   api_secret: CLOUDINARY_API_SECRET,
-  secure: true, 
+  secure: true,
 });
 
 if (NODE_ENV === "development") {
   try {
-    cloudinary.api
-      .ping()
-      .then(() =>
-        console.log(`Cloudinary connecté : "${CLOUDINARY_CLOUD_NAME}"`)
-      )
+    cloudinary.api.ping()
+      .then(() => console.log(`Cloudinary connecté : "${CLOUDINARY_CLOUD_NAME}"`))
       .catch((err) =>
         console.warn("Impossible de contacter Cloudinary :", err.message)
       );
@@ -50,3 +45,4 @@ export const CLOUDINARY_CONFIG = {
 };
 
 export default cloudinary;
+
