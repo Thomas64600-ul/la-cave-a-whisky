@@ -1,5 +1,3 @@
-// backend/controllers/catalogueController.js
-
 import CatalogueWhisky from "../models/CatalogueWhisky.js";
 import { catalogueWhiskySchema } from "../schemas/catalogueWhiskySchema.js";
 
@@ -11,11 +9,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const jsonPath = path.join(__dirname, "..", "data", "whiskies.json");
 
-
-
-/* ======================================================
-   GET – Tous les whiskies du catalogue
-====================================================== */
 export async function getAllCatalogue(req, res) {
   try {
     const data = await CatalogueWhisky.find().sort({ name: 1 });
@@ -34,11 +27,6 @@ export async function getAllCatalogue(req, res) {
   }
 }
 
-
-
-/* ======================================================
-   GET – Whisky par ID
-====================================================== */
 export async function getCatalogueById(req, res) {
   try {
     const whisky = await CatalogueWhisky.findById(req.params.id);
@@ -61,11 +49,6 @@ export async function getCatalogueById(req, res) {
   }
 }
 
-
-
-/* ======================================================
-   POST – Ajouter un whisky
-====================================================== */
 export async function createCatalogueWhisky(req, res) {
   try {
     const validated = await catalogueWhiskySchema.validateAsync(req.body);
@@ -87,11 +70,6 @@ export async function createCatalogueWhisky(req, res) {
   }
 }
 
-
-
-/* ======================================================
-   PUT – Modifier un whisky
-====================================================== */
 export async function updateCatalogueWhisky(req, res) {
   try {
     const validated = await catalogueWhiskySchema.validateAsync(req.body);
@@ -124,11 +102,6 @@ export async function updateCatalogueWhisky(req, res) {
   }
 }
 
-
-
-/* ======================================================
-   DELETE – Supprimer un whisky
-====================================================== */
 export async function deleteCatalogueWhisky(req, res) {
   try {
     const deleted = await CatalogueWhisky.findByIdAndDelete(req.params.id);
@@ -154,11 +127,6 @@ export async function deleteCatalogueWhisky(req, res) {
   }
 }
 
-
-
-/* ======================================================
-   POST – Import JSON Option C
-====================================================== */
 export async function importCatalogue(req, res) {
   try {
     const jsonData = fs.readFileSync(jsonPath, "utf8");
@@ -182,7 +150,7 @@ export async function importCatalogue(req, res) {
 
       } catch (err) {
         skipped++;
-        console.log("⛔ Whisky ignoré:", err.message);
+        console.log("Whisky ignoré:", err.message);
       }
     }
 
