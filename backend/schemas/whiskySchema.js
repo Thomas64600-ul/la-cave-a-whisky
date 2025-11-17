@@ -8,7 +8,7 @@ export const whiskySchema = Joi.object({
   degree: Joi.number().min(0).max(100).required(),
   year: Joi.number().min(1900).max(2100).allow(null).optional(),
   description: Joi.string().allow("").max(2000).optional(),
-  image: Joi.string().uri().optional(),
+  image: Joi.string().allow("").allow(null).optional(),
 });
 
 export const whiskyUpdateSchema = Joi.object({
@@ -19,5 +19,5 @@ export const whiskyUpdateSchema = Joi.object({
   degree: Joi.number().min(0).max(100).optional(),
   year: Joi.number().min(1900).max(2100).allow(null).optional(),
   description: Joi.string().allow("").max(2000).optional(),
-  image: Joi.string().uri().optional(),
+  image: Joi.string().allow("").allow(null).optional(),
 });
