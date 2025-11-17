@@ -1,0 +1,204 @@
+// backend/controllers/catalogueController.js
+
+import CatalogueWhisky from "../models/CatalogueWhisky.js";
+import { catalogueWhiskySchema } from "../schemas/catalogueWhiskySchema.js";
+
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const jsonPath = path.join(__dirname, "..", "data", "whiskies.json");
+
+
+
+/* ======================================================
+   GET – Tous les whiskies du catalogue
+====================================================== */
+export async function getAllCatalogue(req, res) {
+  try {
+    const data = await CatalogueWhisky.find().sort({ name: 1 });
+
+    res.status(200).json({
+      success: true,
+      count: data.length,
+      data,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Erreur lors de la récupération du catalogue.",
+      error: error.message,
+    });
+  }
+}
+
+
+
+/* ======================================================
+   GET – Whisky par ID
+====================================================== */
+export async function getCatalogueById(req, res) {
+  try {
+    const whisky = await CatalogueWhisky.findById(req.params.id);
+
+    if (!whisky) {
+      return res.status(404).json({
+        success: false,
+        message: "Whisky introuvable.",
+      });
+    }
+
+    res.status(200).json({ success: true, data: whisky });
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Erreur lors de la récupération du whisky.",
+      error: error.message,
+    });
+  }
+}
+
+
+
+/* ======================================================
+   POST – Ajouter un whisky
+====================================================== */
+export async function createCatalogueWhisky(req, res) {
+  try {
+    const validated = await catalogueWhiskySchema.validateAsync(req.body);
+
+    const created = await CatalogueWhisky.create(validated);
+
+    res.status(201).json({
+      success: true,
+      message: "Whisky ajouté au catalogue.",
+      data: created,
+    });
+
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "Impossible d’ajouter ce whisky.",
+      error: error.message,
+    });
+  }
+}
+
+
+
+/* ======================================================
+   PUT – Modifier un whisky
+====================================================== */
+export async function updateCatalogueWhisky(req, res) {
+  try {
+    const validated = await catalogueWhiskySchema.validateAsync(req.body);
+
+    const updated = await CatalogueWhisky.findByIdAndUpdate(
+      req.params.id,
+      validated,
+      { new: true }
+    );
+
+    if (!updated) {
+      return res.status(404).json({
+        success: false,
+        message: "Whisky introuvable.",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Whisky mis à jour.",
+      data: updated,
+    });
+
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "Erreur lors de la mise à jour.",
+      error: error.message,
+    });
+  }
+}
+
+
+
+/* ======================================================
+   DELETE – Supprimer un whisky
+====================================================== */
+export async function deleteCatalogueWhisky(req, res) {
+  try {
+    const deleted = await CatalogueWhisky.findByIdAndDelete(req.params.id);
+
+    if (!deleted) {
+      return res.status(404).json({
+        success: false,
+        message: "Whisky introuvable.",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Whisky supprimé du catalogue.",
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Impossible de supprimer ce whisky.",
+      error: error.message,
+    });
+  }
+}
+
+
+
+/* ======================================================
+   POST – Import JSON Option C
+====================================================== */
+export async function importCatalogue(req, res) {
+  try {
+    const jsonData = fs.readFileSync(jsonPath, "utf8");
+    const whiskies = JSON.parse(jsonData);
+
+    let imported = 0;
+    let skipped = 0;
+
+    for (const w of whiskies) {
+      try {
+        const validated = await catalogueWhiskySchema.validateAsync(w);
+
+        const exists = await CatalogueWhisky.findOne({ name: validated.name });
+        if (exists) {
+          skipped++;
+          continue;
+        }
+
+        await CatalogueWhisky.create(validated);
+        imported++;
+
+      } catch (err) {
+        skipped++;
+        console.log("⛔ Whisky ignoré:", err.message);
+      }
+    }
+
+    res.status(201).json({
+      success: true,
+      message: "Import terminé.",
+      imported,
+      skipped,
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Erreur lors de l’import.",
+      error: error.message,
+    });
+  }
+}
+
