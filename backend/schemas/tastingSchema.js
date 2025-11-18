@@ -1,9 +1,12 @@
 import Joi from "joi";
 
 export const tastingSchema = Joi.object({
-  whisky: Joi.string().required().messages({
-    "string.empty": "Le whisky est obligatoire."
-  }),
+  whisky: Joi.string()
+    .required()
+    .messages({
+      "string.empty": "Le whisky est obligatoire.",
+      "any.required": "Le whisky est obligatoire."
+    }),
 
   rating: Joi.number()
     .min(1)
@@ -19,15 +22,30 @@ export const tastingSchema = Joi.object({
   comment: Joi.string()
     .max(500)
     .allow("")
+    .allow(null)
     .optional()
     .messages({
       "string.max": "Le commentaire ne peut pas dépasser 500 caractères."
-    })
+    }),
 });
 
 export const tastingUpdateSchema = Joi.object({
-  rating: Joi.number().min(1).max(5).optional(),
+  rating: Joi.number()
+    .min(1)
+    .max(5)
+    .optional()
+    .messages({
+      "number.min": "La note minimale est 1.",
+      "number.max": "La note maximale est 5."
+    }),
 
-  comment: Joi.string().max(500).allow("").optional()
+  comment: Joi.string()
+    .max(500)
+    .allow("")
+    .allow(null)
+    .optional()
+    .messages({
+      "string.max": "Le commentaire ne peut pas dépasser 500 caractères."
+    }),
 });
 
