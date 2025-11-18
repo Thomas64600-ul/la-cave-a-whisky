@@ -30,7 +30,6 @@ const whiskySchema = new mongoose.Schema(
     },
     year: {
       type: Number,
-      required: false,
       default: null
     },
     description: {
@@ -38,15 +37,34 @@ const whiskySchema = new mongoose.Schema(
       trim: true,
       default: "",
     },
+
     image: {
       type: String,
       default:
         "https://res.cloudinary.com/demo/image/upload/v1700000000/default-whisky.png",
     },
+
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: false,
+    },
+
+    inCave: {
+      type: Boolean,
+      default: false,
+    },
+
+    bottleCount: {
+      type: Number,
+      default: 0,
+      min: 0,
+    },
+
+    caveNotes: {
+      type: String,
+      trim: true,
+      default: "",
     },
   },
   {
@@ -56,3 +74,4 @@ const whiskySchema = new mongoose.Schema(
 
 const Whisky = mongoose.model("Whisky", whiskySchema);
 export default Whisky;
+
