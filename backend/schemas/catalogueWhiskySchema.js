@@ -21,10 +21,11 @@ export const catalogueWhiskySchema = Joi.object({
     "any.required": "Le degré alcoolique est obligatoire",
   }),
 
-  year: Joi.number().integer().min(1900).max(new Date().getFullYear()).allow(null),
+  year: Joi.number().integer().min(0).max(60).allow(null),
 
   description: Joi.string().allow("", null),
 
   image: Joi.string().uri().allow("", null),
 });
+
 

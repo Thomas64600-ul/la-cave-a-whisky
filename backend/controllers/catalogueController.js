@@ -19,10 +19,10 @@ export async function getAllCatalogue(req, res) {
       data,
     });
   } catch (error) {
+    console.error("getAllCatalogue error:", error);
     res.status(500).json({
       success: false,
       message: "Erreur lors de la récupération du catalogue.",
-      error: error.message,
     });
   }
 }
@@ -41,17 +41,27 @@ export async function getCatalogueById(req, res) {
     res.status(200).json({ success: true, data: whisky });
 
   } catch (error) {
+    console.error("getCatalogueById error:", error);
     res.status(500).json({
       success: false,
       message: "Erreur lors de la récupération du whisky.",
-      error: error.message,
     });
   }
 }
 
 export async function createCatalogueWhisky(req, res) {
   try {
+   
     const validated = await catalogueWhiskySchema.validateAsync(req.body);
+
+    
+    const exists = await CatalogueWhisky.findOne({ name: validated.name });
+    if (exists) {
+      return res.status(400).json({
+        success: false,
+        message: "Un whisky portant ce nom existe déjà dans le catalogue.",
+      });
+    }
 
     const created = await CatalogueWhisky.create(validated);
 
@@ -62,6 +72,7 @@ export async function createCatalogueWhisky(req, res) {
     });
 
   } catch (error) {
+    console.error("createCatalogueWhisky error:", error);
     res.status(400).json({
       success: false,
       message: "Impossible d’ajouter ce whisky.",
@@ -72,11 +83,12 @@ export async function createCatalogueWhisky(req, res) {
 
 export async function updateCatalogueWhisky(req, res) {
   try {
+    
     const validated = await catalogueWhiskySchema.validateAsync(req.body);
 
     const updated = await CatalogueWhisky.findByIdAndUpdate(
       req.params.id,
-      validated,
+      { $set: validated },
       { new: true }
     );
 
@@ -94,6 +106,7 @@ export async function updateCatalogueWhisky(req, res) {
     });
 
   } catch (error) {
+    console.error("updateCatalogueWhisky error:", error);
     res.status(400).json({
       success: false,
       message: "Erreur lors de la mise à jour.",
@@ -119,10 +132,10 @@ export async function deleteCatalogueWhisky(req, res) {
     });
 
   } catch (error) {
+    console.error("deleteCatalogueWhisky error:", error);
     res.status(500).json({
       success: false,
       message: "Impossible de supprimer ce whisky.",
-      error: error.message,
     });
   }
 }
@@ -162,6 +175,7 @@ export async function importCatalogue(req, res) {
     });
 
   } catch (error) {
+    console.error("importCatalogue error:", error);
     res.status(500).json({
       success: false,
       message: "Erreur lors de l’import.",

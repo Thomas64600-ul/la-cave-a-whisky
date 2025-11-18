@@ -6,8 +6,8 @@
     "category": "Single Malt",
     "degree": 43,
     "year": 16,
-    "description": "Lagavulin 16, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/lagavulin-16.jpg",
+    "description": "Le Lagavulin 16 ans est un single malt emblématique de l’île d’Islay, réputé pour son caractère puissant et profondément fumé. Au nez, il dévoile une tourbe riche, une fumée intense rappelant un feu de camp, ainsi que des notes marines et légèrement salines. En bouche, la texture est ample et onctueuse, portée par des arômes d’iode, de bois brûlé et de chêne humide, typiques des whiskies de la côte écossaise. Viennent ensuite des nuances plus douces, mêlant fruits secs, agrumes mûrs et caramel d’arachide, qui équilibrent parfaitement l’ensemble. La finale est longue, chaleureuse et persistante, marquée par un retour de fumée, de sel marin et de chêne toasté. C’est un whisky de caractère, profond et parfaitement maîtrisé, idéal pour les amateurs de tourbe en quête d’une expérience authentique et mémorable.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763373840/Lagavulin_16_b5ry8u.png",
     "createdBy": null
   },
   {
@@ -17,8 +17,8 @@
     "category": "Single Malt",
     "degree": 46,
     "year": 10,
-    "description": "Ardbeg 10, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/ardbeg-10.jpg",
+    "description": "L’Ardbeg 10 ans est l’un des single malts les plus emblématiques de l’île d’Islay, réputé pour son intensité tourbée et son caractère maritime puissant. Au nez, il dévoile une fumée franche et profonde, enrichie de notes de goudron, de varech et de citron confit, avec une touche subtile de vanille. En bouche, l’attaque est vive, presque explosive, mêlant poivre noir, braise chaude, réglisse et une minéralité saline typique des whiskies de la côte. Une amertume élégante se mêle ensuite au goût, avant de laisser place à des nuances de malt sucré et de chêne grillé. La finale est longue, sèche et fumée, avec un retour iodé persistant et une fraîcheur d’agrumes qui équilibre la puissance aromatique. Véritable référence des whiskies tourbés, Ardbeg 10 combine intensité brute, fraîcheur surprenante et une profondeur aromatique qui séduit autant les amateurs confirmés que ceux qui découvrent Islay.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763373836/Ardbeg_10_eobcth.png",
     "createdBy": null
   },
   {
@@ -28,8 +28,8 @@
     "category": "Single Malt",
     "degree": 40,
     "year": 10,
-    "description": "Laphroaig 10, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/laphroaig-10.jpg",
+    "description": "Le Laphroaig 10 ans est un single malt emblématique d’Islay, connu pour son profil aromatique radical et immédiatement reconnaissable. Au nez, il s’ouvre sur une fumée de tourbe dense et médicinale, évoquant l’iode, le camphre, les algues séchées et un soupçon d’hôpital — une signature unique qui divise souvent les amateurs. En bouche, l’attaque est franche et huileuse, portée par des notes de cendre froide, de bois brûlé et de réglisse, soutenues par une douceur de vanille issue du vieillissement en fûts de bourbon. On y retrouve également une salinité marine caractéristique, rappelant les vents côtiers de l’île d’Islay. La finale est longue et persistante, marquée par un retour de fumée épaisse, de terre humide et de chêne toasté. Véritable whisky de caractère, le Laphroaig 10 offre une expérience puissante, brute et authentique, qui séduit les amateurs de tourbe la plus expressive.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763373840/Laphroaig_10_amkodw.png",
     "createdBy": null
   },
   {
@@ -39,8 +39,8 @@
     "category": "Single Malt",
     "degree": 45.8,
     "year": 10,
-    "description": "Talisker 10, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/talisker-10.jpg",
+    "description": "Le Talisker 10 ans est un single malt emblématique de l’île de Skye, réputé pour son équilibre unique entre puissance maritime et élégance épicée. Au nez, il révèle une fumée légère mêlée à des notes de varech, de sel marin et de poivre noir, accompagnées d’une pointe de fruits jaunes mûrs et de citron frais. En bouche, l’attaque est vive et chaleureuse, portée par la célèbre signature poivrée de Talisker, rapidement rejointe par des arômes de malt sucré, de caramel doux et de bois légèrement brûlé. La texture est à la fois huileuse et dynamique, évoquant la mer agitée qui entoure la distillerie. La finale est longue, sèche et intensément épicée, marquée par un retour de fumée saline et une chaleur persistante. Ce 10 ans incarne parfaitement le style maritime de Talisker : puissant, équilibré et profondément évocateur de son terroir insulaire.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763373843/Talisker_10_z4bfmb.png",
     "createdBy": null
   },
   {
@@ -50,8 +50,8 @@
     "category": "Single Malt",
     "degree": 40,
     "year": 12,
-    "description": "Glenfiddich 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenfiddich-12.jpg",
+    "description": "Le Glenfiddich 12 ans est un single malt emblématique des Highlands, reconnu pour sa douceur accessible et son style élégant. Au nez, il dévoile des arômes frais de poire mûre, de pomme verte et de fleurs blanches, soutenus par une légère touche de malt sucré et de chêne vanillé. En bouche, la texture est douce et veloutée, avec des notes de fruits du verger, de miel léger et de crème pâtissière, accompagnées d’une nuance subtile d’amande et de caramel blond. L’équilibre entre douceur et fraîcheur est parfaitement maîtrisé, offrant une sensation harmonieuse et facile à apprécier. La finale est moyenne, propre et légèrement boisée, avec un retour de poire juteuse et une pointe d’épices douces. Whisky idéal pour découvrir le style floral et fruité du Speyside, le Glenfiddich 12 reste une référence pour sa finesse, sa constance et son accessibilité.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763373837/Glenfiddich_12_p05poc.png",
     "createdBy": null
   },
   {
@@ -61,8 +61,8 @@
     "category": "Single Malt",
     "degree": 40,
     "year": 12,
-    "description": "Glenlivet 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenlivet-12.jpg",
+    "description": "Le Glenlivet 12 ans est un single malt emblématique du Speyside, réputé pour son profil délicat, fruité et parfaitement équilibré. Au nez, il dévoile des arômes lumineux d’agrumes, de pomme verte, de poire fraîche et de fleurs de printemps, soutenus par une touche de vanille et de miel. En bouche, la texture est douce et soyeuse, offrant des saveurs de fruits du verger, de zestes d’orange, de malt léger et de crème vanillée. Une note subtile d’amande et de chêne toasté apporte de la profondeur sans dominer l’ensemble. La finale est élégante, propre et légèrement sucrée, avec une pointe d’épices douces et une fraîcheur persistante. Accessible mais raffiné, le Glenlivet 12 incarne parfaitement le style du Speyside : harmonieux, fruité et idéal aussi bien pour les débutants que pour les amateurs avertis.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763373838/Glenlivet_12_frrgwy.png",
     "createdBy": null
   },
   {
@@ -72,8 +72,8 @@
     "category": "Single Malt",
     "degree": 40,
     "year": 12,
-    "description": "Macallan 12 Sherry Oak, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/macallan-12-sherry-oak.jpg",
+    "description": "Le Macallan 12 ans Sherry Oak est un single malt prestigieux vieilli exclusivement en fûts de sherry en provenance de Jerez, en Espagne. Au nez, il révèle une richesse aromatique profonde, mêlant raisins secs, figues, dattes, caramel brun et une élégante note de chêne européeen. En bouche, la texture est veloutée et chaleureuse, portée par des saveurs de fruits secs, d’orange confite, de cannelle et de chocolat noir, soutenues par une douceur naturelle rappelant le toffee. La présence du chêne sherry apporte une structure tannique subtile et parfaitement maîtrisée, donnant au whisky une profondeur remarquable. La finale est longue, chaleureuse et épicée, marquée par un retour de cacao, de vanille et de fruits rouges légèrement compotés. Raffiné, riche et généreux, le Macallan 12 Sherry Oak est un incontournable pour les amateurs de whiskies gourmands et élégamment boisés.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763373840/Macallan_12_Sherry_Oak_irn1um.png",
     "createdBy": null
   },
   {
@@ -83,8 +83,8 @@
     "category": "Single Malt",
     "degree": 40,
     "year": 12,
-    "description": "Highland Park 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/highland-park-12.jpg",
+    "description": "Le Highland Park 12 ans est un single malt emblématique des îles Orcades, reconnu pour son équilibre unique entre douceur mielleuse, fumée légère et influence maritime. Au nez, il mêle des arômes de miel de bruyère, d’agrumes frais et de fruits jaunes, accompagnés d’une fumée subtile issue d’une tourbe locale riche en bruyère. En bouche, la texture est ronde et harmonieuse, dévoilant des notes de caramel doux, de vanille, de noix et d’épices délicates, le tout soutenu par une minéralité salée discrète. La fumée reste présente mais élégante, jamais dominante, apportant une complexité parfaitement maîtrisée. La finale est longue, douce et légèrement épicée, avec un retour de bruyère fumée et de chêne toasté. C’est un whisky accessible mais raffiné, apprécié pour sa personnalité équilibrée et son caractère insulaire typique.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763373838/Highland_Park_12_eivir1.png",
     "createdBy": null
   },
   {
@@ -94,8 +94,8 @@
     "category": "Single Malt",
     "degree": 43,
     "year": 14,
-    "description": "Oban 14, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/oban-14.jpg",
+    "description": "L’Oban 14 ans est un single malt côtier très apprécié pour son équilibre remarquable entre douceur maltée, notes maritimes et une légère fumée. Au nez, il s’ouvre sur des arômes de fruits cuits, d’orange confite et de miel, accompagnés d’une touche saline et d’une fumée délicate évoquant un feu de bois au bord de mer. En bouche, la texture est douce et légèrement huileuse, dévoilant des saveurs de caramel blond, de fruits secs, de poivre doux et de chêne vanillé, avec une pointe de sel marin caractéristique de la distillerie. L’ensemble est harmonieusement soutenu par une subtile note tourbée, jamais agressive, qui apporte profondeur et complexité. La finale est longue, chaleureuse et légèrement épicée, avec un retour d’agrumes et de fumée douce. Whisky raffiné et parfaitement équilibré, l’Oban 14 est l’un des meilleurs exemples du style « Highland côtier ».",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763373842/Oban_14_aykt15.png",
     "createdBy": null
   },
   {
@@ -105,8 +105,8 @@
     "category": "Single Malt",
     "degree": 43,
     "year": 12,
-    "description": "Caol Ila 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/caol-ila-12.jpg",
+    "description": "Le Caol Ila 12 ans est un single malt d’Islay reconnu pour son style plus lumineux et aérien que la plupart des whiskies tourbés de l’île. Au nez, il dévoile une fumée délicate et fraîche, mêlée à des notes de citron, de pomme verte, d’herbes marines et de brise salée. En bouche, la texture est légère mais expressive, portée par des saveurs de cendre douce, de poivre blanc, de malt sucré et de fruits jaunes, accompagnées d’une minéralité subtile qui évoque le bord de mer. La tourbe reste présente mais fine, laissant transparaître une grande clarté aromatique. La finale est longue, propre et légèrement iodée, avec un retour de fumée tendre et d’agrumes frais. Équilibré, élégant et particulièrement accessible pour un whisky tourbé, le Caol Ila 12 est souvent considéré comme la porte d’entrée idéale vers le style d’Islay.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763373837/Caol_Ila_12_lpue6m.png",
     "createdBy": null
   },
   {
@@ -116,8 +116,8 @@
     "category": "Single Malt",
     "degree": 40,
     "year": 12,
-    "description": "Aberlour 12 Double Cask, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/aberlour-12-double-cask.jpg",
+    "description": "L’Aberlour 12 ans Double Cask est un single malt chaleureux et gourmand, vieilli à la fois en fûts de bourbon et en fûts de sherry, ce qui lui confère une profondeur aromatique remarquable. Au nez, il dévoile des arômes intenses de fruits rouges, de raisins secs, de caramel doux et de miel, accompagnés d’une touche de vanille et de chêne épicé. En bouche, la texture est ronde, dense et veloutée, offrant des saveurs de chocolat au lait, d’orange confite, de cannelle et de noisette grillée, soutenues par une douceur maltée parfaitement équilibrée. Les influences combinées du bourbon et du sherry apportent une grande richesse, mêlant fraîcheur sucrée et chaleur épicée. La finale est longue, douce et légèrement épicée, avec un retour de fruits secs et de caramel chaud. Whisky généreux et très accessible, l’Aberlour 12 Double Cask séduit par son caractère gourmand et son équilibre harmonieux.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763373836/Aberlour_12_Double_Cask_hxmii2.png",
     "createdBy": null
   },
   {
@@ -127,8 +127,8 @@
     "category": "Single Malt",
     "degree": 46,
     "year": 10,
-    "description": "Springbank 10, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/springbank-10.jpg",
+    "description": "Le Springbank 10 ans est un single malt emblématique de Campbeltown, réputé pour son style artisanal et son caractère complexe. Au nez, il s’ouvre sur un mélange équilibré de tourbe légère, de céréales maltées, de citron frais et d’embruns marins, accompagné d’une touche de pomme verte et de vanille. En bouche, la texture est huileuse et profonde, offrant des saveurs de caramel doux, de fruits jaunes, de sel marin et de poivre doux, soutenues par une fumée délicate et parfaitement intégrée. On retrouve également une note légèrement terreuse et minérale, typique de Springbank, qui apporte une signature unique au whisky. La finale est longue, sèche et subtilement épicée, avec un retour de fumée légère, de chêne toasté et d’agrumes mûrs. Whisky authentique, non standardisé et riche en personnalité, le Springbank 10 est souvent considéré comme l’un des meilleurs rapports qualité-prix du monde du single malt.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763373843/Springbank_10_fu2796.png",
     "createdBy": null
   },
   {
@@ -138,8 +138,8 @@
     "category": "Single Malt",
     "degree": 40,
     "year": 12,
-    "description": "Bowmore 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/bowmore-12.jpg",
+    "description": "Le Bowmore 12 ans est un single malt d’Islay reconnu pour son équilibre subtil entre fumée, douceur fruitée et notes florales. Au nez, il dévoile une fumée délicate mêlée à des arômes de miel, de citron frais et de fleurs blanches, avec une pointe de sel marin typique des whiskies côtiers. En bouche, la texture est douce et légèrement crémeuse, offrant des saveurs harmonieuses de chocolat au lait, de vanille, d’orange confite et de caramel léger, soutenues par une fumée tourbée modérée et parfaitement intégrée. La personnalité de Bowmore se révèle dans cette alliance rare entre profondeur et délicatesse. La finale est moyenne à longue, douce et légèrement saline, avec un retour de fumée tendre, de fruits jaunes et d’épices douces. Accessible, équilibré et raffiné, le Bowmore 12 constitue une excellente introduction au style d’Islay sans excès de puissance tourbée.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763373836/Bowmore_12_ncd4mu.png",
     "createdBy": null
   },
   {
@@ -149,8 +149,8 @@
     "category": "Single Malt",
     "degree": 40,
     "year": 12,
-    "description": "Cragganmore 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/cragganmore-12.jpg",
+    "description": "Le Cragganmore 12 ans est un single malt du Speyside réputé pour son élégance aromatique et sa complexité subtile. Au nez, il s’ouvre sur des notes raffinées de miel, de fleurs sauvages et de fruits du verger, accompagnées d’une touche de noisette et de malt légèrement toasté. En bouche, la texture est douce et délicate, dévoilant des saveurs harmonieuses de caramel léger, de céréales, de vanille et d’agrumes mûrs, soutenues par une pointe épicée et une touche fumée très discrète. L’équilibre entre douceur maltée et profondeur aromatique est parfaitement maîtrisé, offrant une expérience riche mais accessible. La finale est moyenne, propre et légèrement boisée, avec un retour de fruits secs, de miel et d’épices douces. Whisky subtil et nuancé, le Cragganmore 12 est apprécié pour sa finesse, sa complexité et son caractère profondément Speyside.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376129/Cragganmore_12_bt1gvh.png",
     "createdBy": null
   },
   {
@@ -160,8 +160,8 @@
     "category": "Single Malt",
     "degree": 43,
     "year": 12,
-    "description": "Glenfarclas 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenfarclas-12.jpg",
+    "description": "Le Glenfarclas 12 ans est un single malt du Speyside réputé pour son style chaleureux et généreux, porté par un vieillissement traditionnel en fûts de sherry. Au nez, il offre des arômes riches de fruits secs, de raisins sultanine, de caramel brun et de zeste d’orange, accompagnés d’une touche de miel et de chêne épicé. En bouche, la texture est ronde et soyeuse, dévoilant des saveurs de toffee, de fruits rouges légèrement compotés, de noix et de vanille, avec une profondeur chaleureuse typique du sherry européen. L’équilibre entre douceur maltée et influence du fût est parfaitement maîtrisé, donnant un whisky expressif mais accessible. La finale est longue, douce et légèrement épicée, marquée par un retour de fruits secs, de chocolat au lait et de chêne toasté. Authentique, robuste et traditionnel, le Glenfarclas 12 ans incarne parfaitement l’héritage familial et le style sherry du Speyside.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376132/Glenfarclas_12_kktb2o.png",
     "createdBy": null
   },
   {
@@ -171,8 +171,8 @@
     "category": "Single Malt",
     "degree": 50,
     "year": null,
-    "description": "Bruichladdich Classic Laddie, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/bruichladdich-classic-laddie.jpg",
+    "description": "Le Bruichladdich Classic Laddie est un single malt non tourbé d’Islay, conçu pour mettre en valeur la pureté du malt et l’expression authentique du terroir insulaire. Au nez, il dévoile une fraîcheur éclatante mêlant fleurs blanches, agrumes, sucre d’orge et une pointe de vanille, avec un caractère maritime subtil rappelant la brise de l’océan. En bouche, la texture est soyeuse et vibrante, portée par des notes de citron, de poire mûre, de miel léger et de céréales douces, accompagnées d’une minéralité saline raffinée. On retrouve également une touche d’amande, de chêne frais et de fruits tropicaux discrets, signe du travail précis sur les fûts. La finale est longue, lumineuse et propre, marquée par une douceur maltée persistante et une élégante fraîcheur florale. Whisky moderne, pur et expressif, le Classic Laddie incarne parfaitement la philosophie de Bruichladdich : transparence, naturel et caractère artisanal.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376128/Bruichladdich_Classic_Laddie_bvzwlz.png",
     "createdBy": null
   },
   {
@@ -182,8 +182,8 @@
     "category": "Single Malt",
     "degree": 54.2,
     "year": null,
-    "description": "Ardbeg Uigeadail, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/ardbeg-uigeadail.jpg",
+    "description": "L’Ardbeg Uigeadail est un single malt d’Islay puissant et profondément complexe, qui combine la tourbe intense de la distillerie avec la richesse sucrée des fûts de sherry. Au nez, il s’ouvre sur une fumée dense et huileuse, mêlée à des arômes de goudron, de bacon grillé, de cuir ancien et de raisins secs, avec une pointe de chocolat noir. En bouche, la texture est ample et veloutée, offrant une explosion de saveurs : tourbe iodée, miel sombre, mélasse, espresso corsé, noix caramélisées et épices chaudes. L’influence des fûts de sherry apporte une profondeur fruitée — figues, pruneaux, dattes — qui équilibre parfaitement la puissance tourbée. La finale est très longue, chaude et enveloppante, marquée par une fumée persistante, une douceur de fruits secs et une élégante note de chêne grillé. Intense, généreux et parfaitement maîtrisé, Uigeadail est considéré comme l’un des whiskies les plus aboutis et les plus emblématiques d’Ardbeg.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376127/Ardbeg_Uigeadail_cqjfcf.png",
     "createdBy": null
   },
   {
@@ -193,8 +193,8 @@
     "category": "Single Malt",
     "degree": 57.1,
     "year": null,
-    "description": "Ardbeg Corryvreckan, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/ardbeg-corryvreckan.jpg",
+    "description": "L’Ardbeg Corryvreckan est un single malt d’Islay réputé pour sa puissance brute et son intensité tourbée extrême, inspirée du célèbre tourbillon marin dont il porte le nom. Au nez, il s’ouvre sur une fumée profonde et épicée, mêlée de notes de goudron, de poivre noir, de cacao amer et de fruits noirs confits, avec une pointe de bacon fumé et de café torréfié. En bouche, l’attaque est explosive : la texture dense et huileuse dévoile des saveurs de tourbe brûlante, de poivre chaud, de réglisse noire, d’espresso serré et de chocolat noir, soutenues par une acidité subtile de fruits rouges. L’élevage en fûts de chêne français apporte une structure tannique marquée, donnant au whisky une profondeur presque sauvage et une intensité aromatique exceptionnelle. La finale est très longue, chaude et enveloppante, dominée par la fumée, les épices et une minéralité maritime persistante. Corryvreckan est un whisky audacieux, exigeant et incroyablement riche — un incontournable pour les amateurs de tourbe puissante.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376127/Ardbeg_Corryvreckan_ctsx7q.png",
     "createdBy": null
   },
   {
@@ -204,8 +204,8 @@
     "category": "Single Malt",
     "degree": 48,
     "year": 8,
-    "description": "Lagavulin 8, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/lagavulin-8.jpg",
+    "description": "Le Lagavulin 8 ans est un single malt d’Islay au caractère vif, intense et remarquablement expressif pour son jeune âge. Au nez, il dévoile une fumée franche et sèche, accompagnée de notes de cendre froide, de citron frais, de poivre blanc et d’une pointe d’iode évoquant la côte rocheuse. En bouche, l’attaque est directe et tranchante, portée par une tourbe énergique, des arômes de céréales maltées, de vanille légère et d’agrumes acidulés, avec une texture plus fine et plus nerveuse que celle du célèbre 16 ans. On y retrouve également une minéralité marquée et un côté légèrement poivré qui dynamise l’ensemble. La finale est longue, sèche et fumée, avec un retour d’épices, de sel marin et de citron zesté. Pur, droit et sans compromis, le Lagavulin 8 rend hommage au style originel de la distillerie : une tourbe sèche, cendrée et élégante, pleine d'énergie et d’authenticité.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376139/Lagavulin_8_joc6rb.png",
     "createdBy": null
   },
   {
@@ -215,8 +215,8 @@
     "category": "Single Malt",
     "degree": 40,
     "year": 15,
-    "description": "Glenfiddich 15, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenfiddich-15.jpg",
+    "description": "Le Glenfiddich 15 ans est un single malt du Speyside réputé pour sa douceur complexe et son processus de vieillissement unique en Solera Vat. Au nez, il dévoile des arômes riches de miel, de poire mûre, de fruits secs et de vanille, accompagnés d’une touche de cannelle et de chêne toasté. En bouche, la texture est soyeuse et chaleureuse, offrant des saveurs de caramel doux, de fruits rouges, de raisins secs et de noix, avec une profondeur gourmande apportée par les fûts de sherry. Les épices douces — cannelle, noix de muscade, légère pointe de gingembre — apportent une belle dynamique sans dominer le profil fruité. La finale est longue, douce et élégamment boisée, marquée par une persistance de miel et d’épices. Harmonieux, rond et parfaitement équilibré, le Glenfiddich 15 est l’un des whiskies les plus appréciés du Speyside pour sa richesse accessible et son caractère raffiné.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376133/Glenfiddich_15_mzronl.png",
     "createdBy": null
   },
   {
@@ -226,8 +226,8 @@
     "category": "Single Malt",
     "degree": 45.8,
     "year": null,
-    "description": "Talisker Storm, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/talisker-storm.jpg",
+    "description": "Le Talisker Storm est un single malt des îles Skyes qui pousse l’identité maritime de la distillerie à son paroxysme. Au nez, il s’ouvre sur une vague de fumée poivrée mêlée à des arômes de sel marin, de varech et de bois humide, avec une pointe d’agrumes et de vanille discrète. En bouche, l’attaque est vive, intense et légèrement sauvage, portée par des notes de poivre noir signature, de caramel brûlé, de chêne toasté et de fumée dense. On ressent également une salinité marquée, presque iodée, qui rappelle les vents puissants et les embruns de la côte de Skye. La texture est ronde mais dynamique, renforçant le caractère fougueux de ce whisky. La finale est longue, chaleureuse et épicée, dominée par la fumée, le poivre et une subtile note de zeste d’orange. Talisker Storm est un whisky expressif, audacieux et intensément maritime, idéal pour ceux qui recherchent une expérience plus tempétueuse que le classique Talisker 10.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376145/Talisker_Storm_g5vrlb.png",
     "createdBy": null
   },
   {
@@ -237,8 +237,8 @@
     "category": "Single Malt",
     "degree": 45.8,
     "year": null,
-    "description": "Talisker Skye, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/talisker-skye.jpg",
+    "description": "Le Talisker Skye est un single malt conçu pour offrir une version plus douce et accessible de l’identité maritime de la distillerie. Au nez, il dévoile une fumée légère et sucrée accompagnée de notes de caramel blond, de pomme mûre, de citron frais et d’une pointe de vanille, le tout soutenu par une brise saline typique de Talisker. En bouche, la texture est souple et agréablement ronde, révélant des saveurs de miel, de fruits jaunes, de chêne toasté et d’épices douces, avec le fameux poivre noir Talisker qui reste présent mais plus discret que dans le 10 ou le Storm. Une touche de fumée douce et de sel marin vient équilibrer l’ensemble, apportant une dimension côtière sans excès. La finale est moyenne à longue, douce et légèrement épicée, avec un retour de caramel et de fumée délicate. Whisky accessible mais fidèle à l’esprit de Skye, Talisker Skye est idéal pour découvrir la distillerie sous un angle plus rond et plus gourmand.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376144/Talisker_Skye_gppn5h.png",
     "createdBy": null
   },
   {
@@ -248,8 +248,8 @@
     "category": "Single Malt",
     "degree": 43,
     "year": 18,
-    "description": "Macallan 18 Sherry Oak, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/macallan-18-sherry-oak.jpg",
+    "description": "Le Macallan 18 ans Sherry Oak est un single malt d’exception, vieilli exclusivement en fûts de sherry en chêne européen provenant de Jerez, ce qui lui confère une profondeur aromatique incomparable. Au nez, il dévoile une richesse somptueuse de fruits secs, de raisins sultanine, de figues et de dattes, accompagnée d’arômes de caramel foncé, de chocolat noir et d’épices chaudes comme la cannelle et la muscade. En bouche, la texture est veloutée, ample et élégante, marquée par des saveurs de fruits rouges compotés, d’orange confite, de miel sombre et de toffee, soutenues par une note subtile de chêne tannique et de cacao amer. L’équilibre entre douceur fruitée, profondeur boisée et puissance épicée est parfaitement maîtrisé. La finale est longue, chaleureuse et persistante, avec un retour de chocolat noir, de fruits secs et de chêne toasté. Raffiné, intense et majestueux, le Macallan 18 Sherry Oak est considéré comme l’un des whiskies les plus prestigieux de sa catégorie, véritable symbole du savoir-faire traditionnel de la distillerie.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376139/Macallan_18_Sherry_Oak_kjknfq.png",
     "createdBy": null
   },
   {
@@ -259,8 +259,8 @@
     "category": "Single Malt",
     "degree": 40,
     "year": 15,
-    "description": "Glenlivet 15 French Oak, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenlivet-15-french-oak.jpg",
+    "description": "Le Glenlivet 15 ans French Oak Reserve est un single malt élégant et raffiné, partiellement vieilli en fûts de chêne français du Limousin — un choix rare dans le monde du whisky — qui lui confère une complexité aromatique unique. Au nez, il révèle des arômes de fruits mûrs, de poire juteuse, de miel et de zestes d’agrumes, accompagnés d’une subtile note florale et d’un fond vanillé délicat. En bouche, la texture est soyeuse et onctueuse, offrant un bel équilibre entre douceur maltée, saveurs de fruits du verger et touches de toffee et de noisette. L’influence du chêne français apporte une structure plus épicée et légèrement boisée, avec des notes de cannelle, d’amande et un caractère tannique finement maîtrisé. La finale est longue, douce et élégante, marquée par une chaleur épicée et un retour de fruits mûrs. Le Glenlivet 15 est un whisky raffiné, harmonieux et très représentatif du style fruité du Speyside, sublimé par l’apport noble du chêne français.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376134/Glenlivet_15_French_Oak_vsdae2.png",
     "createdBy": null
   },
   {
@@ -270,8 +270,8 @@
     "category": "Single Malt",
     "degree": 40,
     "year": null,
-    "description": "Glenlivet Founder's Reserve, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenlivet-founders-reserve.jpg",
+    "description": "Le Glenlivet Founder’s Reserve est un single malt du Speyside conçu pour offrir une expression douce, fraîche et accessible du style historique de la distillerie. Au nez, il dévoile des arômes lumineux d’agrumes, de pomme verte, de poire fraîche et de sucre d’orge, accompagnés d’une légère note de vanille et de miel. En bouche, la texture est souple et légère, portée par des saveurs de fruits du verger, de crème vanillée, de caramel blond et d’amande douce, le tout soutenu par une touche subtile d’épices et une fraîcheur citronnée. L’ensemble est très harmonieux, facile à apprécier et particulièrement gourmand. La finale est douce, propre et légèrement sucrée, avec un retour de fruits frais et de malt léger. Whisky convivial et très accessible, le Founder’s Reserve est idéal pour découvrir l’univers du Speyside ou pour ceux qui apprécient les profils fruités et délicats.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376135/Glenlivet_Founder_s_Reserve_zqalbo.png",
     "createdBy": null
   },
   {
@@ -281,8 +281,8 @@
     "category": "Single Malt",
     "degree": 40,
     "year": 10,
-    "description": "Glenmorangie 10 Original, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenmorangie-10-original.jpg",
+    "description": "Le Glenmorangie 10 Original est un single malt emblématique des Highlands, reconnu pour son élégance, sa finesse et son caractère délicatement fruité. Au nez, il s’ouvre sur des arômes lumineux de pêche, d’abricot, de zeste d’orange et de citron, soutenus par une douceur vanillée et une touche florale rappelant le chèvrefeuille. En bouche, la texture est légère, douce et soyeuse, dévoilant des saveurs de miel, de malt sucré, de fruits du verger et de crème pâtissière, avec une pointe subtile d’amande et de caramel blond. L’élevage en fûts de bourbon apporte une vanille chaleureuse et un boisé doux, parfaitement intégré. La finale est moyenne, propre et rafraîchissante, marquée par une douceur maltée persistante et une légère note d’agrumes. Whisky accessible, équilibré et raffiné, le Glenmorangie 10 est un incontournable pour comprendre le style élégant et fruité des Highlands.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376137/Glenmorangie_10_Original_e7kgh8.png",
     "createdBy": null
   },
   {
@@ -292,8 +292,8 @@
     "category": "Single Malt",
     "degree": 46,
     "year": 14,
-    "description": "Glenmorangie Quinta Ruban 14, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenmorangie-quinta-ruban-14.jpg",
+    "description": "Le Glenmorangie Quinta Ruban 14 ans est un single malt riche et gourmand, affiné en fûts de porto ruby qui lui apportent une profondeur aromatique remarquable. Au nez, il offre des arômes intenses de chocolat noir, d’orange confite, de fruits rouges mûrs et de menthe, accompagnés d’une touche de chêne sucré et de caramel sombre. En bouche, la texture est veloutée et ample, révélant des saveurs de cacao amer, de framboise, de cassis, de réglisse douce et de noisette grillée, auxquelles s’ajoutent des notes épicées de cannelle et de noix de muscade. L’influence du porto apporte une richesse chaleureuse, tout en préservant la finesse fruitée typique de Glenmorangie. La finale est longue, intense et élégante, marquée par un retour de chocolat noir, d’épices douces et de fruits noirs légèrement confiturés. Le Quinta Ruban 14 est un whisky raffiné, puissant et généreux, souvent apprécié pour son caractère sombre, chocolaté et profondément expressif.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376138/Glenmorangie_Quinta_Ruban_14_vdxpi7.png",
     "createdBy": null
   },
   {
@@ -303,8 +303,8 @@
     "category": "Single Malt",
     "degree": 43,
     "year": 12,
-    "description": "Glenmorangie Lasanta 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenmorangie-lasanta-12.jpg",
+    "description": "Le Glenmorangie Lasanta 12 ans est un single malt chaleureux et généreux, affiné en fûts de sherry oloroso et pedro ximénez qui lui confèrent une richesse aromatique profonde. Au nez, il dévoile des arômes de raisins secs, de caramel brun, de miel sombre et de chocolat au lait, accompagnés de notes d’orange confite, de cannelle et de chêne sucré. En bouche, la texture est veloutée et ample, offrant des saveurs de toffee, de fruits rouges légèrement compotés, de dattes, d’épices douces et de cacao crémeux, le tout soutenu par une douceur maltée parfaitement équilibrée. Les fûts de sherry apportent une rondeur gourmande et une profondeur chaleureuse qui se marient harmonieusement avec la finesse de Glenmorangie. La finale est longue, douce et légèrement épicée, marquée par un retour de chocolat, de fruits secs et de chêne toasté. Lasanta est un whisky riche, enveloppant et accessible, idéal pour les amateurs de profils sherry élégants et gourmands.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376139/Glenmorangie_Lasanta_12_zxnwfc.png",
     "createdBy": null
   },
   {
@@ -314,8 +314,8 @@
     "category": "Single Malt",
     "degree": 46,
     "year": 12,
-    "description": "GlenAllachie 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenallachie-12.jpg",
+    "description": "Le GlenAllachie 12 ans est un single malt du Speyside reconnu pour sa richesse aromatique et son style profondément gourmand, grâce à un assemblage de fûts de sherry Pedro Ximénez, oloroso et de chêne neuf. Au nez, il dévoile des arômes généreux de miel, de caramel foncé, de raisins secs et de chocolat, accompagnés de notes de fruits rouges, de cannelle et d’un léger boisé épicé. En bouche, la texture est veloutée et ample, offrant des saveurs de toffee, de figues, de pruneaux et de fruits noirs, soutenues par une pointe de gingembre doux et une profondeur chocolatée caractéristique de la distillerie. Les fûts de sherry apportent une intensité chaleureuse, parfaitement équilibrée par une douceur maltée. La finale est longue, riche et légèrement épicée, avec un retour de cacao, de fruits secs et de chêne toasté. Le GlenAllachie 12 se distingue par son caractère artisanal, sa générosité aromatique et son équilibre remarquable.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376131/GlenAllachie_12_lzoemk.png",
     "createdBy": null
   },
   {
@@ -325,8 +325,8 @@
     "category": "Single Malt",
     "degree": 40,
     "year": 12,
-    "description": "Old Pulteney 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/old-pulteney-12.jpg",
+    "description": "Le Old Pulteney 12 ans est un single malt côtier emblématique des Highlands du Nord, surnommé « le whisky maritime » pour son caractère salin unique. Au nez, il s’ouvre sur des notes fraîches de brise marine, de citron, de pomme verte et de miel léger, accompagnées d’une pointe de vanille et de chêne doux. En bouche, la texture est souple et légèrement huileuse, révélant des saveurs de caramel blond, de malt sucré, d’agrumes et de fruits jaunes, avec une touche saline distinctive qui évoque la proximité de la mer. Une nuance d’épices douces et une légère note de noisette complètent harmonieusement l’ensemble. La finale est moyenne à longue, propre, légèrement épicée et marquée par un retour de sel marin, d’agrumes et de vanille. Whisky accessible, frais et équilibré, le Old Pulteney 12 est apprécié pour son identité maritime claire et sa grande buvabilité.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763376140/Old_Pulteney_12_ohy00z.png",
     "createdBy": null
   },
   {
@@ -336,8 +336,8 @@
     "category": "Blend",
     "degree": 40,
     "year": 12,
-    "description": "Johnnie Walker Black Label, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/johnnie-walker-black-label.jpg",
+    "description": "Le Johnnie Walker Black Label est un blended Scotch réputé pour son équilibre remarquable et sa complexité accessible, assemblé à partir de whiskies vieillis au minimum 12 ans. Au nez, il révèle une combinaison harmonieuse de fumée douce, de caramel, de vanille et de fruits mûrs, avec une pointe d’épices et de chêne. En bouche, la texture est souple et veloutée, mêlant des saveurs de malt sucré, de caramel brun, de fruits secs et d’agrumes, soutenues par une fumée subtile typique des whiskies d’Islay utilisés dans l’assemblage. Une touche d’épices chaudes, de chocolat et de bois toasté vient apporter de la profondeur sans alourdir le profil aromatique. La finale est longue, douce et légèrement fumée, avec un retour de vanille, d’épices et de chêne. Whisky polyvalent, élégant et parfaitement maîtrisé, le Black Label est apprécié aussi bien pur qu’en cocktail, et reste une référence mondiale du blended Scotch.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386194/Johnnie_Walker_Black_Label_vuvmqh.png",
     "createdBy": null
   },
   {
@@ -347,8 +347,8 @@
     "category": "Blend",
     "degree": 40,
     "year": null,
-    "description": "Johnnie Walker Blue Label, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/johnnie-walker-blue-label.jpg",
+    "description": "Le Johnnie Walker Blue Label est un blended Scotch ultra-prestigieux, élaboré à partir de whiskies rares et soigneusement sélectionnés pour leur profondeur et leur finesse exceptionnelles. Au nez, il offre une richesse aromatique remarquable, mêlant miel, caramel, chocolat noir, fruits secs et une fumée délicate parfaitement intégrée. En bouche, la texture est soyeuse, veloutée et incroyablement élégante, révélant des saveurs de noisette, de malt sucré, de fruits mûrs, d’épices douces et de vanille, soutenues par une touche subtile de tourbe et de chêne ancien. Chaque gorgée dévoile une complexité croissante, résultat d’un assemblage maîtrisé de whiskies vieillis parmi les plus rares de la maison. La finale est longue, raffinée et parfaitement douce, avec un retour de chocolat, de miel et de fumée légère. Symbole du luxe dans le monde du whisky, le Blue Label se distingue par son harmonie, son élégance et son caractère exceptionnellement soigné.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386194/Johnnie_Walker_Blue_Label_uwws81.png",
     "createdBy": null
   },
   {
@@ -358,8 +358,8 @@
     "category": "Blend",
     "degree": 40,
     "year": 12,
-    "description": "Chivas Regal 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/chivas-regal-12.jpg",
+    "description": "Le Chivas Regal 12 ans est un blended Scotch élégant et harmonieux, réputé pour sa douceur accessible et son style richement malté. Au nez, il dévoile des arômes de miel, de pomme rouge, de poire mûre et de fleurs douces, accompagnés d’une touche de vanille et de caramel crémeux. En bouche, la texture est veloutée et généreuse, offrant des saveurs de toffee, de noisette, de fruits du verger et de céréales légèrement toastées, avec une subtilité d’épices douces. L’assemblage soigné de whiskies du Speyside lui confère une rondeur chaleureuse, tandis que les fûts de chêne américain ajoutent une douceur vanillée parfaitement intégrée. La finale est douce, propre et légèrement sucrée, avec un retour de miel, de fruits mûrs et de chêne délicat. Whisky convivial et équilibré, le Chivas 12 est apprécié pour sa finesse et sa grande buvabilité, aussi bien pur qu’en cocktail.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386177/Chivas_Regal_12_vdu4mm.png",
     "createdBy": null
   },
   {
@@ -369,8 +369,8 @@
     "category": "Blend",
     "degree": 40,
     "year": 18,
-    "description": "Chivas Regal 18, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/chivas-regal-18.jpg",
+    "description": "Le Chivas Regal 18 ans est un blended Scotch luxueux et raffiné, élaboré à partir d’une sélection méticuleuse de whiskies âgés offrant une profondeur aromatique exceptionnelle. Au nez, il dévoile une richesse élégante mêlant chocolat noir, caramel toffee, fruits secs, orange confite et épices douces, accompagnée d’une subtile note fumée parfaitement intégrée. En bouche, la texture est veloutée, ample et sophistiquée, révélant des saveurs de cacao crémeux, de raisins secs, de dattes, de noisette et de miel, soutenues par un boisé noble et une pointe d’épices chaudes comme la cannelle et la muscade. L’équilibre entre douceur, complexité et chaleur est remarquable. La finale est longue, riche et harmonieuse, avec un retour de chocolat, de chêne toasté et de fruits confits. Whisky élégant et profond, le Chivas 18 incarne parfaitement le savoir-faire de la maison, offrant une expérience riche, suave et hautement prestigieuse.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386182/Chivas_Regal_18_acpkog.png",
     "createdBy": null
   },
   {
@@ -380,8 +380,8 @@
     "category": "Blended Malt",
     "degree": 40,
     "year": null,
-    "description": "Monkey Shoulder, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/monkey-shoulder.jpg",
+    "description": "Monkey Shoulder est un blended malt moderne et polyvalent, élaboré à partir de trois single malts du Speyside spécialement sélectionnés pour leur douceur et leur caractère gourmand. Au nez, il exprime des arômes chaleureux de vanille, de miel, de caramel blond et de fruits du verger, accompagnés d’une touche de malt frais et d’épices douces. En bouche, la texture est souple, ronde et très accessible, révélant des saveurs de crème vanillée, de toffee, de poire mûre et d’un léger zeste d’orange, soutenues par une subtile note épicée et un boisé léger. L’ensemble est harmonieux, doux et parfaitement équilibré. La finale est moyenne, douce et légèrement sucrée, avec un retour de caramel et de céréales toastées. Conçu autant pour être dégusté pur que pour briller en cocktail, Monkey Shoulder est apprécié pour son profil gourmand, sa polyvalence et son style résolument moderne.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386198/Monkey_Shoulder_ymmwpp.png",
     "createdBy": null
   },
   {
@@ -391,8 +391,8 @@
     "category": "Blend",
     "degree": 40,
     "year": null,
-    "description": "Famous Grouse, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/famous-grouse.jpg",
+    "description": "The Famous Grouse est un blended Scotch emblématique de l’Écosse, apprécié pour son équilibre, sa douceur et sa grande polyvalence. Au nez, il dévoile des arômes de malt léger, de caramel blond, de vanille et de fruits secs, accompagnés d’une pointe d’épices douces et d’un soupçon de fumée subtile. En bouche, la texture est souple et harmonieuse, révélant des saveurs de céréales toastées, de miel, de toffee et de fruits jaunes, avec un boisé délicat provenant du vieillissement en fûts de chêne. L’ensemble est rond, facile à apprécier et très accessible. La finale est propre, douce et légèrement épicée, avec un retour de caramel et de malt sucré. Whisky convivial par excellence, Famous Grouse est apprécié aussi bien pur qu’en cocktail, et demeure l’un des blends les plus populaires grâce à son excellent rapport qualité-prix et son profil équilibré.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386183/Famous_Grouse_zhekl9.png",
     "createdBy": null
   },
   {
@@ -402,8 +402,8 @@
     "category": "Blend",
     "degree": 40,
     "year": null,
-    "description": "Ballantine's Finest, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/ballantines-finest.jpg",
+    "description": "Ballantine’s Finest est un blended Scotch whisky réputé pour sa douceur harmonieuse et son style accessible, parfait pour une dégustation simple et agréable. Au nez, il dévoile des arômes légers de miel, de vanille, de céréales sucrées et de pomme jaune, accompagnés d’une pointe florale et d’un boisé délicat. En bouche, la texture est souple et équilibrée, offrant des saveurs de caramel blond, de malt doux, de fruits du verger et d’épices très légères, avec une touche de noisette et de chêne vanillé en arrière-plan. L’ensemble est rond, doux et sans agressivité, fidèle au style délicat des blends du Speyside et des Highlands qui entrent dans sa composition. La finale est courte à moyenne, propre et légèrement sucrée, avec un retour de vanille et de céréales. Whisky convivial par excellence, Ballantine’s Finest se distingue par sa douceur, sa facilité de dégustation et sa grande polyvalence en cocktail.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386176/Ballantine_s_Finest_qxgvrj.png",
     "createdBy": null
   },
   {
@@ -413,8 +413,8 @@
     "category": "Irish Whiskey",
     "degree": 40,
     "year": null,
-    "description": "Bushmills Original, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/bushmills-original.jpg",
+    "description": "Le Bushmills Original, souvent surnommé « White Label », est un whiskey irlandais emblématique, apprécié pour sa douceur légère et son caractère accessible. Au nez, il dévoile des arômes délicats de céréales maltées, de vanille, de miel et de fruits frais comme la pomme et la poire, accompagnés d’une subtile note florale. En bouche, la texture est douce et souple, portée par des saveurs de malt sucré, de caramel léger, de vanille crémeuse et d’un zeste d’agrumes, avec une fraîcheur caractéristique due à la triple distillation irlandaise. L’équilibre est harmonieux, léger et sans agressivité. La finale est courte à moyenne, douce, propre et légèrement vanillée, avec un retour de céréales et une touche fruitée discrète. Whisky convivial et facile à boire, Bushmills Original est idéal pour une dégustation simple ou pour accompagner des cocktails légers.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386177/Bushmills_Original_srlz8v.png",
     "createdBy": null
   },
   {
@@ -424,8 +424,8 @@
     "category": "Irish Whiskey",
     "degree": 40,
     "year": 10,
-    "description": "Bushmills 10 Single Malt, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/bushmills-10-single-malt.jpg",
+    "description": "Le Bushmills 10 ans Single Malt est un whiskey irlandais raffiné, reconnu pour sa douceur fruitée et son élégance naturelle. Au nez, il s’ouvre sur des arômes lumineux de miel, de vanille, de pomme verte et de poire mûre, accompagnés d’une touche de chocolat au lait et d’agrumes, résultant de son vieillissement en fûts de bourbon et de sherry. En bouche, la texture est soyeuse et délicate, révélant des saveurs de fruits frais, de caramel léger, de malt sucré et de vanille crémeuse, avec une pointe d’épices douces et de cacao. La triple distillation typiquement irlandaise apporte une grande pureté et une finesse remarquable. La finale est douce, propre et légèrement épicée, avec un retour de chocolat et de fruits du verger. Léger, élégant et parfaitement équilibré, le Bushmills 10 ans est idéal pour découvrir la finesse des single malts irlandais.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386176/Bushmills_10_Single_Malt_hp70qc.png",
     "createdBy": null
   },
   {
@@ -435,8 +435,8 @@
     "category": "Irish Whiskey",
     "degree": 40,
     "year": null,
-    "description": "Jameson Original, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/jameson-original.jpg",
+    "description": "Le Jameson Original est un whiskey irlandais incontournable, apprécié pour sa douceur, son équilibre et sa grande facilité de dégustation. Au nez, il dévoile des arômes légers de vanille, de miel, de céréales sucrées et de fruits frais, avec une pointe florale et un soupçon de bois toasté. En bouche, la texture est souple et moelleuse, marquée par des saveurs de malt doux, de caramel blond, de vanille crémeuse et d’un zeste d’agrumes, le tout soutenu par une subtilité épicée très agréable. La triple distillation typique de Jameson apporte une grande pureté et une finesse notable, rendant le profil particulièrement harmonieux et accessible. La finale est douce, propre et légèrement sucrée, avec un retour de céréales et de chêne léger. Whiskey polyvalent et convivial, Jameson Original est parfait aussi bien pur que mélangé dans des cocktails ou des long drinks.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386188/Jameson_Original_klfleb.png",
     "createdBy": null
   },
   {
@@ -446,8 +446,8 @@
     "category": "Irish Whiskey",
     "degree": 40,
     "year": null,
-    "description": "Jameson Black Barrel, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/jameson-black-barrel.jpg",
+    "description": "Le Jameson Black Barrel est un whiskey irlandais riche et intensément aromatique, élaboré avec des fûts de bourbon doublement carbonisés qui lui confèrent une profondeur remarquable. Au nez, il dévoile des arômes généreux de caramel brûlé, de vanille, de fruits secs et d’épices douces, accompagnés d’une touche de banane mûre et de chêne toasté. En bouche, la texture est veloutée et ample, offrant des saveurs de toffee, de noix caramélisées, de poivre doux et de fruits tropicaux subtils, le tout soutenu par une chaleur boisée élégante. La triple distillation apporte une grande finesse, tandis que le toastage intense des fûts enrichit le whisky d’une complexité gourmande et parfaitement maîtrisée. La finale est longue, chaleureuse et légèrement épicée, avec un retour de caramel sombre, de vanille et de bois grillé. Whiskey puissant mais équilibré, Jameson Black Barrel est idéal pour ceux qui recherchent une version plus riche et sophistiquée du style Jameson.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386194/Johnnie_Walker_Black_Label_vuvmqh.png",
     "createdBy": null
   },
   {
@@ -457,8 +457,8 @@
     "category": "Single Pot Still",
     "degree": 40,
     "year": 12,
-    "description": "Redbreast 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/redbreast-12.jpg",
+    "description": "Le Redbreast 12 ans est un single pot still irlandais emblématique, réputé pour sa richesse aromatique, sa profondeur et sa texture onctueuse. Au nez, il s’ouvre sur des arômes généreux de fruits rouges, de pomme cuite, de fruits exotiques et de miel, accompagnés de notes de vanille, de noisette et d’épices douces. En bouche, la texture est crémeuse et enveloppante, révélant des saveurs de fruits secs, de toffee, de caramel foncé et de sherry, soutenues par une pointe de chêne toasté et une légère touche poivrée typique du style pot still. L’équilibre entre douceur fruitée, chaleur épicée et profondeur boisée est parfaitement maîtrisé, offrant une complexité exceptionnelle. La finale est longue, chaleureuse et persistante, marquée par un retour de fruits mûrs, d’épices douces et de bois noble. Whisky riche, raffiné et profondément expressif, le Redbreast 12 est largement considéré comme l’un des meilleurs Irish whiskeys de sa catégorie.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386200/Redbreast_12_fajcye.png",
     "createdBy": null
   },
   {
@@ -468,8 +468,8 @@
     "category": "Single Pot Still",
     "degree": 46,
     "year": 15,
-    "description": "Redbreast 15, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/redbreast-15.jpg",
+    "description": "Le Redbreast 15 ans est un single pot still irlandais d’une grande profondeur, reconnu pour son élégance, sa richesse aromatique et sa texture somptueusement crémeuse. Au nez, il dévoile une explosion de fruits mûrs — prune, figue, orange confite — mêlés à du miel sombre, du caramel, de la noisette et une pointe de chêne épicé. En bouche, la texture est ample, ronde et veloutée, révélant des saveurs complexes de raisins secs, de toffee, de fruits tropicaux, de chocolat noir et d’épices chaudes comme la cannelle et le clou de girofle. Le style pot still apporte une intensité épicée subtile, parfaitement intégrée au caractère gourmand et sherry du whisky. La finale est longue, chaleureuse et profondément persistante, marquée par un retour de fruits secs, de bois noble et d’épices douces. Raffiné, puissant et harmonieux, le Redbreast 15 est considéré comme l’une des plus belles expressions du whiskey irlandais haut de gamme.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386206/Redbreast_15_zfyk69.png",
     "createdBy": null
   },
   {
@@ -479,8 +479,8 @@
     "category": "Irish Whiskey",
     "degree": 40,
     "year": null,
-    "description": "Tullamore Dew, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/tullamore-dew.jpg",
+    "description": "Le Tullamore D.E.W. est un whiskey irlandais emblématique, célèbre pour sa douceur équilibrée et son profil délicatement fruité grâce à son assemblage unique de trois types de whiskey : pot still, malt et grain. Au nez, il révèle des arômes légers de pomme verte, de poire, de vanille et de fleurs blanches, accompagnés d’une touche de céréales sucrées et d’un boisé très fin. En bouche, la texture est douce, ronde et particulièrement soyeuse, offrant des saveurs de caramel blond, de malt doux, de fruits frais et d’épices légères, le tout sublimé par la triple distillation qui apporte une grande pureté aromatique. Une note subtile d’amande et de vanille vient compléter l’ensemble avec élégance. La finale est moyenne, propre et légèrement sucrée, avec un retour de fruits du verger et une douceur persistante. Accessible, équilibré et polyvalent, Tullamore D.E.W. est idéal aussi bien pur qu’en cocktail.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386207/Tullamore_Dew_ti4fyn.png",
     "createdBy": null
   },
   {
@@ -490,8 +490,8 @@
     "category": "Single Pot Still",
     "degree": 40,
     "year": null,
-    "description": "Green Spot, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/green-spot.jpg",
+    "description": "Le Green Spot est un single pot still irlandais renommé pour sa fraîcheur fruitée et son élégance aromatique. Au nez, il s’ouvre sur des arômes lumineux de pomme verte, de poire juteuse et d’agrumes, accompagnés de notes florales, de vanille douce et d’un soupçon de chêne frais. En bouche, la texture est soyeuse et dynamique, révélant des saveurs de fruits du verger, de crème pâtissière, de malt sucré et de miel, avec une pointe d’épices typique du style pot still, apportant profondeur et vivacité. On retrouve également des nuances discrètes d’herbes fraîches et de chêne toasté, parfaitement intégrées. La finale est moyenne à longue, propre, fraîche et légèrement épicée, avec un retour de fruits et de vanille. Whisky raffiné, équilibré et très expressif, Green Spot incarne la finesse du single pot still irlandais dans une version accessible et hautement appréciée.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386183/Green_Spot_qs90vw.png",
     "createdBy": null
   },
   {
@@ -501,8 +501,8 @@
     "category": "Blend",
     "degree": 51.4,
     "year": null,
-    "description": "Nikka From the Barrel, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/nikka-from-the-barrel.jpg",
+    "description": "Nikka From the Barrel est un whisky japonais puissant et complexe, élaboré à partir d’un assemblage de single malts et de whiskies de grain soigneusement sélectionnés, puis remis en fût pour une seconde maturation qui accentue sa profondeur aromatique. Au nez, il dévoile des arômes intenses de caramel brun, de vanille, de fruits secs et de prune, accompagnés d’une pointe d’épices, de chêne toasté et d’une légère note florale. En bouche, la texture est riche, dense et chaleureuse, révélant des saveurs de toffee, de fruits mûrs, de miel sombre, de cannelle et de poivre, avec une élégante touche de chocolat et de bois noble. Son degré élevé apporte une belle puissance tout en conservant une grande précision aromatique. La finale est longue, chaude et épicée, marquée par un retour de fruits secs, de caramel et d’épices boisées. Whisky emblématique du Japon, Nikka From the Barrel séduit par son intensité maîtrisée, sa complexité et son équilibre remarquable.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386199/Nikka_From_the_Barrel_msjuaw.png",
     "createdBy": null
   },
   {
@@ -512,8 +512,8 @@
     "category": "Single Malt",
     "degree": 45,
     "year": null,
-    "description": "Nikka Coffey Malt, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/nikka-coffey-malt.jpg",
+    "description": "Le Nikka Coffey Malt est un whisky japonais atypique et raffiné, élaboré exclusivement à partir d’orge maltée mais distillé dans un alambic Coffey traditionnel, habituellement réservé aux whiskies de grain. Ce procédé unique lui confère un profil particulièrement rond et gourmand. Au nez, il dévoile des arômes riches de vanille, de caramel crémeux, de banane mûre et de fruits tropicaux, accompagnés d’une touche de biscuit malté et de chêne doux. En bouche, la texture est veloutée et généreuse, révélant des saveurs de toffee, de gâteau aux fruits, d’épices douces et de chocolat blanc, avec une pointe d’orange confite qui apporte de la fraîcheur. L’équilibre entre douceur maltée et profondeur boisée est parfaitement maîtrisé, offrant une expérience harmonieuse et accessible. La finale est longue, douce et légèrement épicée, marquée par un retour de vanille, de caramel et de chêne délicatement toasté. Expressif, original et élégant, le Nikka Coffey Malt est l’une des expressions les plus séduisantes de la maison Nikka.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386199/Nikka_Coffey_Malt_njyjai.png",
     "createdBy": null
   },
   {
@@ -523,8 +523,8 @@
     "category": "Single Malt",
     "degree": 45,
     "year": null,
-    "description": "Yoichi Single Malt, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/yoichi-single-malt.jpg",
+    "description": "Le Yoichi Single Malt est un whisky japonais emblématique de la distillerie Yoichi, réputée pour son style puissant et son influence marquée de la tradition écossaise d’Islay. Au nez, il dévoile une fumée délicate mais présente, mêlée à des arômes de malt toasté, de fruits jaunes, de poire mûre et d’agrumes, avec une pointe saline évoquant les embruns marins. En bouche, la texture est vive et légèrement huileuse, révélant des saveurs de tourbe sèche, de caramel brun, de noix grillée et de vanille, accompagnées d’une belle fraîcheur fruitée. Une note subtile de charbon de bois et d’épices douces apporte profondeur et complexité. La finale est longue, chaude et légèrement fumée, avec un retour d’épices, de fruits mûrs et de chêne toasté. Whisky authentique et de caractère, le Yoichi Single Malt incarne parfaitement la vision de Masataka Taketsuru : un style robuste, équilibré et intensément expressif.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386212/Yoichi_Single_Malt_tdee8h.png",
     "createdBy": null
   },
   {
@@ -534,8 +534,8 @@
     "category": "Single Malt",
     "degree": 45,
     "year": null,
-    "description": "Miyagikyo Single Malt, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/miyagikyo-single-malt.jpg",
+    "description": "Le Miyagikyo Single Malt est un whisky japonais élégant et délicat, issu de la distillerie Miyagikyo, située dans une vallée verdoyante et réputée pour son style floral et fruité. Au nez, il révèle des arômes subtils de poire, de pomme fraîche, de pêche blanche et de fleurs de printemps, accompagnés d’une touche de vanille, de miel et de biscuit malté. En bouche, la texture est douce et veloutée, dévoilant des saveurs harmonieuses de fruits jaunes, de sucre d’orge, de crème légère et de chêne délicatement épicé, avec une pointe d’amande douce et de caramel clair. L’expression reste lumineuse, propre et parfaitement équilibrée, typique du style doux et raffiné de Miyagikyo. La finale est moyenne à longue, fraîche et légèrement sucrée, avec un retour de vanille, de fruits du verger et de chêne fin. Whisky subtil, élégant et accessible, le Miyagikyo Single Malt incarne la finesse et la précision aromatique de la maison Nikka.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386196/Miyagikyo_Single_Malt_a7rjm8.png",
     "createdBy": null
   },
   {
@@ -545,8 +545,8 @@
     "category": "Blend",
     "degree": 43,
     "year": null,
-    "description": "Hibiki Japanese Harmony, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/hibiki-japanese-harmony.jpg",
+    "description": "Le Hibiki Japanese Harmony est un blended whisky japonais raffiné et élégant, reconnu pour son équilibre exceptionnel et sa douceur harmonieuse. Au nez, il s’ouvre sur des arômes délicats de miel, de fleur d’oranger, de fruits jaunes et d’agrumes, accompagnés de notes de vanille, de chêne doux et d’un léger parfum floral évoquant les pétales de rose. En bouche, la texture est soyeuse et parfaitement fluide, révélant des saveurs de miel léger, de caramel blond, de fruits mûrs et de poire juteuse, soutenues par une touche subtile d’épices douces et de santal. L’assemblage minutieux de whiskies provenant des différentes distilleries Suntory apporte une grande profondeur aromatique tout en conservant une finesse remarquable. La finale est douce, longue et élégamment boisée, marquée par un retour de vanille, de miel et de légères notes d’encens. Symbole du savoir-faire japonais, Hibiki Harmony se distingue par sa pureté, sa précision et son caractère délicatement orchestral.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386187/Hibiki_Japanese_Harmony_b4wmrx.png",
     "createdBy": null
   },
   {
@@ -556,8 +556,8 @@
     "category": "Single Malt",
     "degree": 43,
     "year": 12,
-    "description": "Yamazaki 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/yamazaki-12.jpg",
+    "description": "Le Yamazaki 12 ans est un single malt japonais emblématique, reconnu pour son élégance raffinée et sa richesse aromatique inspirée du style traditionnel japonais. Au nez, il dévoile des arômes délicats de miel, de pêche, d’abricot et de fleurs blanches, accompagnés de notes subtiles de chêne, d’encens et d’épices douces. En bouche, la texture est soyeuse et harmonieuse, révélant des saveurs de fruits mûrs, de vanille crémeuse, de caramel léger et de chêne toasté, avec une pointe d’amande et d’épices délicates issues du vieillissement partiel en fûts de chêne mizunara, typiques du Japon. L’ensemble est parfaitement équilibré, à la fois doux, fruité et subtilement épicé. La finale est longue, élégante et chaleureuse, marquée par un retour de fruits sucrés, de vanille et de notes boisées exotiques. Whisky culte et profondément raffiné, le Yamazaki 12 incarne tout le savoir-faire et la finesse de la maison Suntory.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386208/Yamazaki_12_uuarih.png",
     "createdBy": null
   },
   {
@@ -567,8 +567,8 @@
     "category": "Single Malt",
     "degree": 43,
     "year": 12,
-    "description": "Hakushu 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/hakushu-12.jpg",
+    "description": "Le Hakushu 12 ans est un single malt japonais frais et délicatement tourbé, élaboré au cœur des forêts montagneuses des Alpes japonaises. Au nez, il dévoile des arômes lumineux de menthe, de pomme verte, de poire juteuse et de citron frais, accompagnés d’une fumée légère et herbacée qui évoque un feu de bois en pleine nature. En bouche, la texture est vive et rafraîchissante, portée par des saveurs de fruits croquants, de miel léger, de vanille douce et d’herbes aromatiques, avec une pointe subtile de tourbe sèche. L’ensemble est harmonieux, pur et d’une grande finesse. La finale est longue, propre et légèrement sèche, marquée par un retour de fumée douce, de zeste d’agrumes et de notes végétales élégantes. Whisky à la fois léger, complexe et incroyablement rafraîchissant, le Hakushu 12 est une référence pour ceux qui apprécient les profils forestiers, herbacés et subtilement tourbés du Japon.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763386187/Hakushu_12_dzrjpx.png",
     "createdBy": null
   },
   {
@@ -578,8 +578,8 @@
     "category": "Bourbon",
     "degree": 46.5,
     "year": null,
-    "description": "Blanton's Original, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/blantons-original.jpg",
+    "description": "Le Blanton’s Original Single Barrel est un bourbon emblématique du Kentucky, réputé pour son élégance, sa rondeur et la singularité de chaque fût sélectionné. Au nez, il s’ouvre sur des arômes riches de caramel, de vanille, de miel et de maïs sucré, accompagnés de notes de fruits mûrs, de noix et d’épices douces comme la cannelle et la muscade. En bouche, la texture est soyeuse et généreuse, révélant des saveurs profondes de caramel brûlé, de sucre roux, d’orange confite et de chêne toasté, avec une pointe épicée qui apporte dynamisme et complexité. Une touche subtile de tabac doux et de chocolat vient enrichir le profil aromatique. La finale est longue, chaleureuse et parfaitement équilibrée, marquée par un retour de vanille, d’épices et de chêne américain. Bourbon prestigieux et raffiné, Blanton’s Original est apprécié pour son caractère unique, sa finesse et son authenticité artisanale.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763389010/Blanton_s_Original_lq2mln.png",
     "createdBy": null
   },
   {
@@ -589,8 +589,8 @@
     "category": "Bourbon",
     "degree": 45,
     "year": null,
-    "description": "Buffalo Trace, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/buffalo-trace.jpg",
+    "description": "Buffalo Trace est un bourbon du Kentucky très apprécié pour son équilibre, sa douceur gourmande et son excellent rapport qualité-prix. Au nez, il dévoile des arômes chaleureux de caramel, de vanille, de maïs sucré et de toffee, accompagnés de notes de fruits mûrs, de miel et d’un soupçon d’épices. En bouche, la texture est ronde et veloutée, révélant des saveurs de caramel brun, de chêne toasté, de cannelle douce et de poire cuite, avec une légère touche de cacao et de tabac qui apporte profondeur et caractère. L’ensemble reste harmonieux, accessible et très agréable à déguster. La finale est moyenne à longue, douce et épicée, avec un retour de vanille, de chêne et de caramel. Bourbon polyvalent, Buffalo Trace se distingue par sa constance, sa gourmandise et la finesse de son vieillissement, en faisant une référence incontournable pour les amateurs comme pour les connaisseurs.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763389011/Buffalo_Trace_sb7aog.png",
     "createdBy": null
   },
   {
@@ -600,8 +600,8 @@
     "category": "Bourbon",
     "degree": 45,
     "year": 10,
-    "description": "Eagle Rare 10, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/eagle-rare-10.jpg",
+    "description": "Eagle Rare 10 ans est un bourbon du Kentucky élégant et raffiné, réputé pour sa complexité aromatique et sa grande finesse. Au nez, il s’ouvre sur des arômes profonds de caramel brun, de vanille sucrée et de miel, accompagnés de notes de cerise noire, d’orange confite et d’un chêne doux parfaitement intégré. En bouche, la texture est soyeuse et équilibrée, révélant des saveurs de toffee, de chocolat léger, de fruits mûrs et d’épices douces comme la cannelle et la muscade, avec une subtile touche herbacée qui apporte une belle profondeur. La présence du chêne américain offre une chaleur boisée maîtrisée et une rondeur très agréable. La finale est longue, lisse et légèrement épicée, marquée par un retour de caramel, de vanille et de fruits noirs. Bourbon sophistiqué et harmonieux, Eagle Rare 10 est apprécié pour sa douceur raffinée et son caractère noble, fidèle au savoir-faire de Buffalo Trace.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763389016/Eagle_Rare_10_cdulj9.png",
     "createdBy": null
   },
   {
@@ -611,8 +611,8 @@
     "category": "Bourbon",
     "degree": 50.5,
     "year": null,
-    "description": "Wild Turkey 101, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/wild-turkey-101.jpg",
+    "description": "Wild Turkey 101 est un bourbon emblématique du Kentucky, reconnu pour sa puissance maîtrisée et son caractère richement épicé. Au nez, il s’ouvre sur des arômes intenses de caramel, de vanille, de maïs sucré et de chêne américain, accompagnés d’une touche de cannelle, de cuir et d’orange confite. En bouche, la texture est robuste et chaleureuse, portée par des saveurs de caramel brun, de toffee, de poivre noir, de clou de girofle et de chêne toasté, avec une belle présence de douceur vanillée qui équilibre la puissance du degré alcoolique. Une légère note de noisette, de cacao et d’épices chaudes complète l’ensemble avec élégance. La finale est longue, persistante et épicée, marquée par un retour de caramel brûlé, de vanille et d’épices intenses. Bourbon puissant mais harmonieux, Wild Turkey 101 est apprécié pour son authenticité, sa profondeur et sa capacité à offrir beaucoup de caractère, que ce soit pur ou en cocktail.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763389024/Wild_Turkey_101_kvxmoe.png",
     "createdBy": null
   },
   {
@@ -622,8 +622,8 @@
     "category": "Bourbon",
     "degree": 45,
     "year": null,
-    "description": "Maker's Mark, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/makers-mark.jpg",
+    "description": "Maker’s Mark est un bourbon du Kentucky réputé pour sa douceur caractéristique, due à l’utilisation de blé à la place du seigle dans sa recette. Au nez, il dévoile des arômes chaleureux de vanille, de caramel blond, de miel et de maïs sucré, accompagnés d’une touche de fruits rouges et de chêne doux. En bouche, la texture est ronde, soyeuse et extrêmement accessible, révélant des saveurs de caramel, de vanille crémeuse, de biscuit au beurre et de fruits mûrs, soutenues par une légère note épicée parfaitement équilibrée. Le profil reste doux, gourmand et sans agressivité, fidèle à la signature de la distillerie. La finale est moyenne, douce et légèrement sucrée, avec un retour de vanille, de caramel et de chêne délicatement toasté. Bourbon convivial et très agréable à déguster, Maker’s Mark est apprécié aussi bien pur qu’en cocktail grâce à son caractère doux, rond et harmonieux.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763389022/Maker_s_Mark_wngxfn.png",
     "createdBy": null
   },
   {
@@ -633,8 +633,8 @@
     "category": "Bourbon",
     "degree": 43.2,
     "year": null,
-    "description": "Woodford Reserve, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/woodford-reserve.jpg",
+    "description": "Woodford Reserve est un bourbon du Kentucky reconnu pour sa richesse aromatique, son équilibre et son caractère artisanal. Au nez, il dévoile des arômes profonds de caramel, de vanille, de cacao et de chêne toasté, accompagnés de notes de fruits secs, d’orange confite et d’épices douces. En bouche, la texture est soyeuse et généreuse, révélant des saveurs de toffee, de miel, de noisette grillée et de chocolat, avec une pointe de cannelle, de poivre doux et de tabac sucré qui apporte une belle complexité. L’influence des fûts de chêne américain est parfaitement intégrée, apportant chaleur et rondeur. La finale est longue, douce et élégamment épicée, marquée par un retour de vanille, de caramel brun et de chêne grillé. Bourbon raffiné et harmonieux, Woodford Reserve est apprécié pour sa constance, sa profondeur aromatique et son caractère noble, idéal aussi bien pur qu’en Old Fashioned.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763389030/Woodford_Reserve_qep0zs.png",
     "createdBy": null
   },
   {
@@ -644,8 +644,8 @@
     "category": "Bourbon",
     "degree": 50,
     "year": null,
-    "description": "Four Roses Single Barrel, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/four-roses-single-barrel.jpg",
+    "description": "Four Roses Single Barrel est un bourbon du Kentucky réputé pour son élégance, sa précision aromatique et la singularité de chaque fût sélectionné. Au nez, il s’ouvre sur des arômes riches de vanille, de caramel brun et de chêne doux, accompagnés de notes de fruits mûrs — abricot, cerise noire, poire — et d’une touche florale caractéristique de la distillerie. En bouche, la texture est soyeuse et ample, dévoilant des saveurs de miel, de toffee, de fruits rouges, d’épices douces et d’une pointe de cacao. Le seigle présent dans la recette apporte une vivacité épicée maîtrisée qui équilibre parfaitement la douceur du maïs. La finale est longue, chaude et raffinée, marquée par un retour de vanille, d’épices et de chêne toasté. Bourbon expressif, précis et parfaitement équilibré, Four Roses Single Barrel est apprécié pour sa finesse, sa complexité et la qualité constante de ses embouteillages.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763389018/Four_Roses_Single_Barrel_cddknk.png",
     "createdBy": null
   },
   {
@@ -655,8 +655,8 @@
     "category": "Bourbon",
     "degree": 45,
     "year": null,
-    "description": "Bulleit Bourbon, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/bulleit-bourbon.jpg",
+    "description": "Bulleit Bourbon est un bourbon du Kentucky reconnu pour son caractère vif et épicé, grâce à sa forte proportion de seigle dans la recette. Au nez, il dévoile des arômes de caramel léger, de vanille, de maïs sucré et d’orange confite, accompagnés d’une pointe de poivre, de chêne et d’épices chaleureuses. En bouche, la texture est souple mais énergique, révélant des saveurs de caramel brun, de miel, de cannelle, de noix et de zeste d’agrumes, avec une vivacité épicée marquée typique du seigle. La présence du chêne apporte une chaleur boisée parfaitement équilibrée. La finale est longue, sèche et épicée, avec un retour de poivre, de caramel et de chêne toasté. Bourbon moderne et accessible, Bulleit séduit par son profil dynamique, idéal pour être dégusté pur ou utilisé en cocktail, notamment dans un Old Fashioned ou un Boulevardier.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763389011/Bulleit_Bourbon_eeaeuw.png",
     "createdBy": null
   },
   {
@@ -666,8 +666,8 @@
     "category": "Rye",
     "degree": 50,
     "year": null,
-    "description": "Rittenhouse Rye, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/rittenhouse-rye.jpg",
+    "description": "Rittenhouse Rye est un rye whiskey américain emblématique du style « Bottled-in-Bond », réputé pour sa puissance maîtrisée et son profil épicé riche et chaleureux. Au nez, il dévoile des arômes intenses de poivre noir, de cannelle, de caramel foncé et de vanille, accompagnés de notes de fruits rouges, de cacao et d’un soupçon de chêne toasté. En bouche, la texture est robuste et ronde, révélant des saveurs de seigle épicé, de toffee, de chocolat noir, de zeste d’orange et de noix grillée, avec une complexité aromatique typique des ryes à haut degré. La présence d’épices chaudes — clou de girofle, gingembre, muscade — apporte une belle profondeur sans jamais masquer la douceur du caramel et de la vanille. La finale est longue, sèche et vibrante, marquée par un retour épicé, du chêne grillé et une pointe de cacao amer. Whiskey expressif et puissant, Rittenhouse Rye est particulièrement apprécié pur ou dans des cocktails classiques comme le Manhattan ou le Old Fashioned.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763389023/Rittenhouse_Rye_okytvm.png",
     "createdBy": null
   },
   {
@@ -677,426 +677,9 @@
     "category": "Rye",
     "degree": 45,
     "year": null,
-    "description": "Sazerac Rye, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/sazerac-rye.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Lagavulin 16",
-    "brand": "Lagavulin",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 43,
-    "year": 16,
-    "description": "Lagavulin 16, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/lagavulin-16.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Ardbeg 10",
-    "brand": "Ardbeg",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 46,
-    "year": 10,
-    "description": "Ardbeg 10, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/ardbeg-10.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Laphroaig 10",
-    "brand": "Laphroaig",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 40,
-    "year": 10,
-    "description": "Laphroaig 10, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/laphroaig-10.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Talisker 10",
-    "brand": "Talisker",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 45.8,
-    "year": 10,
-    "description": "Talisker 10, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/talisker-10.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Glenfiddich 12",
-    "brand": "Glenfiddich",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 40,
-    "year": 12,
-    "description": "Glenfiddich 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenfiddich-12.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Glenlivet 12",
-    "brand": "The Glenlivet",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 40,
-    "year": 12,
-    "description": "Glenlivet 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenlivet-12.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Macallan 12 Sherry Oak",
-    "brand": "The Macallan",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 40,
-    "year": 12,
-    "description": "Macallan 12 Sherry Oak, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/macallan-12-sherry-oak.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Highland Park 12",
-    "brand": "Highland Park",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 40,
-    "year": 12,
-    "description": "Highland Park 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/highland-park-12.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Oban 14",
-    "brand": "Oban",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 43,
-    "year": 14,
-    "description": "Oban 14, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/oban-14.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Caol Ila 12",
-    "brand": "Caol Ila",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 43,
-    "year": 12,
-    "description": "Caol Ila 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/caol-ila-12.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Aberlour 12 Double Cask",
-    "brand": "Aberlour",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 40,
-    "year": 12,
-    "description": "Aberlour 12 Double Cask, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/aberlour-12-double-cask.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Springbank 10",
-    "brand": "Springbank",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 46,
-    "year": 10,
-    "description": "Springbank 10, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/springbank-10.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Bowmore 12",
-    "brand": "Bowmore",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 40,
-    "year": 12,
-    "description": "Bowmore 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/bowmore-12.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Cragganmore 12",
-    "brand": "Cragganmore",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 40,
-    "year": 12,
-    "description": "Cragganmore 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/cragganmore-12.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Glenfarclas 12",
-    "brand": "Glenfarclas",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 43,
-    "year": 12,
-    "description": "Glenfarclas 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenfarclas-12.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Bruichladdich Classic Laddie",
-    "brand": "Bruichladdich",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 50,
-    "year": null,
-    "description": "Bruichladdich Classic Laddie, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/bruichladdich-classic-laddie.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Ardbeg Uigeadail",
-    "brand": "Ardbeg",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 54.2,
-    "year": null,
-    "description": "Ardbeg Uigeadail, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/ardbeg-uigeadail.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Ardbeg Corryvreckan",
-    "brand": "Ardbeg",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 57.1,
-    "year": null,
-    "description": "Ardbeg Corryvreckan, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/ardbeg-corryvreckan.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Lagavulin 8",
-    "brand": "Lagavulin",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 48,
-    "year": 8,
-    "description": "Lagavulin 8, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/lagavulin-8.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Glenfiddich 15",
-    "brand": "Glenfiddich",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 40,
-    "year": 15,
-    "description": "Glenfiddich 15, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenfiddich-15.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Talisker Storm",
-    "brand": "Talisker",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 45.8,
-    "year": null,
-    "description": "Talisker Storm, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/talisker-storm.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Talisker Skye",
-    "brand": "Talisker",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 45.8,
-    "year": null,
-    "description": "Talisker Skye, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/talisker-skye.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Macallan 18 Sherry Oak",
-    "brand": "The Macallan",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 43,
-    "year": 18,
-    "description": "Macallan 18 Sherry Oak, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/macallan-18-sherry-oak.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Glenlivet 15 French Oak",
-    "brand": "The Glenlivet",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 40,
-    "year": 15,
-    "description": "Glenlivet 15 French Oak, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenlivet-15-french-oak.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Glenlivet Founder's Reserve",
-    "brand": "The Glenlivet",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 40,
-    "year": null,
-    "description": "Glenlivet Founder's Reserve, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenlivet-founders-reserve.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Glenmorangie 10 Original",
-    "brand": "Glenmorangie",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 40,
-    "year": 10,
-    "description": "Glenmorangie 10 Original, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenmorangie-10-original.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Glenmorangie Quinta Ruban 14",
-    "brand": "Glenmorangie",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 46,
-    "year": 14,
-    "description": "Glenmorangie Quinta Ruban 14, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenmorangie-quinta-ruban-14.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Glenmorangie Lasanta 12",
-    "brand": "Glenmorangie",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 43,
-    "year": 12,
-    "description": "Glenmorangie Lasanta 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenmorangie-lasanta-12.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "GlenAllachie 12",
-    "brand": "GlenAllachie",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 46,
-    "year": 12,
-    "description": "GlenAllachie 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/glenallachie-12.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Old Pulteney 12",
-    "brand": "Old Pulteney",
-    "country": "Écosse",
-    "category": "Single Malt",
-    "degree": 40,
-    "year": 12,
-    "description": "Old Pulteney 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/old-pulteney-12.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Johnnie Walker Black Label",
-    "brand": "Johnnie Walker",
-    "country": "Écosse",
-    "category": "Blend",
-    "degree": 40,
-    "year": 12,
-    "description": "Johnnie Walker Black Label, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/johnnie-walker-black-label.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Johnnie Walker Blue Label",
-    "brand": "Johnnie Walker",
-    "country": "Écosse",
-    "category": "Blend",
-    "degree": 40,
-    "year": null,
-    "description": "Johnnie Walker Blue Label, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/johnnie-walker-blue-label.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Chivas Regal 12",
-    "brand": "Chivas",
-    "country": "Écosse",
-    "category": "Blend",
-    "degree": 40,
-    "year": 12,
-    "description": "Chivas Regal 12, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/chivas-regal-12.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Chivas Regal 18",
-    "brand": "Chivas",
-    "country": "Écosse",
-    "category": "Blend",
-    "degree": 40,
-    "year": 18,
-    "description": "Chivas Regal 18, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/chivas-regal-18.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Monkey Shoulder",
-    "brand": "Monkey Shoulder",
-    "country": "Écosse",
-    "category": "Blended Malt",
-    "degree": 40,
-    "year": null,
-    "description": "Monkey Shoulder, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/monkey-shoulder.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Famous Grouse",
-    "brand": "The Famous Grouse",
-    "country": "Écosse",
-    "category": "Blend",
-    "degree": 40,
-    "year": null,
-    "description": "Famous Grouse, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/famous-grouse.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Ballantine's Finest",
-    "brand": "Ballantine's",
-    "country": "Écosse",
-    "category": "Blend",
-    "degree": 40,
-    "year": null,
-    "description": "Ballantine's Finest, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/ballantines-finest.jpg",
-    "createdBy": null
-  },
-  {
-    "name": "Bushmills Original",
-    "brand": "Bushmills",
-    "country": "Irlande",
-    "category": "Irish Whiskey",
-    "degree": 40,
-    "year": null,
-    "description": "Bushmills Original, un whisky reconnu mondialement.",
-    "image": "/images/whiskies/bushmills-original.jpg",
+    "description": "Sazerac Rye est un rye whiskey américain emblématique, surnommé le « whiskey officiel du Sazerac », le célèbre cocktail de la Nouvelle-Orléans. Au nez, il dévoile une élégante combinaison de seigle épicé, de vanille, de caramel doux et d’écorce d’orange, accompagnée de notes de cannelle, d’anis et de chêne toasté. En bouche, la texture est souple mais expressive, révélant des saveurs de poivre doux, de miel, de toffee et de fruits rouges, avec une pointe d’épices chaudes typiques du seigle — clou de girofle et gingembre léger. L’équilibre entre douceur et épices est parfaitement maîtrisé, offrant un profil raffiné et accessible. La finale est longue, chaude et légèrement sucrée, marquée par un retour de vanille, d’épices douces et d’orange confite. Rye aromatique, élégant et polyvalent, Sazerac Rye est aussi apprécié pur qu’utilisé dans des cocktails classiques.",
+    "image": "https://res.cloudinary.com/di1ofnwbx/image/upload/v1763389024/Sazerac_Rye_ksiwsv.png",
     "createdBy": null
   }
+ 
 ]
