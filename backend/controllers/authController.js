@@ -1,19 +1,19 @@
 import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
 import User from "../models/User.js";
-
-dotenv.config();
+import bcrypt from "bcryptjs";
 
 function generateToken(user) {
-  if (!process.env.JWT_SECRET) {
-    throw new Error("JWT_SECRET manquant dans le fichier .env");
-  }
-
   return jwt.sign(
-    { id: user._id, email: user.email, role: user.role },
+    { userId: user._id, role: user.role },
     process.env.JWT_SECRET,
-    { expiresIn: "7d" } 
+    { expiresIn: "7d" }
   );
+}
+
+function formatUser(user) {
+  if (!user) return null;
+  const { password, __v, ...clean } = user.toObject();
+  return clean;
 }
 
 export async function register(req, res) {
@@ -23,50 +23,38 @@ export async function register(req, res) {
     if (!username || !email || !password) {
       return res.status(400).json({
         success: false,
-        status: 400,
-        message: "Tous les champs sont requis.",
+        message: "Nom, email et mot de passe sont obligatoires.",
       });
     }
 
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
+    const exists = await User.findOne({ email });
+    if (exists) {
       return res.status(400).json({
         success: false,
-        status: 400,
         message: "Cet email est déjà utilisé.",
       });
     }
 
-    const newUser = await User.create({
+    const user = await User.create({
       username,
       email,
       password,
-      role: "user",
+      role: "user", 
     });
 
-    const token = generateToken(newUser);
-
-    if (process.env.NODE_ENV !== "production") {
-      console.log(`👤 Nouvel utilisateur inscrit : ${newUser.email}`);
-    }
+    const token = generateToken(user);
 
     res.status(201).json({
       success: true,
-      status: 201,
-      message: "Utilisateur créé avec succès",
+      message: "Compte créé avec succès",
       token,
-      user: {
-        id: newUser._id,
-        username: newUser.username,
-        email: newUser.email,
-        role: newUser.role,
-      },
+      user: formatUser(user),
     });
+
   } catch (error) {
     console.error("Erreur register :", error.message);
     res.status(500).json({
       success: false,
-      status: 500,
       message: "Erreur lors de l'inscription",
       error: error.message,
     });
@@ -80,59 +68,48 @@ export async function login(req, res) {
     if (!email || !password) {
       return res.status(400).json({
         success: false,
-        status: 400,
         message: "Email et mot de passe requis.",
       });
     }
 
     const user = await User.findOne({ email }).select("+password");
+
     if (!user) {
       return res.status(401).json({
         success: false,
-        status: 401,
-        message: "Utilisateur non trouvé.",
+        message: "Identifiants invalides.",
       });
     }
 
-    const isMatch = await user.matchPassword(password);
-    if (!isMatch) {
+    if (user.isActive === false) {
+      return res.status(403).json({
+        success: false,
+        message: "Compte désactivé par un administrateur.",
+      });
+    }
+
+    const isValid = await bcrypt.compare(password, user.password);
+
+    if (!isValid) {
       return res.status(401).json({
         success: false,
-        status: 401,
-        message: "Mot de passe incorrect.",
+        message: "Identifiants invalides.",
       });
     }
 
     const token = generateToken(user);
 
-    res.cookie("token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
-      maxAge: 7 * 24 * 60 * 60 * 1000,
-    });
-
-    if (process.env.NODE_ENV !== "production") {
-      console.log(`Connexion réussie : ${user.email}`);
-    }
-
     res.status(200).json({
       success: true,
-      status: 200,
       message: "Connexion réussie",
       token,
-      user: {
-        id: user._id,
-        username: user.username,
-        email: user.email,
-        role: user.role,
-      },
+      user: formatUser(user),
     });
+
   } catch (error) {
     console.error("Erreur login :", error.message);
     res.status(500).json({
       success: false,
-      status: 500,
       message: "Erreur lors de la connexion",
       error: error.message,
     });
@@ -141,16 +118,15 @@ export async function login(req, res) {
 
 export async function logout(req, res) {
   try {
-    res.clearCookie("token");
-    res.status(200).json({
+   
+    return res.status(200).json({
       success: true,
-      status: 200,
-      message: "Déconnexion réussie",
+      message: "Déconnexion effectuée (token supprimé côté client).",
     });
+
   } catch (error) {
     res.status(500).json({
       success: false,
-      status: 500,
       message: "Erreur lors de la déconnexion",
       error: error.message,
     });
