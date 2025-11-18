@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>La Cave à Whisky – Accueil</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Cave à Whisky – Accueil</title>
 
-  <body>
-   
-    <div class="layout">
-  
-      <header id="header"></header>
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/whisky-card.css" />
+</head>
 
-      <main>
-        <section class="hero">
-          <h1>Bienvenue dans la Cave à Whisky</h1>
-          <p>
-            Découvrez des whiskys du monde entier, explorez la cave personnelle
-            de Bon Papa et partagez vos dégustations.
-          </p>
-        </section>
+<body>
+  <div class="layout">
 
-        <section class="whisky-list">
-         
-        </section>
-      </main>
+    <header id="site-header"></header>
 
-      <footer id="footer"></footer>
-    </div>
+    <main>
+     
+      <section class="hero">
+        <h1>Bienvenue dans la Cave à Whisky de Bon Papa</h1>
+        <p>
+          Découvrez des whiskys du monde entier, explorez la cave personnelle
+          de Bon Papa et partagez vos dégustations.
+        </p>
+      </section>
 
-    <script type="module" src="js/main.js"></script>
-  </body>
-</html>
+      <section class="home-section">
+        <h2>Sélection du jour</h2>
+
+        <div id="home-whisky-list" class="whisky-grid">
+          <div class="loading">Chargement...</div>
+        </div>
+
+        <div class="home-button-container">
+          <a href="cave.html" class="btn-primary">Entrer dans la cave de Bon Papa</a>
+          <a href="api-whiskies.html" class="btn-secondary">Explorer les whiskys du monde</a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+  </div>
+
+<script src="./js/utils/loadComponent.js"></script>
+<script src="./js/api.js"></script>
+
+<script src="./js/whisky-card.js"></script>
+
+<script src="./js/home.js"></script>
+
+

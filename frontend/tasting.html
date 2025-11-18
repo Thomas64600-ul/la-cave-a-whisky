@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dégustations</title>
+  <title>Dégustation</title>
 
   <link rel="stylesheet" href="./assets/css/global.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
-
   <link rel="stylesheet" href="./assets/css/tasting.css" />
 </head>
 
 <body>
-
   <div class="layout-header">
     <header id="site-header"></header>
   </div>
@@ -21,15 +19,15 @@
 
     <h1>Dégustations et avis</h1>
 
+    <h2 id="whiskyName" class="whisky-title"></h2>
+
     <section class="tasting-form">
       <h2>Laisser une dégustation</h2>
 
       <form id="tastingForm">
 
         <label>Note (1 à 5)</label>
-        <div class="rating">
-          <input type="number" id="rating" min="1" max="5" required />
-        </div>
+        <input type="number" id="rating" min="1" max="5" required />
 
         <label for="comment">Commentaire</label>
         <textarea id="comment" rows="4" placeholder="Votre avis..." required></textarea>
@@ -40,11 +38,7 @@
 
     <section class="recent-tastings">
       <h2>Avis récents</h2>
-
-      <div id="tastingList" class="tasting-list">
-      
-      </div>
-
+      <div id="tastingList" class="tasting-list"></div>
     </section>
   </main>
 
@@ -52,8 +46,11 @@
     <footer id="site-footer"></footer>
   </div>
 
-  <script type="module" src="./js/main.js"></script>
-  <script type="module" src="./js/tasting.js"></script>
+  <script src="./js/utils/loadComponent.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/tasting.js"></script>
 
 </body>
 </html>
+
