@@ -1,56 +1,73 @@
-import { whiskys } from "./utils/whiskys.js";
-import { loadComponent } from "./utils/loadComponent.js";
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadComponent("site-header", "./components/header/header.html");
+  await loadComponent("site-footer", "./components/footer/footer.html");
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadComponent("#site-header", "./components/header/header.html");
-  loadComponent("#site-footer", "./components/footer/footer.html");
-
-  renderDetails();
+  loadDetails();
 });
 
-function renderDetails() {
+async function fetchWhisky(id) {
+ 
+  try {
+    const r1 = await fetch(`http://localhost:5000/api/catalogue/${id}`);
+    const d1 = await r1.json();
+    if (d1.success) return { ...d1.data, source: "catalogue" };
+  } catch (e) {}
+
+  try {
+    const r2 = await fetch(`http://localhost:5000/api/whiskies/${id}`);
+    const d2 = await r2.json();
+    if (d2.success) return { ...d2.data, source: "cave" };
+  } catch (e) {}
+
+  return null;
+}
+
+async function loadDetails() {
   const container = document.getElementById("whisky-details");
 
   const params = new URLSearchParams(window.location.search);
-  const id = parseInt(params.get("id"));
+  const id = params.get("id");
 
   if (!id) {
-    container.innerHTML = `<p class="error">Aucun whisky sélectionné.</p>`;
+    container.innerHTML = "<p>Aucun whisky sélectionné.</p>";
     return;
   }
 
-  const whisky = whiskys.find(w => w.id === id);
+  const w = await fetchWhisky(id);
 
-  if (!whisky) {
-    container.innerHTML = `<p class="error">Whisky introuvable.</p>`;
+  if (!w) {
+    container.innerHTML = "<p>Whisky introuvable.</p>";
     return;
   }
 
   container.innerHTML = `
     <div class="details-content">
 
-      <img src="${whisky.image}" 
-           alt="${whisky.name}" 
-           class="details-image" />
+      <div class="details-image-wrapper">
+        <img src="${w.image}" class="details-image" alt="${w.name}">
+      </div>
 
       <div class="details-info">
+        <h2>${w.name}</h2>
 
-        <h2>${whisky.name}</h2>
+        <p><strong>Marque :</strong> ${w.brand}</p>
+        <p><strong>Pays :</strong> ${w.country}</p>
+        <p><strong>Catégorie :</strong> ${w.category}</p>
+        <p><strong>Degré :</strong> ${w.degree}%</p>
+        <p><strong>Année :</strong> ${w.year ?? "Non renseignée"}</p>
 
-        <p><strong>Marque :</strong> ${whisky.brand}</p>
-        <p><strong>Pays :</strong> ${whisky.country}</p>
-        <p><strong>Catégorie :</strong> ${whisky.category}</p>
-        <p><strong>Degré :</strong> ${whisky.degree}%</p>
-        <p><strong>Année :</strong> ${whisky.year ?? "Non renseignée"}</p>
+        ${w.description ? `<p>${w.description}</p>` : ''}
 
-        <div class="details-description">
-          ${whisky.description}
-        </div>
-
+        <a class="btn-primary" href="${
+          w.source === 'catalogue' ? 'api-whiskies.html' : 'cave.html'
+        }">
+          ← Retour
+        </a>
       </div>
+
     </div>
   `;
-
-  const btnAdd = document.getElementById("add-tasting");
-  btnAdd.href = `tasting.html?id=${whisky.id}`;
 }
+
+
+

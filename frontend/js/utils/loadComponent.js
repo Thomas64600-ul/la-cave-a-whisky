@@ -1,4 +1,4 @@
-export async function loadComponent(targetId, filePath) {
+window.loadComponent = async function (targetId, filePath) {
   const container = document.getElementById(targetId);
   if (!container) return;
 
@@ -9,4 +9,5 @@ export async function loadComponent(targetId, filePath) {
   } catch (error) {
     console.error(`Erreur lors du chargement de ${filePath}`, error);
   }
-}
+};
+

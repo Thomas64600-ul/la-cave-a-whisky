@@ -1,49 +1,91 @@
-const tastings = [
-  {
-    user: "Paul",
-    rating: 5,
-    comment: "Un whisky doux, boisé, avec une belle longueur."
-  },
-  {
-    user: "Louis",
-    rating: 4,
-    comment: "Excellent équilibre entre le fruité et la tourbe."
-  }
-];
+document.addEventListener("DOMContentLoaded", async () => {
 
-document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const whiskyId = params.get("id");
+
+  const title = document.getElementById("whiskyName");
   const list = document.getElementById("tastingList");
   const form = document.getElementById("tastingForm");
 
-  function renderTastings() {
-    list.innerHTML = "";
-
-    tastings.forEach(t => {
-      const card = document.createElement("div");
-      card.className = "tasting-card";
-      card.innerHTML = `
-        <strong>${t.user} — ★ ${t.rating}</strong>
-        <p>${t.comment}</p>
-      `;
-      list.appendChild(card);
-    });
+  if (!whiskyId) {
+    title.textContent = "Aucun whisky sélectionné";
+    return;
   }
 
-  renderTastings();
+  async function loadWhisky() {
+    try {
+      const res = await fetch(`http://localhost:5000/api/whiskies/${whiskyId}`);
+      const data = await res.json();
 
-  form.addEventListener("submit", e => {
+      if (!data.success) {
+        title.textContent = "Whisky introuvable";
+        return;
+      }
+
+      title.textContent = `${data.data.name} — Dégustations`;
+    } catch (err) {
+      title.textContent = "Erreur lors du chargement du whisky.";
+    }
+  }
+
+  async function loadTastings() {
+    list.innerHTML = "<p>Chargement...</p>";
+
+    try {
+      const res = await fetch(`http://localhost:5000/api/tastings?whisky=${whiskyId}`);
+      const result = await res.json();
+
+      list.innerHTML = "";
+
+      result.data.forEach(t => {
+        const card = document.createElement("div");
+        card.className = "tasting-card";
+        card.innerHTML = `
+          <strong>${t.user?.username || "Anonyme"} — ★ ${t.rating}</strong>
+          <p>${t.comment}</p>
+        `;
+        list.appendChild(card);
+      });
+
+    } catch (error) {
+      list.innerHTML = "<p>Impossible de charger les avis.</p>";
+    }
+  }
+
+  await loadWhisky();
+  await loadTastings();
+
+  form.addEventListener("submit", async e => {
     e.preventDefault();
 
-    const rating = document.getElementById("rating").value;
+    const rating = Number(document.getElementById("rating").value);
     const comment = document.getElementById("comment").value;
 
-    tastings.unshift({
-      user: "Utilisateur",
-      rating,
-      comment
-    });
+    try {
+      const res = await fetch("http://localhost:5000/api/tastings", {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          whisky: whiskyId,
+          rating,
+          comment
+        })
+      });
 
-    form.reset();
-    renderTastings();
+      const data = await res.json();
+
+      if (!data.success) {
+        alert(data.message || "Erreur serveur");
+        return;
+      }
+
+      form.reset();
+      loadTastings();
+
+    } catch (err) {
+      alert("Impossible d’envoyer la dégustation.");
+    }
   });
 });
+
