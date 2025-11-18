@@ -2,14 +2,14 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import morgan from "morgan";
-import cookieParser from "cookie-parser";
 import compression from "compression";
 import helmet from "helmet";
 import mongoose from "mongoose";
 
-import { connectDB } from "./config/db.js"; 
+import { connectDB } from "./config/db.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import { generalLimiter } from "./middlewares/rateLimiter.js";
+
 
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
@@ -24,26 +24,30 @@ const app = express();
 app.set("trust proxy", 1);
 app.disable("x-powered-by");
 
-app.use(cors({
-  origin: ["http://127.0.0.1:5500", "http://localhost:5500"],
-  methods: "GET,POST,PUT,DELETE",
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: [
+      "http://127.0.0.1:5500",
+      "http://localhost:5500",
+      "http://localhost:5173",
+      "http://localhost:3000",
+    ],
+    methods: "GET,POST,PUT,DELETE,PATCH",
+    credentials: true,
+  })
+);
 
 app.use(helmet());
 app.use(compression());
 app.use(express.json({ limit: "10mb" }));
-app.use(cookieParser());
 
 app.use(morgan(process.env.NODE_ENV === "development" ? "dev" : "combined"));
-
 app.use(generalLimiter);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/whiskies", whiskyRoutes);
 app.use("/api/tastings", tastingRoutes);
-
 app.use("/api/catalogue", catalogueRoutes);
 
 app.use((req, res) => {
@@ -78,3 +82,4 @@ process.on("SIGINT", async () => {
   console.log("Connexion MongoDB fermée proprement");
   process.exit(0);
 });
+
