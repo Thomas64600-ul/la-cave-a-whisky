@@ -7,42 +7,27 @@
 
   <link rel="stylesheet" href="./assets/css/global.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
-
   <link rel="stylesheet" href="./assets/css/details.css" />
 </head>
 
 <body>
 
-  <div class="layout-header">
-    <header id="site-header"></header>
-  </div>
+<header id="site-header"></header>
 
-  <main class="details-container">
-    <section id="whisky-details" class="details-content">
+<main class="container">
+  <h1>Détails du Whisky</h1>
 
-      <div class="loading">
-        Chargement du whisky...
-      </div>
+  <section id="whisky-details" class="details-wrapper">
+    <p>Chargement...</p>
+  </section>
+</main>
 
-    </section>
+<footer id="site-footer"></footer>
 
-    <div class="details-buttons">
-      <a href="tasting.html" id="add-tasting" class="btn-action">
-        Ajouter une dégustation
-      </a>
-
-      <a href="cave.html" class="btn-secondary">
-        ← Retour à la cave
-      </a>
-    </div>
-  </main>
-
-  <div class="layout-footer">
-    <footer id="site-footer"></footer>
-  </div>
-
-  <script type="module" src="./js/main.js"></script>
-  <script type="module" src="./js/details.js"></script>
+<script src="./js/utils/loadComponent.js"></script>
+<script src="./js/details.js"></script>
 
 </body>
 </html>
+
+

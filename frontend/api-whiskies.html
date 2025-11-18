@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whiskys du Monde</title>
+
+  <link rel="stylesheet" href="./assets/css/global.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/whisky-card.css"/>
+</head>
+
+<body>
+
+  <header id="site-header"></header>
+
+  <main class="container">
+    <h1>Whiskys du Monde</h1>
+    <p>Tous les whiskys disponibles dans l’API mondiale.</p>
+
+    <section id="api-whisky-list" class="whisky-grid">
+      <div class="loading">Chargement...</div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="./js/utils/loadComponent.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/whisky-card.js"></script>
+  <script src="./js/api-whiskies.js"></script>
+
+</body>
+</html>
+
+
