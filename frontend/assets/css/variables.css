@@ -1,0 +1,25 @@
+:root {
+ 
+  --light-bg: #faf7f0;
+  --light-surface: #ffffff;
+  --light-border: #e5dcc8;
+  --light-text: #3a2f23;
+  --light-subtext: #74695b;
+  --light-accent: #8a5a2f;     
+  --light-info: #5b3d1e;
+
+  --dark-bg: #1a1816;
+  --dark-surface: #272421;
+  --dark-border: #3a3733;
+  --dark-text: #f7f0e6;
+  --dark-subtext: #c7b8a6;
+  --dark-accent: #d4a574;
+
+  --font-body: "Lato", sans-serif;
+  --font-title: "Playfair Display", serif;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+
+  --transition: 0.3s ease;
+}

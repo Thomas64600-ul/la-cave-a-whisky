@@ -1,43 +1,81 @@
 .tasting-container {
   max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
 .tasting-container h1 {
   text-align: center;
+  font-family: var(--font-title);
+  font-size: 2.2rem;
   margin-bottom: 2rem;
+  color: var(--light-accent);
 }
 
-.tasting-form, .recent-tastings {
-  background: var(--card-bg);
+body.dark .tasting-container h1 {
+  color: var(--dark-accent);
+}
+
+.tasting-form,
+.recent-tastings {
+  background: var(--light-surface);
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
   margin-bottom: 2.5rem;
 }
 
-label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: .4rem;
+body.dark .tasting-form,
+body.dark .recent-tastings {
+  background: var(--dark-surface);
+  box-shadow: 0 3px 14px rgba(0,0,0,0.45);
 }
 
-input, textarea {
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: .4rem;
+  color: var(--light-subtext);
+}
+
+body.dark label {
+  color: var(--dark-subtext);
+}
+
+input,
+textarea {
   width: 100%;
-  padding: .6rem;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-  background: var(--input-bg);
+  padding: .7rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--light-border);
+  background: var(--light-surface);
   margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+
+body.dark input,
+body.dark textarea {
+  background: var(--dark-surface);
+  border-color: var(--dark-border);
+  color: var(--dark-text);
 }
 
 .btn-submit {
-  background: var(--accent);
+  background: var(--light-accent);
   color: white;
-  padding: .7rem 1.4rem;
-  border-radius: 8px;
+  padding: .75rem 1.6rem;
+  border-radius: var(--radius);
   font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-submit:hover {
+  background: #8a5a36;
+}
+
+body.dark .btn-submit {
+  background: var(--dark-accent);
 }
 
 .tasting-list {
@@ -45,13 +83,15 @@ input, textarea {
   gap: 1rem;
 }
 
-.tasting-card {
-  background: var(--card-bg);
-  padding: 1.4rem;
-  border-radius: 10px;
-  box-shadow: var(--shadow-soft);
+.recent-tastings h2,
+.tasting-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--light-accent);
+  font-family: var(--font-title);
 }
 
-.tasting-card strong {
-  color: var(--accent);
+body.dark .recent-tastings h2,
+body.dark .tasting-form h2 {
+  color: var(--dark-accent);
 }

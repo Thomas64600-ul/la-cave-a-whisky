@@ -1,55 +1,99 @@
 .auth-container {
   max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 40px auto;
+  padding: 0 20px;
   text-align: center;
 }
 
+.auth-container h1 {
+  font-size: 2.2rem;
+  font-family: var(--font-title);
+  color: var(--light-accent);
+}
+
+body.dark .auth-container h1 {
+  color: var(--dark-accent);
+}
+
 .auth-grid {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
 
+@media (max-width: 820px) {
+  .auth-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .auth-box {
-  background: var(--card-bg);
+  background: var(--light-surface);
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
   text-align: left;
 }
 
+body.dark .auth-box {
+  background: var(--dark-surface);
+  box-shadow: 0 3px 14px rgba(0,0,0,0.45);
+}
+
 .auth-box h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-family: var(--font-title);
+  color: var(--light-accent);
+}
+
+body.dark .auth-box h2 {
+  color: var(--dark-accent);
 }
 
 label {
   display: block;
-  margin-bottom: 0.4rem;
-  font-weight: bold;
+  margin-bottom: .4rem;
+  font-weight: 600;
+  color: var(--light-subtext);
+}
+
+body.dark label {
+  color: var(--dark-subtext);
 }
 
 input {
   width: 100%;
-  padding: .7rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--input-bg);
+  padding: .75rem;
+  margin-bottom: 1.2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--light-border);
+  background: var(--light-surface);
+  font-size: 1rem;
+}
+
+body.dark input {
+  background: var(--dark-surface);
+  border-color: var(--dark-border);
+  color: var(--dark-text);
 }
 
 .btn-submit {
   display: inline-block;
-  padding: .7rem 1.4rem;
-  border-radius: 8px;
-  background: var(--accent);
+  padding: .75rem 1.6rem;
+  border-radius: var(--radius);
+  background: var(--light-accent);
   color: white;
   font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
-@media (max-width: 800px) {
-  .auth-grid {
-    grid-template-columns: 1fr;
-  }
+.btn-submit:hover {
+  background: #8a5a36;
+}
+
+body.dark .btn-submit {
+  background: var(--dark-accent);
 }

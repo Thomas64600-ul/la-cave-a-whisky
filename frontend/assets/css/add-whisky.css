@@ -1,0 +1,129 @@
+.add-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.add-container h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-family: var(--font-title);
+  color: var(--light-accent);
+}
+
+body.dark .add-container h1 {
+  color: var(--dark-accent);
+}
+
+.subtitle {
+  text-align: center;
+  margin: 0.5rem 0 2rem;
+  font-size: 1.1rem;
+  color: var(--light-subtext);
+}
+
+body.dark .subtitle {
+  color: var(--dark-subtext);
+}
+
+.add-form {
+  background: var(--light-surface);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+body.dark .add-form {
+  background: var(--dark-surface);
+  box-shadow: 0 3px 14px rgba(0,0,0,0.45);
+}
+
+.form-group {
+  margin-bottom: 1.4rem;
+}
+
+.form-full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  display: block;
+  color: var(--light-subtext);
+}
+
+body.dark .form-group label {
+  color: var(--dark-subtext);
+}
+
+.add-form input,
+.add-form textarea,
+.add-form select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--light-border);
+  background: var(--light-surface);
+  font-size: 1rem;
+}
+
+body.dark .add-form input,
+body.dark .add-form textarea,
+body.dark .add-form select {
+  background: var(--dark-surface);
+  border-color: var(--dark-border);
+  color: var(--dark-text);
+}
+
+.btn-action {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--light-accent);
+  color: white;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-action:hover {
+  background: #8a5a36;
+}
+
+body.dark .btn-action {
+  background: var(--dark-accent);
+}
+
+.btn-secondary {
+  display: inline-block;
+  margin-left: 1rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius);
+  background: var(--light-surface);
+  color: var(--light-text);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  background: #eee1cf;
+}
+
+body.dark .btn-secondary {
+  background: var(--dark-surface);
+  color: var(--dark-text);
+}
+
+@media (max-width: 650px) {
+  .add-form {
+    padding: 1.4rem;
+  }
+
+  .btn-secondary {
+    display: block;
+    margin: 1rem auto 0;
+    text-align: center;
+  }
+}

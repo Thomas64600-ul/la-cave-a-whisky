@@ -1,114 +1,69 @@
-body {
-  background-color: var(--bg-color, #f5ecd9);
-  color: var(--text-color, #2c1d0c);
-  font-family: "Georgia", "Times New Roman", serif;
-  margin: 0;
-  padding: 0;
-}
-
 .cave-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  margin: 40px auto;
+  padding: 0 20px;
   text-align: center;
 }
 
-.cave-title {
-  font-size: 2.8rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #3b2915;
-}
-
-.cave-subtitle {
-  font-size: 1.2rem;
-  color: #876543;
-  margin-bottom: 40px;
-}
-
-.whisky-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 35px;
-  margin-top: 40px;
-  padding-bottom: 70px;
-}
-
-.whisky-card {
-  background: #fdf7ef;
-  border: 2px solid #d7b894;
-  border-radius: 14px;
-  padding: 30px 20px;
-  text-align: center;
-  transition: 0.25s ease;
-  cursor: pointer;
-}
-
-.whisky-card:hover {
-  transform: scale(1.03);
-  border-color: #c19a6b;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-}
-
-.whisky-card h3 {
-  font-size: 1.3rem;
+.page-title {
+  font-size: 2.6rem;
+  font-family: var(--font-title);
+  color: var(--light-accent);
   margin-bottom: 10px;
 }
 
-.whisky-card .brand {
-  font-weight: bold;
+.cave-description {
   font-size: 1.1rem;
-  color: #3b2915;
-  margin-bottom: 6px;
+  color: var(--light-subtext);
+  margin-bottom: 35px;
 }
 
-.whisky-card .country {
-  color: #8b5a2b;
-  font-size: 0.95rem;
+body.dark .page-title {
+  color: var(--dark-accent);
 }
 
-.add-whisky-btn {
+body.dark .cave-description {
+  color: var(--dark-subtext);
+}
+
+.btn-add {
   display: inline-block;
-  margin: 50px auto 0;
-  padding: 14px 26px;
-  font-size: 1.1rem;
-  background: #b88a4a;
+  background: var(--light-accent);
   color: white;
-  border: none;
-  border-radius: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  font-weight: bold;
+  margin-bottom: 25px;
   cursor: pointer;
+  transition: var(--transition);
   text-decoration: none;
-  transition: 0.25s ease;
 }
 
-.add-whisky-btn:hover {
-  background: #a97b3c;
-  transform: translateY(-2px);
+.btn-add:hover {
+  background: #8a5a36;
 }
 
-
-body.dark {
-  --bg-color: #0f0b07;
-  --text-color: #f2e7d5;
+body.dark .btn-add {
+  background: var(--dark-accent);
 }
 
-body.dark .whisky-card {
-  background: #1a140f;
-  border-color: #3a2a20;
+body.dark .btn-add:hover {
+  background: #b88d59;
 }
 
-body.dark .whisky-card:hover {
-  border-color: #b88a4a;
+.cave-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+  padding-bottom: 40px;
 }
 
-body.dark .brand {
-  color: #e8d2b5;
-}
+@media (max-width: 600px) {
+  .page-title {
+    font-size: 2.1rem;
+  }
 
-body.dark .add-whisky-btn {
-  background: #d9a257;
-}
-
-body.dark .add-whisky-btn:hover {
-  background: #c38f46;
+  .cave-description {
+    font-size: 1rem;
+  }
 }

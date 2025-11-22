@@ -1,0 +1,107 @@
+.api-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 2.4rem;
+  font-family: var(--font-title);
+  color: var(--light-accent);
+  margin-bottom: 0.5rem;
+}
+
+body.dark .page-title {
+  color: var(--dark-accent);
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: var(--light-subtext);
+  margin-bottom: 40px;
+}
+
+body.dark .page-subtitle {
+  color: var(--dark-subtext);
+}
+
+.whisky-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 1.5rem;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.api-actions {
+  margin-top: 30px;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius);
+  background: var(--light-surface);
+  color: var(--light-text);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  background: #f2e8d8;
+}
+
+body.dark .btn-secondary {
+  background: var(--dark-surface);
+  color: var(--dark-text);
+}
+
+.btn-add-whisky {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  padding: 0.75rem 1.4rem;
+  background: var(--light-accent);
+  color: white;
+  border-radius: var(--radius);
+
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+
+  border: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.btn-add-whisky:hover {
+  background: #8e6c40; 
+  transform: translateY(-2px);
+}
+
+body.dark .btn-add-whisky {
+  background: var(--dark-accent);
+  color: white;
+}
+
+body.dark .btn-add-whisky:hover {
+  background: #d4b37a; 
+}
+
+@media (max-width: 600px) {
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+  }
+}
