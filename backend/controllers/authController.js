@@ -44,13 +44,12 @@ export async function register(req, res) {
 
     const token = generateToken(user);
 
-res.cookie("token", token, {
-  httpOnly: true,
-  secure: false,      
-  sameSite: "lax",    
-  path: "/",
-});
-
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,       
+      sameSite: "none",   
+      path: "/",
+    });
 
     return res.status(201).json({
       success: true,
@@ -97,14 +96,12 @@ export async function login(req, res) {
 
     const token = generateToken(user);
 
-res.cookie("token", token, {
-  httpOnly: true,
-  secure: false,       
-  sameSite: "lax",     
-  path: "/",
-});
-
-
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,       
+      sameSite: "none",   
+      path: "/",
+    });
 
     return res.status(200).json({
       success: true,
@@ -123,7 +120,11 @@ res.cookie("token", token, {
 
 export async function logout(req, res) {
   try {
-    res.clearCookie("token", { path: "/" });
+    res.clearCookie("token", {
+      path: "/",
+      secure: true,
+      sameSite: "none",
+    });
 
     return res.status(200).json({
       success: true,
