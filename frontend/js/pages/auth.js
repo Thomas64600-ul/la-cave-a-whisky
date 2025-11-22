@@ -27,22 +27,15 @@ function initLoginForm(form) {
     }
 
     try {
-      
-      const res = await fetch("http://127.0.0.1:5000/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-        credentials: "include" 
-      });
-
-      const data = await res.json();
+     
+      const data = await api.auth.login({ email, password });
 
       if (!data.success) {
         return alert("Erreur : " + data.message);
       }
 
       alert("Connexion réussie !");
-      window.location.href = "index.html";
+      window.location.href = "../index.html";
 
     } catch (err) {
       console.error("Erreur login :", err);
@@ -64,21 +57,15 @@ function initRegisterForm(form) {
     }
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/api/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, email, password }),
-        credentials: "include"
-      });
-
-      const data = await res.json();
+     
+      const data = await api.auth.register({ username, email, password });
 
       if (!data.success) {
         return alert("Erreur : " + data.message);
       }
 
       alert("Inscription réussie !");
-      window.location.href = "login.html";
+      window.location.href = "./login.html";
 
     } catch (err) {
       console.error("Erreur inscription :", err);
