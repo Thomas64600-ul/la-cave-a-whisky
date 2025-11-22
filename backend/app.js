@@ -5,7 +5,7 @@ import morgan from "morgan";
 import compression from "compression";
 import helmet from "helmet";
 import mongoose from "mongoose";
-import cookieParser from "cookie-parser";   
+import cookieParser from "cookie-parser";
 
 import { connectDB } from "./config/db.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
@@ -21,16 +21,30 @@ dotenv.config();
 
 const app = express();
 
+const HOST = "127.0.0.1";
+const PORT = process.env.PORT || 5000;
+
 app.set("trust proxy", 1);
 app.disable("x-powered-by");
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5500",
-      "http://127.0.0.1:5500",
-    ],
-    methods: "GET,POST,PUT,DELETE,PATCH",
+    origin: (origin, callback) => {
+      const allowed = [
+  "http://localhost:5500",
+  "http://127.0.0.1:5500",
+  "http://localhost:5501",
+  "http://127.0.0.1:5501"
+];
+
+      if (!origin) return callback(null, true);
+
+      if (allowed.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("CORS non autorisé : " + origin));
+    },
     credentials: true,
   })
 );
@@ -38,9 +52,7 @@ app.use(
 app.use(helmet());
 app.use(compression());
 app.use(express.json({ limit: "10mb" }));
-
-app.use(cookieParser());      
-
+app.use(cookieParser());
 app.use(morgan(process.env.NODE_ENV === "development" ? "dev" : "combined"));
 app.use(generalLimiter);
 
@@ -60,12 +72,12 @@ app.use((req, res) => {
 
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
 connectDB()
   .then(() => {
     console.log("MongoDB connecté");
-    app.listen(PORT, () => {
-      console.log(`Serveur en ligne sur le port ${PORT}`);
+
+    app.listen(PORT, HOST, () => {
+      console.log(`Serveur en ligne sur http://${HOST}:${PORT}`);
       console.log(`Mode : ${process.env.NODE_ENV || "development"}`);
     });
   })
@@ -80,3 +92,4 @@ process.on("SIGINT", async () => {
   console.log("Connexion MongoDB fermée proprement");
   process.exit(0);
 });
+

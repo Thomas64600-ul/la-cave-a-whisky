@@ -44,19 +44,18 @@ export async function register(req, res) {
 
     const token = generateToken(user);
 
-    res.cookie("token", token, {
-      httpOnly: true,
-      secure: false,
-      sameSite: "lax",
-      path: "/",
-      maxAge: 7 * 24 * 60 * 60 * 1000,
-    });
+res.cookie("token", token, {
+  httpOnly: true,
+  secure: false,      
+  sameSite: "lax",    
+  path: "/",
+});
+
 
     return res.status(201).json({
       success: true,
       message: "Compte créé avec succès",
       user: formatUser(user),
-      token,
     });
 
   } catch (error) {
@@ -98,19 +97,19 @@ export async function login(req, res) {
 
     const token = generateToken(user);
 
-    res.cookie("token", token, {
-      httpOnly: true,
-      secure: false,
-      sameSite: "lax",
-      path: "/",
-      maxAge: 7 * 24 * 60 * 60 * 1000,
-    });
+res.cookie("token", token, {
+  httpOnly: true,
+  secure: false,       
+  sameSite: "lax",     
+  path: "/",
+});
+
+
 
     return res.status(200).json({
       success: true,
       message: "Connexion réussie",
       user: formatUser(user),
-      token,
     });
 
   } catch (error) {

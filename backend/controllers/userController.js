@@ -30,7 +30,7 @@ export async function getAllUsers(req, res) {
     res.status(200).json({
       success: true,
       count: users.length,
-      users: users.map(formatUser),
+      data: users.map(formatUser),  
     });
   } catch (error) {
     res.status(500).json({
@@ -39,6 +39,7 @@ export async function getAllUsers(req, res) {
     });
   }
 }
+
 
 export async function getUserById(req, res) {
   try {
