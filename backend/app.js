@@ -34,6 +34,7 @@ app.use(
         "http://127.0.0.1:5500",
         "http://localhost:5501",
         "http://127.0.0.1:5501",
+         "https://graceful-torte-820efb.netlify.app"
    
       ];
 

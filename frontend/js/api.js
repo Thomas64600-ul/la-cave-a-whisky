@@ -1,8 +1,10 @@
-const API_URL = "http://127.0.0.1:5000/api";
+const API_URL = window.location.hostname === "localhost"
+  ? "http://127.0.0.1:5000/api"
+  : "https://cave-a-whisky-api.onrender.com/api";
 
 async function request(endpoint, options = {}) {
   const res = await fetch(API_URL + endpoint, {
-    credentials: "include",
+    credentials: "include", 
     ...options,
   });
 
