@@ -21,7 +21,6 @@ dotenv.config();
 
 const app = express();
 
-const HOST = "127.0.0.1";
 const PORT = process.env.PORT || 5000;
 
 app.set("trust proxy", 1);
@@ -31,17 +30,15 @@ app.use(
   cors({
     origin: (origin, callback) => {
       const allowed = [
-  "http://localhost:5500",
-  "http://127.0.0.1:5500",
-  "http://localhost:5501",
-  "http://127.0.0.1:5501"
-];
+        "http://localhost:5500",
+        "http://127.0.0.1:5500",
+        "http://localhost:5501",
+        "http://127.0.0.1:5501",
+   
+      ];
 
       if (!origin) return callback(null, true);
-
-      if (allowed.includes(origin)) {
-        return callback(null, true);
-      }
+      if (allowed.includes(origin)) return callback(null, true);
 
       return callback(new Error("CORS non autorisé : " + origin));
     },
@@ -76,8 +73,8 @@ connectDB()
   .then(() => {
     console.log("MongoDB connecté");
 
-    app.listen(PORT, HOST, () => {
-      console.log(`Serveur en ligne sur http://${HOST}:${PORT}`);
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`Serveur en ligne sur port ${PORT}`);
       console.log(`Mode : ${process.env.NODE_ENV || "development"}`);
     });
   })
@@ -92,4 +89,3 @@ process.on("SIGINT", async () => {
   console.log("Connexion MongoDB fermée proprement");
   process.exit(0);
 });
-
