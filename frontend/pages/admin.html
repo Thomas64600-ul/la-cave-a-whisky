@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administration – La Cave à Whisky</title>
+
+  <link rel="icon" type="image/png" href="../assets/images/logocave.png" />
+
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/admin.css" />
+
+  <link rel="stylesheet" href="../components/header/header.css" />
+  <link rel="stylesheet" href="../components/footer/footer.css" />
+  <link rel="stylesheet" href="../components/whisky-card/whisky-card.css" />
+</head>
+
+<body>
+
+  <header id="site-header"></header>
+
+  <main class="admin-container">
+
+    <h1 class="page-title">Panneau d'administration</h1>
+
+    <p class="page-subtitle">
+      Bienvenue Bon Papa — gérez ici tout votre site.
+    </p>
+
+    <nav class="admin-tabs">
+      <button data-tab="catalogue" class="active">Catalogue mondial</button>
+      <button data-tab="cave">Cave</button>
+      <button data-tab="tastings">Dégustations</button>
+      <button data-tab="users">Utilisateurs</button>
+    </nav>
+
+    <section id="admin-catalogue" class="admin-section active">
+      <h2>Catalogue mondial</h2>
+      <button class="btn-add-whisky" id="add-catalogue-btn">➕ Ajouter un whisky</button>
+      <div id="admin-catalogue-list" class="admin-grid"></div>
+    </section>
+
+    <section id="admin-cave" class="admin-section">
+      <h2>Cave de Bon Papa</h2>
+      <button class="btn-add-whisky" id="add-cave-btn">➕ Ajouter un whisky</button>
+      <div id="admin-cave-list" class="admin-grid"></div>
+    </section>
+
+    <section id="admin-tastings" class="admin-section">
+      <h2>Dégustations</h2>
+      <div id="admin-tastings-list" class="tasting-list"></div>
+    </section>
+
+    <section id="admin-users" class="admin-section">
+      <h2>Utilisateurs</h2>
+      <div id="admin-users-list" class="users-grid"></div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../js/utils/loadComponent.js"></script>
+  <script src="../js/utils/theme.js"></script>
+  <script src="../js/pages/main.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../components/whisky-card/whisky-card.js"></script>
+  <script src="../js/pages/admin.js"></script>
+
+</body>
+</html>

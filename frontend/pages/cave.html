@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cave de Bon Papa – La Cave à Whisky</title>
+
+  <link rel="icon" type="image/png" href="../assets/images/logocave.png" />
+
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/cave.css" />
+
+  <link rel="stylesheet" href="../components/header/header.css" />
+  <link rel="stylesheet" href="../components/footer/footer.css" />
+
+  <link rel="stylesheet" href="../components/whisky-card/whisky-card.css" />
+</head>
+
+<body>
+
+  <header id="site-header"></header>
+
+  <main class="cave-container">
+
+    <h1 class="page-title">La Cave de Bon Papa</h1>
+
+    <div class="cave-actions">
+      <button id="btn-add-whisky" class="btn-add" style="display: none;">
+        ➕ Ajouter un whisky
+      </button>
+    </div>
+
+    <p class="cave-description">
+      Retrouvez ici toute la collection de whiskys soigneusement sélectionnée.
+    </p>
+
+    <section id="cave-list" class="cave-grid">
+      <div class="loading">Chargement...</div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../js/utils/loadComponent.js"></script>
+  <script src="../js/utils/theme.js"></script>
+
+  <script src="../js/api.js"></script>
+
+  <script src="../js/pages/main.js"></script>
+
+  <script src="../components/whisky-card/whisky-card.js"></script>
+
+  <script src="../js/pages/cave.js"></script>
+
+</body>
+</html>
+

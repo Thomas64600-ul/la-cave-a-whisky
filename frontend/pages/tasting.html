@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dégustations – La Cave à Whisky</title>
+
+  <link rel="icon" type="image/png" href="../assets/images/logocave.png" />
+
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/tasting.css" />
+
+  <link rel="stylesheet" href="../components/tasting-card/tasting-card.css" />
+  <link rel="stylesheet" href="../components/header/header.css" />
+  <link rel="stylesheet" href="../components/footer/footer.css" />
+</head>
+
+<body>
+
+  <header id="site-header"></header>
+
+  <main class="tasting-container">
+
+    <h1 class="page-title">Dégustations & Avis</h1>
+
+    <h2 id="whiskyName" class="whisky-title"></h2>
+
+    <section class="tasting-form">
+      <h2 class="section-title">Laisser une dégustation</h2>
+
+      <form id="tastingForm" class="tasting-form-content">
+
+        <label for="rating">Note (1 à 5)</label>
+        <input type="number" id="rating" min="1" max="5" required />
+
+        <label for="comment">Commentaire</label>
+        <textarea id="comment" rows="4" placeholder="Votre avis..." required></textarea>
+
+        <button type="submit" class="btn-submit">Envoyer</button>
+      </form>
+    </section>
+
+    <section class="recent-tastings">
+      <h2 class="section-title">Avis récents</h2>
+
+      <div id="tastingList" class="tasting-list">
+        <div class="loading">Chargement...</div>
+      </div>
+    </section>
+
+    <div class="tasting-actions">
+      <a href="#" class="btn-secondary" id="backDetailBtn">← Retour au whisky</a>
+    </div>
+
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../js/utils/loadComponent.js"></script>
+  <script src="../js/utils/theme.js"></script>
+
+  <script src="../js/api.js"></script>
+
+  <script src="../components/tasting-card/tasting-card.js"></script>
+
+  <script src="../js/pages/main.js"></script>
+
+  <script src="../js/pages/tasting.js"></script>
+
+</body>
+</html>
+
