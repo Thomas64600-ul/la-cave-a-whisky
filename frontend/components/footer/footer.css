@@ -1,13 +1,16 @@
 .site-footer {
+  text-align: center;
+  padding: 1.5rem;
   background-color: var(--light-surface);
-  color: var(--light-subtext);
   border-top: 1px solid var(--light-border);
-  font-size: 0.9rem;
+  color: var(--light-subtext);
+  margin-top: 2rem;
   transition: var(--transition);
 }
 
 body.dark .site-footer {
   background-color: var(--dark-surface);
+  border-top-color: var(--dark-border);
   color: var(--dark-subtext);
-  border-top: 1px solid var(--dark-border);
 }
+
