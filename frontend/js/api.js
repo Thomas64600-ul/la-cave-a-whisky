@@ -1,7 +1,11 @@
-const API_URL =
-  window.location.hostname === "localhost"
-    ? "http://127.0.0.1:5000/api"
-    : "https://cave-a-whisky-api.onrender.com/api";
+const isLocalhost =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1";
+
+const API_URL = isLocalhost
+  ? "http://127.0.0.1:5000/api"
+  : "https://cave-a-whisky-api.onrender.com/api";
+
 
 
 async function request(endpoint, options = {}) {
