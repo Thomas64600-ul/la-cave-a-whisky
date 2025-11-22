@@ -20,14 +20,16 @@ function initDetailsPage() {
 async function loadWhiskyDetails(container) {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
-  const source = params.get("source"); 
+  const source = params.get("source");
 
   if (!id) return renderError(container, "Aucun whisky sélectionné.");
 
   try {
     const whisky = await getWhiskyById(id, source);
 
-    if (!whisky) return renderError(container, "Whisky introuvable.");
+    if (!whisky) {
+      return renderError(container, "Whisky introuvable.");
+    }
 
     renderDetails(container, whisky);
 
@@ -40,35 +42,30 @@ async function loadWhiskyDetails(container) {
 async function getWhiskyById(id, source) {
   console.log("🔎 Source détectée :", source);
 
-  if (source === "catalogue") {
-    try {
-      const r = await fetch(`http://localhost:5000/api/catalogue/${id}`);
-      const d = await r.json();
-
-      if (d.success) return { ...d.data, source: "catalogue" };
-
-      console.warn("⚠ Catalogue → success false :", d);
-    } catch (e) {
-      console.warn("⚠ Catalogue inaccessible");
-    }
-  }
-
   try {
-    const r = await fetch(`http://localhost:5000/api/whiskies/${id}`);
-    const d = await r.json();
+    if (source === "catalogue") {
+      const r = await api.catalogue.getById(id);
+      if (r.success) {
+        return { ...r.data, source: "catalogue" };
+      }
+    }
 
-    if (d.success) return { ...d.data, source: "cave" };
+    const r = await api.whiskies.getById(id);
+    if (r.success) {
+      return { ...r.data, source: "cave" };
+    }
 
-    console.warn("⚠ Cave → success false :", d);
-  } catch (e) {
-    console.warn("⚠ Cave inaccessible");
+  } catch (err) {
+    console.error("Erreur API :", err);
   }
 
   return null;
 }
 
 function renderDetails(container, w) {
-  const backURL = w.source === "catalogue" ? "api-whiskies.html" : "cave.html";
+  const backURL = w.source === "catalogue"
+    ? "api-whiskies.html"
+    : "cave.html";
 
   container.innerHTML = `
     <div class="details-content">
@@ -110,5 +107,6 @@ function renderError(container, message) {
     <p class="error-message">${message}</p>
   `;
 }
+
 
 
