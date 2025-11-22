@@ -1,112 +1,39 @@
-document.addEventListener("DOMContentLoaded", async () => {
+const DEFAULT_IMAGE =
+  "https://res.cloudinary.com/demo/image/upload/v1700000000/default-whisky.png";
 
-  await loadComponent("site-header", "../components/header/header.html");
-  await loadComponent("site-footer", "../components/footer/footer.html");
+function whiskyCardTemplate(w) {
+  const img = w.image || DEFAULT_IMAGE;
 
-  if (window.initThemeSystem) initThemeSystem();
-  if (window.initHeader) initHeader();
+  return `
+    <a class="whisky-card" href="/pages/details.html?id=${w._id}&source=${w.source}">
 
-  initDetailsPage();
-});
+      
+      <img src="${img}" alt="${w.name || "Whisky"}" class="whisky-image" />
 
-function initDetailsPage() {
-  const container = document.getElementById("whisky-details");
-  if (!container) return;
+      <h3>${w.name || "Nom inconnu"}</h3>
 
-  container.innerHTML = `<div class="loading">Chargement...</div>`;
-  loadWhiskyDetails(container);
-}
-
-async function loadWhiskyDetails(container) {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
-  const source = params.get("source");
-
-  if (!id) return renderError(container, "Aucun whisky sélectionné.");
-
-  try {
-    const whisky = await getWhiskyById(id, source);
-
-    if (!whisky) {
-      return renderError(container, "Whisky introuvable.");
-    }
-
-    renderDetails(container, whisky);
-
-  } catch (err) {
-    console.error("Erreur loadWhiskyDetails :", err);
-    renderError(container, "Erreur lors du chargement.");
-  }
-}
-
-async function getWhiskyById(id, source) {
-  console.log("Source détectée :", source);
-
-  try {
-    if (source === "catalogue") {
-      const r = await api.catalogue.getById(id);
-      if (r.success) {
-        return { ...r.data, source: "catalogue" };
-      }
-    }
-
-    const r = await api.whiskies.getById(id);
-    if (r.success) {
-      return { ...r.data, source: "cave" };
-    }
-
-  } catch (err) {
-    console.error("Erreur API :", err);
-  }
-
-  return null;
-}
-
-function renderDetails(container, w) {
-  const backURL = w.source === "catalogue"
-    ? "api-whiskies.html"
-    : "cave.html";
-
-  container.innerHTML = `
-    <div class="details-content">
-
-      <div class="details-image-wrapper">
-        <img src="${w.image}" class="details-image" alt="${w.name}">
-      </div>
-
-      <div class="details-info">
-
-        <h2>${w.name}</h2>
-
-        <p><strong>Marque :</strong> ${w.brand}</p>
-        <p><strong>Pays :</strong> ${w.country}</p>
-        <p><strong>Catégorie :</strong> ${w.category}</p>
-        <p><strong>Degré :</strong> ${w.degree}%</p>
-        <p><strong>Année :</strong> ${w.year ?? "Non renseignée"}</p>
-
-        <div class="details-description">
-          ${w.description || "Aucune description disponible."}
-        </div>
-
-        <div class="details-buttons">
-          <a class="btn-secondary" href="${backURL}">← Retour</a>
-
-          <a class="btn-primary" href="tasting.html?id=${w._id}">
-            Voir les dégustations →
-          </a>
-        </div>
-
-      </div>
-
-    </div>
+      <p><strong>Marque :</strong> ${w.brand || "N/A"}</p>
+      <p><strong>Pays :</strong> ${w.country || "N/A"}</p>
+      <p><strong>Catégorie :</strong> ${w.category || "N/A"}</p>
+      <p><strong>Degré :</strong> ${w.degree ? w.degree + "%" : "N/A"}</p>
+      
+    </a>
   `;
 }
 
-function renderError(container, message) {
-  container.innerHTML = `
-    <p class="error-message">${message}</p>
-  `;
-}
+window.createCatalogueCard = function (w) {
+  return whiskyCardTemplate({ ...w, source: "catalogue" });
+};
+
+window.createCaveCard = function (w) {
+  return whiskyCardTemplate({ ...w, source: "cave" });
+};
+
+window.createWhiskyCard = function (w) {
+  return w.source === "cave"
+    ? createCaveCard(w)
+    : createCatalogueCard(w);
+};
 
 
 

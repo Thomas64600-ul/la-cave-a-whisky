@@ -40,7 +40,7 @@ async function loadWhiskyDetails(container) {
 }
 
 async function getWhiskyById(id, source) {
-  console.log("🔎 Source détectée :", source);
+  console.log("Source détectée :", source);
 
   try {
     if (source === "catalogue") {
