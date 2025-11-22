@@ -1,0 +1,84 @@
+.whisky-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.whisky-card {
+  display: block; 
+  text-decoration: none;
+  color: var(--light-text);
+
+  background-color: var(--light-surface);
+  border: 1px solid var(--light-border);
+  border-radius: var(--radius);
+  
+  padding: 1rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.whisky-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+
+.whisky-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+  background-color: #fff;
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+
+.whisky-card h3 {
+  margin: 8px 0;
+  font-size: 1.2rem;
+  color: var(--light-text);
+}
+
+.whisky-card p {
+  margin: 3px 0;
+  color: var(--light-subtext);
+  font-size: 0.95rem;
+}
+
+body.dark .whisky-card {
+  background-color: var(--dark-surface);
+  border-color: var(--dark-border);
+}
+
+body.dark .whisky-card h3 {
+  color: var(--dark-text);
+}
+
+body.dark .whisky-card p {
+  color: var(--dark-subtext);
+}
+
+@media (max-width: 768px) {
+
+  .whisky-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+  }
+
+  .whisky-card img {
+    height: 160px;
+  }
+
+  .whisky-card h3 {
+    font-size: 1rem;
+  }
+
+  .whisky-card {
+    padding: 0.8rem;
+  }
+}
