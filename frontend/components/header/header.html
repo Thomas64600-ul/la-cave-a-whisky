@@ -1,17 +1,52 @@
 <header class="site-header">
+
   <div class="logo">
-    <img src="../../assets/images/logocave.png" alt="Logo La Cave à Whisky" />
+    <img src="../assets/images/logocave.png" alt="Logo La Cave à Whisky" />
     <div class="logo-text">
       <h1>La Cave à Whisky</h1>
       <p>de Bon Papa</p>
     </div>
   </div>
 
-  <nav class="nav-links">
-    <a href="../../index.html">Accueil</a>
-    <a href="../../cave.html">La Cave</a>
-    <a href="../../tasting.html">Dégustations</a>
-    <a href="../../login.html">Connexion</a>
-    <button id="toggle-theme" aria-label="Changer de thème">🌙</button>
+  <nav class="nav-desktop">
+
+    <a href="./index.html" data-link="index">Accueil</a>
+    <a href="./cave.html" data-link="cave">La Cave</a>
+    <a href="./tasting.html" data-link="tasting">Dégustations</a>
+    <a href="./api-whiskies.html" data-link="catalogue">Catalogue</a>
+
+    <a href="./login.html" id="nav-login" class="nav-auth">Connexion</a>
+
+    <div id="user-info" class="nav-user hidden"> 
+      <img id="user-avatar" class="nav-avatar" src="" alt="avatar" /> 
+      <span id="user-name"></span> 
+      <button id="logout-btn" class="logout-btn">Déconnexion</button>
+    </div>
   </nav>
+
+  <div class="header-actions">
+    <button id="toggle-theme">🌙</button>
+    <button id="burger" class="burger">☰</button>
+  </div>
+
+  <nav id="mobile-menu" class="mobile-menu">
+
+    <a href="./index.html" data-link="index">Accueil</a>
+    <a href="./cave.html" data-link="cave">La Cave</a>
+    <a href="./tasting.html" data-link="tasting">Dégustations</a>
+    <a href="./api-whiskies.html" data-link="catalogue">Catalogue</a>
+
+    <a href="./login.html" id="nav-login-mobile" class="nav-auth">Connexion</a>
+
+    <div id="mobile-user-info" class="nav-user hidden"> 
+      <img id="mobile-user-avatar" class="nav-avatar" src="" /> 
+      <span id="mobile-user-name"></span>
+      <button id="mobile-logout-btn" class="logout-btn">Déconnexion</button> 
+    </div>
+
+  </nav>
+
 </header>
+
+
+
