@@ -29,14 +29,14 @@ app.disable("x-powered-by");
 app.use(
   cors({
     origin: (origin, callback) => {
-      const allowed = [
-        "http://localhost:5500",
-        "http://127.0.0.1:5500",
-        "http://localhost:5501",
-        "http://127.0.0.1:5501",
-         "https://graceful-torte-820efb.netlify.app"
-   
-      ];
+     const allowed = [
+  "http://localhost:5500",
+  "http://127.0.0.1:5500",
+  "http://localhost:5501",
+  "http://127.0.0.1:5501",
+  "https://leafy-maamoul-ccc5a2.netlify.app/"  
+];
+
 
       if (!origin) return callback(null, true);
       if (allowed.includes(origin)) return callback(null, true);
