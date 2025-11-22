@@ -1,179 +1,90 @@
-const API_URL = "http://localhost:5000/api";
+const API_URL = "http://127.0.0.1:5000/api";
 
-
-async function apiGet(endpoint) {
-  const res = await fetch(`${API_URL}${endpoint}`, {
+async function request(endpoint, options = {}) {
+  const res = await fetch(API_URL + endpoint, {
     credentials: "include",
+    ...options,
   });
 
-  const data = await res.json();
-  if (!res.ok) throw new Error(data.message || "Erreur API");
+  const data = await res.json().catch(() => ({}));
+
+  if (endpoint === "/auth/check" && res.status === 401) {
+    return { success: false, user: null };
+  }
+
+  if (!res.ok) {
+    console.error("API ERROR →", endpoint, data);
+    throw new Error(data.message || "Erreur API");
+  }
 
   return data;
 }
 
-async function apiSend(endpoint, method = "POST", body = {}) {
-  const res = await fetch(`${API_URL}${endpoint}`, {
+function get(endpoint) {
+  return request(endpoint);
+}
+
+function send(endpoint, method, body = {}) {
+  return request(endpoint, {
     method,
-    headers: {
-      "Content-Type": "application/json",
-    },
-    credentials: "include",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });
-
-  const data = await res.json();
-  if (!res.ok) throw new Error(data.message || "Erreur API");
-
-  return data;
 }
 
-async function apiSendForm(endpoint, method = "POST", formData) {
-  const res = await fetch(`${API_URL}${endpoint}`, {
+function sendForm(endpoint, method, formData) {
+  return request(endpoint, {
     method,
-    credentials: "include",
     body: formData,
   });
-
-  const data = await res.json();
-  if (!res.ok) throw new Error(data.message || "Erreur API");
-
-  return data;
 }
 
-function register(body) {
-  return apiSend("/auth/register", "POST", body);
-}
-
-function login(body) {
-  return apiSend("/auth/login", "POST", body);
-}
-
-function checkAuth() {
-  return apiGet("/auth/check");
-}
-
-function getUsers() {
-  return apiGet("/users");
-}
-
-function getUserById(id) {
-  return apiGet(`/users/${id}`);
-}
-
-function updateUser(id, body) {
-  return apiSend(`/users/${id}`, "PUT", body);
-}
-
-function updateUserAvatar(id, file) {
-  const formData = new FormData();
-  formData.append("avatar", file);
-
-  return apiSendForm(`/users/${id}/avatar`, "PUT", formData);
-}
-
-function deleteUser(id) {
-  return apiSend(`/users/${id}`, "DELETE");
-}
-
-function getWhiskies() {
-  return apiGet("/whiskies");
-}
-
-function getWhiskyById(id) {
-  return apiGet(`/whiskies/${id}`);
-}
-
-function createWhisky(data) {
-  return apiSendForm("/whiskies", "POST", data);
-}
-
-function updateWhisky(id, data) {
-  return apiSendForm(`/whiskies/${id}`, "PUT", data);
-}
-
-function deleteWhisky(id) {
-  return apiSend(`/whiskies/${id}`, "DELETE");
-}
-
-function getTastings() {
-  return apiGet("/tastings");
-}
-
-function getMyTastings() {
-  return apiGet("/tastings/mine");
-}
-
-function getTastingById(id) {
-  return apiGet(`/tastings/${id}`);
-}
-
-function createTasting(body) {
-  return apiSend("/tastings", "POST", body);
-}
-
-function updateTasting(id, body) {
-  return apiSend(`/tastings/${id}`, "PUT", body);
-}
-
-function deleteTasting(id) {
-  return apiSend(`/tastings/${id}`, "DELETE");
-}
-
-function getCatalogue() {
-  return apiGet("/catalogue");
-}
-
-function getCatalogueById(id) {
-  return apiGet(`/catalogue/${id}`);
-}
-
-function createCatalogue(body) {
-  return apiSend("/catalogue", "POST", body);
-}
-
-function updateCatalogue(id, body) {
-  return apiSend(`/catalogue/${id}`, "PUT", body);
-}
-
-function deleteCatalogue(id) {
-  return apiSend(`/catalogue/${id}`, "DELETE");
-}
-
-function importCatalogue() {
-  return apiSend("/catalogue/import", "POST");
-}
-
-window.api = {
-  register,
-  login,
-  checkAuth,
-
-  getUsers,
-  getUserById,
-  updateUser,
-  updateUserAvatar,
-  deleteUser,
-
-  getWhiskies,
-  getWhiskyById,
-  createWhisky,
-  updateWhisky,
-  deleteWhisky,
-
-  getTastings,
-  getMyTastings,
-  getTastingById,
-  createTasting,
-  updateTasting,
-  deleteTasting,
-
-  getCatalogue,
-  getCatalogueById,
-  createCatalogue,
-  updateCatalogue,
-  deleteCatalogue,
-  importCatalogue,
+const auth = {
+  register: (body) => send("/auth/register", "POST", body),
+  login: (body) => send("/auth/login", "POST", body),
+  check: () => get("/auth/check"),
+  logout: () => send("/auth/logout", "POST"),
 };
 
-console.log("api.js chargé ✔");
+const users = {
+  getAll: () => get("/users"),
+  getById: (id) => get(`/users/${id}`),
+  update: (id, body) => send(`/users/${id}`, "PUT", body),
+  delete: (id) => send(`/users/${id}`, "DELETE"),
+};
+
+const whiskies = {
+  getAll: () => get("/whiskies"),
+  getById: (id) => get(`/whiskies/${id}`),
+  create: (data) => sendForm("/whiskies", "POST", data),
+  update: (id, data) => sendForm(`/whiskies/${id}`, "PUT", data),
+  delete: (id) => send(`/whiskies/${id}`, "DELETE"),
+};
+
+const catalogue = {
+  getAll: () => get("/catalogue"),
+  getById: (id) => get(`/catalogue/${id}`),
+  create: (body) => send("/catalogue", "POST", body),
+  update: (id, body) => send(`/catalogue/${id}`, "PUT", body),
+  delete: (id) => send(`/catalogue/${id}`, "DELETE"),
+};
+
+const tastings = {
+  getAll: () => get("/tastings"),
+  getMine: () => get("/tastings/mine"),
+  getById: (id) => get(`/tastings/${id}`),
+  create: (body) => send("/tastings", "POST", body),
+  update: (id, body) => send(`/tastings/${id}`, "PUT", body),
+  delete: (id) => send(`/tastings/${id}`, "DELETE"),
+};
+
+window.api = {
+  auth,
+  users,
+  whiskies,
+  catalogue,
+  tastings,
+};
+
+
+
