@@ -112,7 +112,7 @@ function addAdminLink(user) {
   const navDesktop = document.querySelector(".nav-desktop");
   if (navDesktop && !navDesktop.querySelector(".admin-nav-link")) {
     const a = document.createElement("a");
-    a.href = "./admin.html";
+    a.href = "/pages/admin.html";
     a.textContent = "Administration";
     a.classList.add("admin-nav-link");
     navDesktop.insertBefore(a, document.getElementById("nav-login"));
@@ -121,7 +121,7 @@ function addAdminLink(user) {
   const mobileMenu = document.getElementById("mobile-menu");
   if (mobileMenu && !mobileMenu.querySelector(".admin-nav-link")) {
     const a = document.createElement("a");
-    a.href = "./admin.html";
+    a.href = "/pages/admin.html";
     a.textContent = "Administration";
     a.classList.add("admin-nav-link");
     mobileMenu.insertBefore(a, document.getElementById("nav-login-mobile"));
