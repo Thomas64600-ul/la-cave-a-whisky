@@ -10,16 +10,16 @@ async function initAdminPage() {
 
   if (!auth.success || auth.user.role !== "admin") {
     alert("Accès réservé à l’administrateur.");
-    window.location.href = "index.html";
+    window.location.href = "/index.html";  
     return;
   }
 
   initAdminTabs();
 
-  loadCatalogueAdmin();
-  loadCaveAdmin();
-  loadTastingsAdmin();
-  loadUsersAdmin();
+  await loadCatalogueAdmin();
+  await loadCaveAdmin();
+  await loadTastingsAdmin();
+  await loadUsersAdmin();
 
   initAdminButtons();
 }
@@ -43,97 +43,123 @@ async function loadCatalogueAdmin() {
   const box = document.getElementById("admin-catalogue-list");
   box.innerHTML = `<div class="loading">Chargement…</div>`;
 
-  const res = await api.catalogue.getAll();
+  try {
+    const res = await api.catalogue.getAll();
 
-  if (!res.success) {
-    box.innerHTML = `<p class="error">Erreur lors du chargement du catalogue.</p>`;
-    return;
+    if (!res.success) {
+      box.innerHTML = `<p class="error">Impossible de charger le catalogue.</p>`;
+      return;
+    }
+
+    box.innerHTML = "";
+    res.data.forEach((w) => box.appendChild(createAdminWhiskyItem(w, "catalogue")));
+
+  } catch (err) {
+    console.error(err);
+    box.innerHTML = `<p class="error">Erreur API catalogue.</p>`;
   }
-
-  box.innerHTML = "";
-  res.data.forEach((w) => box.appendChild(createAdminWhiskyItem(w, "catalogue")));
 }
 
 async function loadCaveAdmin() {
   const box = document.getElementById("admin-cave-list");
   box.innerHTML = `<div class="loading">Chargement…</div>`;
 
-  const res = await api.whiskies.getAll();
+  try {
+    const res = await api.whiskies.getAll();
 
-  if (!res.success) {
-    box.innerHTML = `<p class="error">Erreur lors du chargement de la cave.</p>`;
-    return;
+    if (!res.success) {
+      box.innerHTML = `<p class="error">Impossible de charger la cave.</p>`;
+      return;
+    }
+
+    box.innerHTML = "";
+    res.data.forEach((w) => box.appendChild(createAdminWhiskyItem(w, "cave")));
+
+  } catch (err) {
+    console.error(err);
+    box.innerHTML = `<p class="error">Erreur API cave.</p>`;
   }
-
-  box.innerHTML = "";
-  res.data.forEach((w) => box.appendChild(createAdminWhiskyItem(w, "cave")));
 }
 
 async function loadTastingsAdmin() {
   const box = document.getElementById("admin-tastings-list");
   box.innerHTML = `<div class="loading">Chargement…</div>`;
 
-  const res = await api.tastings.getAll();
+  try {
+    const res = await api.tastings.getAll();
 
-  if (!res.success) {
-    box.innerHTML = `<p class="error">Erreur lors du chargement des dégustations.</p>`;
-    return;
+    if (!res.success) {
+      box.innerHTML = `<p class="error">Erreur lors du chargement des dégustations.</p>`;
+      return;
+    }
+
+    box.innerHTML = "";
+
+    res.data.forEach((t) => {
+      const item = document.createElement("div");
+      item.className = "tasting-item";
+
+      item.innerHTML = `
+        <p><strong>${t.user.username}</strong> → <em>${t.whisky.name}</em></p>
+        <p>Note : ${t.rating}/5</p>
+        <p>${t.comment}</p>
+        <button class="btn-delete" data-id="${t._id}" data-type="tasting">
+          Supprimer
+        </button>
+      `;
+
+      box.appendChild(item);
+    });
+
+    bindDeleteButtons();
+
+  } catch (err) {
+    console.error(err);
+    box.innerHTML = `<p class="error">Erreur API dégustations.</p>`;
   }
-
-  box.innerHTML = "";
-
-  res.data.forEach((t) => {
-    const item = document.createElement("div");
-    item.className = "tasting-item";
-
-    item.innerHTML = `
-      <p><strong>${t.user.username}</strong> → <em>${t.whisky.name}</em></p>
-      <p>Note : ${t.rating}/5</p>
-      <p>${t.comment}</p>
-      <button class="btn-delete" data-id="${t._id}" data-type="tasting">Supprimer</button>
-    `;
-
-    box.appendChild(item);
-  });
-
-  bindDeleteButtons();
 }
 
 async function loadUsersAdmin() {
   const box = document.getElementById("admin-users-list");
   box.innerHTML = `<div class="loading">Chargement…</div>`;
 
-  const res = await api.users.getAll();
+  try {
+    const res = await api.users.getAll();
 
-  if (!res.success) {
-    box.innerHTML = `<p class="error">Erreur lors du chargement des utilisateurs.</p>`;
-    return;
+    if (!res.success) {
+      box.innerHTML = `<p class="error">Impossible de charger les utilisateurs.</p>`;
+      return;
+    }
+
+    box.innerHTML = "";
+
+    res.data.forEach((u) => {
+      const div = document.createElement("div");
+      div.className = "user-item";
+
+      div.innerHTML = `
+        <img src="${u.avatar}" class="user-avatar" />
+
+        <div class="user-info">
+          <p><strong>${u.username}</strong></p>
+          <p>${u.email}</p>
+          <p class="user-role-label">Rôle : <strong>${u.role}</strong></p>
+        </div>
+
+        <button class="btn-delete" data-id="${u._id}" data-type="user">
+          Supprimer
+        </button>
+      `;
+
+      box.appendChild(div);
+    });
+
+    bindDeleteButtons();
+
+  } catch (err) {
+    console.error(err);
+    box.innerHTML = `<p class="error">Erreur API utilisateurs.</p>`;
   }
-
-  box.innerHTML = "";
-
-  res.data.forEach((u) => {
-    const div = document.createElement("div");
-    div.className = "user-item";
-
-    div.innerHTML = `
-      <img src="${u.avatar}" class="user-avatar" />
-
-      <div class="user-info">
-        <p><strong>${u.username}</strong></p>
-        <p>${u.email}</p>
-        <p class="user-role-label">Rôle : <strong>${u.role}</strong></p>
-      </div>
-
-      <button class="btn-delete" data-id="${u._id}" data-type="user">
-        Supprimer
-      </button>
-    `;
-
-    box.appendChild(div);
-  });
-
-  bindDeleteButtons();
 }
 
 function bindDeleteButtons() {
@@ -177,8 +203,10 @@ function initAdminButtons() {
   const btnCave = document.getElementById("add-cave-btn");
 
   if (btnCatalogue)
-    btnCatalogue.onclick = () => (window.location.href = "add-whisky.html#catalogue");
+    btnCatalogue.onclick = () =>
+      (window.location.href = "/pages/add-whisky.html#catalogue"); 
 
   if (btnCave)
-    btnCave.onclick = () => (window.location.href = "add-whisky.html#cave");
+    btnCave.onclick = () =>
+      (window.location.href = "/pages/add-whisky.html#cave");
 }
