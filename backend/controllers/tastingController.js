@@ -4,7 +4,7 @@ export async function getAllTastings(req, res) {
   try {
     const tastings = await Tasting.find()
       .populate("user", "username email role")
-      .populate("whisky", "name country brand")
+      .populate("whisky", "name country brand image")
       .sort({ createdAt: -1 });
 
     res.status(200).json({
@@ -25,7 +25,7 @@ export async function getTastingById(req, res) {
   try {
     const tasting = await Tasting.findById(req.params.id)
       .populate("user", "username email role")
-      .populate("whisky", "name country brand");
+      .populate("whisky", "name country brand image");
 
     if (!tasting) {
       return res.status(404).json({
@@ -79,7 +79,7 @@ export async function createTasting(req, res) {
 
     const populated = await tasting.populate([
       { path: "user", select: "username email" },
-      { path: "whisky", select: "name country brand" },
+      { path: "whisky", select: "name country brand image" },
     ]);
 
     res.status(201).json({
@@ -107,7 +107,6 @@ export async function updateTasting(req, res) {
       });
     }
 
-    
     const isOwner = tasting.user.toString() === req.user._id.toString();
     const isAdmin = req.user.role === "admin";
 
@@ -125,7 +124,7 @@ export async function updateTasting(req, res) {
 
     const populated = await updated.populate([
       { path: "user", select: "username email" },
-      { path: "whisky", select: "name country brand" },
+      { path: "whisky", select: "name country brand image" },
     ]);
 
     res.status(200).json({
@@ -181,7 +180,7 @@ export async function deleteTasting(req, res) {
 export async function getUserTastings(req, res) {
   try {
     const tastings = await Tasting.find({ user: req.user._id })
-      .populate("whisky", "name country brand")
+      .populate("whisky", "name country brand image")
       .sort({ createdAt: -1 });
 
     res.status(200).json({
@@ -202,7 +201,7 @@ export async function getTastingsForWhisky(req, res) {
   try {
     const tastings = await Tasting.find({ whisky: req.params.whiskyId })
       .populate("user", "username email")
-      .populate("whisky", "name country brand")
+      .populate("whisky", "name country brand image")
       .sort({ createdAt: -1 });
 
     res.status(200).json({
@@ -218,4 +217,3 @@ export async function getTastingsForWhisky(req, res) {
     });
   }
 }
-
