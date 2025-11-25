@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dégustations – La Cave à Whisky</title>
+
+  <link rel="icon" type="image/png" href="../assets/images/logocave.png" />
+
+  <link rel="stylesheet" href="../assets/css/global.css" />
+
+  <link rel="stylesheet" href="../assets/css/degustations.css" />
+
+  <link rel="stylesheet" href="../components/tasting-card/tasting-card.css" />
+  <link rel="stylesheet" href="../components/header/header.css" />
+  <link rel="stylesheet" href="../components/footer/footer.css" />
+</head>
+
+<body>
+
+  <header id="site-header"></header>
+
+  <main class="tasting-container">
+
+    <h1 class="page-title">Toutes les dégustations</h1>
+
+    <section class="recent-tastings">
+      <h2 class="section-title">Avis des membres</h2>
+
+      <div id="tastingsList" class="tasting-list">
+        <div class="loading">Chargement...</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../js/utils/loadComponent.js"></script>
+  <script src="../js/utils/theme.js"></script>
+  <script src="../js/api.js"></script>
+
+  <script src="../components/tasting-card/tasting-card.js"></script>
+
+  <script src="../js/pages/main.js"></script>
+  <script src="../js/pages/degustations.js"></script>
+
+</body>
+</html>
