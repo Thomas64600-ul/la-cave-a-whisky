@@ -82,6 +82,7 @@ const tastings = {
   getAll: () => get("/tastings"),
   getMine: () => get("/tastings/mine"),
   getById: (id) => get(`/tastings/${id}`),
+  getByWhisky: (whiskyId) => get(`/tastings/whisky/${whiskyId}`), 
   create: (body) => send("/tastings", "POST", body),
   update: (id, body) => send(`/tastings/${id}`, "PUT", body),
   delete: (id) => send(`/tastings/${id}`, "DELETE"),

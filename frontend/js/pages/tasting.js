@@ -54,7 +54,8 @@ async function loadTastingList(whiskyId) {
   list.innerHTML = `<div class="loading">Chargement...</div>`;
 
   try {
-    const res = await api.get(`/tastings/whisky/${whiskyId}`);
+ 
+    const res = await api.tastings.getByWhisky(whiskyId);
 
     if (!res.success || !Array.isArray(res.data)) {
       list.innerHTML = `<p class="error-message">Aucun avis pour le moment.</p>`;
