@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", async () => {
- 
   await loadComponent("site-header", "../components/header/header.html");
   await loadComponent("site-footer", "../components/footer/footer.html");
 
@@ -35,15 +34,14 @@ async function loadWhiskyInfo(whiskyId) {
   const title = document.getElementById("whiskyName");
 
   try {
-    const res = await fetch(`http://localhost:5000/api/whiskies/${whiskyId}`);
-    const data = await res.json();
+    const res = await api.whiskies.getById(whiskyId);
 
-    if (!data.success) {
+    if (!res.success) {
       title.textContent = "Whisky introuvable.";
       return;
     }
 
-    title.textContent = `${data.data.name} — Dégustations`;
+    title.textContent = `${res.data.name} — Dégustations`;
 
   } catch (err) {
     console.error("Erreur loadWhiskyInfo:", err);
@@ -56,15 +54,14 @@ async function loadTastingList(whiskyId) {
   list.innerHTML = `<div class="loading">Chargement...</div>`;
 
   try {
-    const res = await fetch(`http://localhost:5000/api/tastings/whisky/${whiskyId}`);
-    const result = await res.json();
+    const res = await api.get(`/tastings/whisky/${whiskyId}`);
 
-    if (!result.success || !Array.isArray(result.data)) {
+    if (!res.success || !Array.isArray(res.data)) {
       list.innerHTML = `<p class="error-message">Aucun avis pour le moment.</p>`;
       return;
     }
 
-    renderTastings(list, result.data);
+    renderTastings(list, res.data);
 
   } catch (error) {
     console.error("Erreur loadTastingList:", error);
@@ -105,22 +102,18 @@ async function handleTastingSubmit(e, whiskyId) {
   }
 
   try {
-    const res = await fetch("http://localhost:5000/api/tastings", {
-      method: "POST",
-      credentials: "include",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ whisky: whiskyId, rating, comment }),
+    const res = await api.tastings.create({
+      whisky: whiskyId,
+      rating,
+      comment
     });
 
-    const data = await res.json();
-
-    if (!data.success) {
-      alert(data.message || "Erreur serveur.");
+    if (!res.success) {
+      alert(res.message || "Erreur serveur.");
       return;
     }
 
     document.getElementById("tastingForm").reset();
-
     loadTastingList(whiskyId);
 
   } catch (err) {
