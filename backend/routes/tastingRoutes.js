@@ -16,7 +16,8 @@ import { authorizeRoles } from "../middlewares/authorizeRoles.js";
 
 const router = express.Router();
 
-router.get("/", protect, authorizeRoles("admin"), getAllTastings);
+router.get("/", getAllTastings);
+
 
 router.get("/whisky/:whiskyId", getTastingsForWhisky);
 
