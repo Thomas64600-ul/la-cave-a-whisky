@@ -1,22 +1,4 @@
 import Whisky from "../models/Whisky.js";
-import { v2 as cloudinary } from "cloudinary";
-
-async function uploadToCloudinary(fileBuffer, folder = "cave_a_whisky/whiskies") {
-  return new Promise((resolve, reject) => {
-    const stream = cloudinary.uploader.upload_stream(
-      {
-        folder,
-        resource_type: "image",
-        transformation: [{ width: 1000, crop: "limit" }],
-      },
-      (error, result) => {
-        if (error) reject(error);
-        else resolve(result.secure_url);
-      }
-    );
-    stream.end(fileBuffer);
-  });
-}
 
 export async function getAllWhiskies(req, res) {
   try {
@@ -72,14 +54,8 @@ export async function createWhisky(req, res) {
       });
     }
 
-    let imageUrl = req.body.image || null;
-    if (req.file) {
-      imageUrl = await uploadToCloudinary(req.file.buffer);
-    }
-
     const newWhisky = await Whisky.create({
       ...req.body,
-      image: imageUrl,
       inCave: false,
       bottleCount: 0,
       caveNotes: "",
@@ -105,13 +81,7 @@ export async function updateWhisky(req, res) {
   try {
     const { id } = req.params;
 
-    let updateData = { ...req.body };
-
-    if (req.file) {
-      updateData.image = await uploadToCloudinary(req.file.buffer);
-    }
-
-    const whisky = await Whisky.findByIdAndUpdate(id, updateData, {
+    const whisky = await Whisky.findByIdAndUpdate(id, req.body, {
       new: true,
       runValidators: true,
     });
@@ -201,16 +171,17 @@ export async function addToCave(req, res) {
 export async function updateCaveInfo(req, res) {
   try {
     const { id } = req.params;
-    const { bottleCount, caveNotes } = req.body;
 
     const whisky = await Whisky.findByIdAndUpdate(
       id,
       {
-        $set: {
-          ...(bottleCount !== undefined && { bottleCount }),
-          ...(caveNotes !== undefined && { caveNotes }),
-          inCave: true,
-        },
+        ...(req.body.bottleCount !== undefined && {
+          bottleCount: req.body.bottleCount,
+        }),
+        ...(req.body.caveNotes !== undefined && {
+          caveNotes: req.body.caveNotes,
+        }),
+        inCave: true,
       },
       { new: true }
     );
