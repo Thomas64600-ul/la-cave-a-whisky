@@ -65,10 +65,11 @@ const users = {
 const whiskies = {
   getAll: () => get("/whiskies"),
   getById: (id) => get(`/whiskies/${id}`),
-  create: (data) => sendForm("/whiskies", "POST", data),
-  update: (id, data) => sendForm(`/whiskies/${id}`, "PUT", data),
+  create: (body) => send("/whiskies", "POST", body),
+  update: (id, body) => send(`/whiskies/${id}`, "PUT", body),
   delete: (id) => send(`/whiskies/${id}`, "DELETE"),
 };
+
 
 const catalogue = {
   getAll: () => get("/catalogue"),
