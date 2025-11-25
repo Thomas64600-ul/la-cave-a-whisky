@@ -48,24 +48,19 @@ async function handleSubmit(e) {
   const newWhisky = collectFormData();
 
   try {
-    const { endpoint, redirect } = getTargetConfig(target);
-
-    const response = await fetch(endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      body: JSON.stringify(newWhisky),
-    });
-
-    const result = await response.json();
-
-    if (!response.ok) {
-      alert("Erreur : " + result.message);
+    if (target === "cave") {
+      await window.api.whiskies.create(newWhisky);
+      alert("Whisky ajouté dans la cave !");
+      window.location.href = "cave.html";
       return;
     }
 
-    alert("Whisky ajouté avec succès !");
-    window.location.href = redirect;
+    if (target === "catalogue") {
+      await window.api.catalogue.create(newWhisky);
+      alert("Whisky ajouté au catalogue !");
+      window.location.href = "api-whiskies.html";
+      return;
+    }
 
   } catch (error) {
     console.error("Erreur ajout whisky :", error);
@@ -84,23 +79,5 @@ function collectFormData() {
     image: document.getElementById("image").value.trim(),
     description: document.getElementById("description").value.trim(),
   };
-}
-
-function getTargetConfig(target) {
-  if (target === "cave") {
-    return {
-      endpoint: "http://127.0.0.1:5000/api/whiskies",
-      redirect: "cave.html",
-    };
-  }
-
-  if (target === "catalogue") {
-    return {
-      endpoint: "http://127.0.0.1:5000/api/catalogue",
-      redirect: "api-whiskies.html",
-    };
-  }
-
-  throw new Error("Cible d'ajout invalide.");
 }
 
