@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
+  console.log("ID du whisky =", whiskyId, " / TYPE =", type);
+
   const whisky = await fetchWhiskyData(whiskyId, type);
   if (!whisky) return;
 
@@ -28,19 +30,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function fetchWhiskyData(id, type) {
   try {
-    const response =
+    const res =
       type === "catalogue"
-        ? await api.catalogue.getOne(id)
-        : await api.whiskies.getOne(id);
+        ? await api.catalogue.getById(id)
+        : await api.whiskies.getById(id);
 
-    if (!response.success) throw new Error("Erreur API");
+    if (!res.success) throw new Error("Erreur API");
 
-    return response.data;
+    return res.data;
 
   } catch (err) {
-    console.error(err);
+    console.error("Erreur récupération whisky :", err);
     alert("Impossible de charger le whisky.");
-    window.location.href = "./admin.html";
+    return null;
   }
 }
 
@@ -68,14 +70,14 @@ async function updateWhisky(id, type) {
   };
 
   try {
-    const response =
+    const res =
       type === "catalogue"
         ? await api.catalogue.update(id, body)
         : await api.whiskies.update(id, body);
 
-    if (!response.success) throw new Error("Erreur API update");
+    if (!res.success) throw new Error("Erreur API update");
 
-    alert("Whisky mis à jour !");
+    alert("Whisky modifié avec succès !");
     window.location.href = "./admin.html";
 
   } catch (err) {
