@@ -97,3 +97,22 @@ body.dark input {
 body.dark .btn-submit {
   background: var(--dark-accent);
 }
+
+.auth-message {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: var(--radius);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.auth-message.error {
+  color: #b33a3a;
+}
+
+.auth-message.success {
+  color: #3a8f3a;
+}

@@ -198,3 +198,24 @@ body.dark .user-item {
   color: #777;
   margin-bottom: 4px;
 }
+
+.btn-edit {
+  margin-top: 8px;
+  padding: 0.5rem 1rem;
+  background: var(--light-accent); 
+  color: white;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-edit:hover {
+  background: #8e6c40;
+}
+
+body.dark .btn-edit {
+  background: var(--dark-accent);
+}
