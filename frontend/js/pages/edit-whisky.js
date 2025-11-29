@@ -1,48 +1,64 @@
-console.log("EDIT WHISKY → Script chargé ✔");
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Page Modifier un Whisky → Initialisation…");
 
-document.addEventListener("DOMContentLoaded", async () => {
+  initEditWhiskyPage();
+});
 
-  await loadComponent("site-header", "../components/header/header.html");
-  await loadComponent("site-footer", "../components/footer/footer.html");
+function initEditWhiskyPage() {
+  const form = document.getElementById("edit-whisky-form");
+  const returnLink = document.getElementById("return-link");
+
+  if (!form) {
+    console.error("Erreur : éléments introuvables dans edit-whisky.html");
+    return;
+  }
 
   const params = new URLSearchParams(window.location.search);
   const whiskyId = params.get("id");
-  const type = params.get("type"); 
+  const type = params.get("type");
 
   if (!whiskyId || !type) {
-    alert("Paramètres manquants pour l'édition.");
+    alert("Paramètres invalides.");
     window.location.href = "./admin.html";
     return;
   }
 
-  console.log("ID du whisky =", whiskyId, " / TYPE =", type);
+  updateReturnLink(type, returnLink);
 
-  const whisky = await fetchWhiskyData(whiskyId, type);
-  if (!whisky) return;
+  loadWhiskyData(whiskyId, type);
 
-  fillEditForm(whisky);
+  form.addEventListener("submit", (e) => handleEditSubmit(e, whiskyId, type));
+}
 
-  document.getElementById("edit-whisky-form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    updateWhisky(whiskyId, type);
-  });
-});
+function updateReturnLink(type, link) {
+  if (!link) return;
 
-async function fetchWhiskyData(id, type) {
+  if (type === "cave") {
+    link.href = "admin.html";
+    link.textContent = "← Retour à la cave";
+  }
+
+  if (type === "catalogue") {
+    link.href = "admin.html";
+    link.textContent = "← Retour au catalogue";
+  }
+}
+
+async function loadWhiskyData(id, type) {
   try {
     const res =
       type === "catalogue"
         ? await api.catalogue.getById(id)
         : await api.whiskies.getById(id);
 
-    if (!res.success) throw new Error("Erreur API");
+    if (!res.success) throw new Error("API error");
 
-    return res.data;
+    fillEditForm(res.data);
 
   } catch (err) {
-    console.error("Erreur récupération whisky :", err);
+    console.error("Erreur chargement whisky :", err);
     alert("Impossible de charger le whisky.");
-    return null;
+    window.location.href = "admin.html";
   }
 }
 
@@ -57,31 +73,39 @@ function fillEditForm(w) {
   document.getElementById("description").value = w.description ?? "";
 }
 
-async function updateWhisky(id, type) {
-  const body = {
-    name: document.getElementById("name").value,
-    brand: document.getElementById("brand").value,
-    country: document.getElementById("country").value,
-    category: document.getElementById("category").value,
+function collectEditFormData() {
+  const rawYear = document.getElementById("year").value.trim();
+
+  return {
+    name: document.getElementById("name").value.trim(),
+    brand: document.getElementById("brand").value.trim(),
+    country: document.getElementById("country").value.trim(),
+    category: document.getElementById("category").value.trim(),
     degree: Number(document.getElementById("degree").value),
-    year: Number(document.getElementById("year").value) || null,
-    image: document.getElementById("image").value,
-    description: document.getElementById("description").value
+    year: rawYear === "" ? null : Number(rawYear), 
+    image: document.getElementById("image").value.trim(),
+    description: document.getElementById("description").value.trim(),
   };
+}
+
+async function handleEditSubmit(e, id, type) {
+  e.preventDefault();
+
+  const updatedWhisky = collectEditFormData();
 
   try {
-    const res =
-      type === "catalogue"
-        ? await api.catalogue.update(id, body)
-        : await api.whiskies.update(id, body);
+    if (type === "cave") {
+      await api.whiskies.update(id, updatedWhisky);
+      alert("Whisky modifié dans la cave !");
+    } else {
+      await api.catalogue.update(id, updatedWhisky);
+      alert("Whisky modifié dans le catalogue !");
+    }
 
-    if (!res.success) throw new Error("Erreur API update");
+    window.location.href = "admin.html";
 
-    alert("Whisky modifié avec succès !");
-    window.location.href = "./admin.html";
-
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error("Erreur lors de la mise à jour :", error);
     alert("Erreur lors de l'enregistrement des modifications.");
   }
 }
