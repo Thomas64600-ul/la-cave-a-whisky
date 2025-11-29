@@ -68,12 +68,17 @@ function fillEditForm(w) {
   document.getElementById("country").value = w.country;
   document.getElementById("category").value = w.category;
   document.getElementById("degree").value = w.degree;
-  document.getElementById("year").value = w.year || "";
+
+  // NOUVEAUX CHAMPS
+  document.getElementById("age").value = w.age ?? "";
+  document.getElementById("year").value = w.year ?? "";
+
   document.getElementById("image").value = w.image;
   document.getElementById("description").value = w.description ?? "";
 }
 
 function collectEditFormData() {
+  const rawAge = document.getElementById("age").value.trim();
   const rawYear = document.getElementById("year").value.trim();
 
   return {
@@ -82,7 +87,11 @@ function collectEditFormData() {
     country: document.getElementById("country").value.trim(),
     category: document.getElementById("category").value.trim(),
     degree: Number(document.getElementById("degree").value),
-    year: rawYear === "" ? null : Number(rawYear), 
+
+    // NOUVEAUX CHAMPS
+    age: rawAge === "" ? null : Number(rawAge),
+    year: rawYear === "" ? null : Number(rawYear),
+
     image: document.getElementById("image").value.trim(),
     description: document.getElementById("description").value.trim(),
   };

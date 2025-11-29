@@ -192,3 +192,9 @@ body.dark .user-item {
   border-radius: var(--radius);
   min-width: 100px;
 }
+
+.admin-details {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 4px;
+}

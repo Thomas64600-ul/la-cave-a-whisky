@@ -69,13 +69,19 @@ async function handleSubmit(e) {
 }
 
 function collectFormData() {
+  const rawAge = document.getElementById("age")?.value.trim() || "";
+  const rawYear = document.getElementById("year")?.value.trim() || "";
+
   return {
     name: document.getElementById("name").value.trim(),
     brand: document.getElementById("brand").value.trim(),
     country: document.getElementById("country").value.trim(),
     category: document.getElementById("category").value.trim(),
     degree: Number(document.getElementById("degree").value),
-    year: Number(document.getElementById("year").value),
+
+    age: rawAge === "" ? null : Number(rawAge),
+    year: rawYear === "" ? null : Number(rawYear),
+
     image: document.getElementById("image").value.trim(),
     description: document.getElementById("description").value.trim(),
   };

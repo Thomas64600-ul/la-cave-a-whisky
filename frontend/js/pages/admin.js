@@ -205,10 +205,18 @@ function createAdminWhiskyItem(w, type) {
   const div = document.createElement("div");
   div.className = "admin-item";
 
+  const ageDisplay = w.age != null ? `${w.age} ans` : "—";
+  const yearDisplay = w.year != null ? `${w.year}` : "—";
+
   div.innerHTML = `
     <img src="${w.image}" class="admin-item-img">
+
     <p><strong>${w.name}</strong></p>
     <p>${w.brand}</p>
+
+    <!-- NOUVEAUX CHAMPS -->
+    <p class="admin-details">Âge : <strong>${ageDisplay}</strong></p>
+    <p class="admin-details">Année : <strong>${yearDisplay}</strong></p>
 
     <div class="admin-item-buttons">
       <button class="btn-edit" data-type="${type}" data-id="${w._id}">
@@ -223,6 +231,7 @@ function createAdminWhiskyItem(w, type) {
 
   return div;
 }
+
 
 function initAdminButtons() {
   const btnCatalogue = document.getElementById("add-catalogue-btn");
