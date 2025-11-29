@@ -92,7 +92,7 @@ function renderDetails(container, w) {
           <a class="btn-secondary" href="${backURL}">← Retour</a>
 
           <a class="btn-primary" href="tasting.html?id=${w._id}">
-            Voir les dégustations →
+            Ecrire une dégustation →
           </a>
         </div>
 

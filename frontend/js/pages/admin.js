@@ -34,7 +34,9 @@ function initAdminTabs() {
       sections.forEach((s) => s.classList.remove("active"));
 
       tab.classList.add("active");
-      document.getElementById("admin-" + tab.dataset.tab).classList.add("active");
+      document
+        .getElementById("admin-" + tab.dataset.tab)
+        .classList.add("active");
     });
   });
 }
@@ -53,6 +55,9 @@ async function loadCatalogueAdmin() {
 
     box.innerHTML = "";
     res.data.forEach((w) => box.appendChild(createAdminWhiskyItem(w, "catalogue")));
+
+    bindDeleteButtons();
+    bindEditButtons();
 
   } catch (err) {
     console.error(err);
@@ -74,6 +79,9 @@ async function loadCaveAdmin() {
 
     box.innerHTML = "";
     res.data.forEach((w) => box.appendChild(createAdminWhiskyItem(w, "cave")));
+
+    bindDeleteButtons();
+    bindEditButtons();
 
   } catch (err) {
     console.error(err);
@@ -103,6 +111,7 @@ async function loadTastingsAdmin() {
         <p><strong>${t.user.username}</strong> → <em>${t.whisky.name}</em></p>
         <p>Note : ${t.rating}/5</p>
         <p>${t.comment}</p>
+
         <button class="btn-delete" data-id="${t._id}" data-type="tasting">
           Supprimer
         </button>
@@ -181,6 +190,17 @@ function bindDeleteButtons() {
   });
 }
 
+function bindEditButtons() {
+  document.querySelectorAll(".btn-edit").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.id;
+      const type = btn.dataset.type;
+
+      window.location.href = `/pages/edit-whisky.html?id=${id}&type=${type}`;
+    });
+  });
+}
+
 function createAdminWhiskyItem(w, type) {
   const div = document.createElement("div");
   div.className = "admin-item";
@@ -190,9 +210,15 @@ function createAdminWhiskyItem(w, type) {
     <p><strong>${w.name}</strong></p>
     <p>${w.brand}</p>
 
-    <button class="btn-delete" data-type="${type}" data-id="${w._id}">
-      Supprimer
-    </button>
+    <div class="admin-item-buttons">
+      <button class="btn-edit" data-type="${type}" data-id="${w._id}">
+        Modifier
+      </button>
+
+      <button class="btn-delete" data-type="${type}" data-id="${w._id}">
+        Supprimer
+      </button>
+    </div>
   `;
 
   return div;
