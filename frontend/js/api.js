@@ -47,7 +47,7 @@ function sendForm(endpoint, method, formData) {
     body: formData,
   });
 }
-cave
+
 const auth = {
   register: (body) => send("/auth/register", "POST", body),
   login: (body) => send("/auth/login", "POST", body),
