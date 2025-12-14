@@ -107,10 +107,13 @@ async function loadTastingsAdmin() {
       const item = document.createElement("div");
       item.className = "tasting-item";
 
+      const username = t.user?.username || "Utilisateur inconnu";
+      const whiskyName = t.whisky?.name || "Whisky supprimé";
+
       item.innerHTML = `
-        <p><strong>${t.user.username}</strong> → <em>${t.whisky.name}</em></p>
+        <p><strong>${username}</strong> → <em>${whiskyName}</em></p>
         <p>Note : ${t.rating}/5</p>
-        <p>${t.comment}</p>
+        <p>${t.comment || ""}</p>
 
         <button class="btn-delete" data-id="${t._id}" data-type="tasting">
           Supprimer
@@ -127,6 +130,7 @@ async function loadTastingsAdmin() {
     box.innerHTML = `<p class="error">Erreur API dégustations.</p>`;
   }
 }
+
 
 async function loadUsersAdmin() {
   const box = document.getElementById("admin-users-list");
