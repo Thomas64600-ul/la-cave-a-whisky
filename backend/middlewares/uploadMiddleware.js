@@ -3,8 +3,8 @@ import path from "path";
 
 const storage = multer.memoryStorage();
 
-const allowedMimeTypes = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
-const allowedExtensions = [".jpeg", ".jpg", ".png", ".webp"];
+const allowedMimeTypes = ["image/jpeg", "image/jpg", "image/png", "image/webp", "image/avif"];
+const allowedExtensions = [".jpeg", ".jpg", ".png", ".webp", ".avif"];
 
 const fileFilter = (req, file, cb) => {
   const ext = path.extname(file.originalname).toLowerCase();
