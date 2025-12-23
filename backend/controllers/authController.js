@@ -45,11 +45,14 @@ export async function register(req, res) {
     const token = generateToken(user);
 
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,       
-      sameSite: "none",   
-      path: "/",
-    });
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+  domain: ".onrender.com",
+  path: "/",
+  maxAge: 7 * 24 * 60 * 60 * 1000,
+});
+
 
     return res.status(201).json({
       success: true,
@@ -97,11 +100,14 @@ export async function login(req, res) {
     const token = generateToken(user);
 
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,       
-      sameSite: "none",   
-      path: "/",
-    });
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+  domain: ".onrender.com",
+  path: "/",
+  maxAge: 7 * 24 * 60 * 60 * 1000,
+});
+
 
     return res.status(200).json({
       success: true,
