@@ -22,6 +22,7 @@ function getToken() {
 function clearToken() {
   memoryToken = null;
   localStorage.removeItem("token");
+  window.currentUser = null;
 }
 
 async function request(endpoint, options = {}) {
@@ -44,6 +45,7 @@ async function request(endpoint, options = {}) {
   const data = await res.json().catch(() => ({}));
 
   if (endpoint === "/auth/check" && res.status === 401) {
+    window.currentUser = null;
     return { success: false, user: null };
   }
 
@@ -74,13 +76,14 @@ function sendForm(endpoint, method, formData) {
   });
 }
 
+
 const auth = {
   register: async (body) => {
     const data = await send("/auth/register", "POST", body);
 
     if (data?.token) {
       setToken(data.token);
-      localStorage.setItem("token", data.token); 
+      localStorage.setItem("token", data.token);
     }
 
     return data;
@@ -91,13 +94,23 @@ const auth = {
 
     if (data?.token) {
       setToken(data.token);
-      localStorage.setItem("token", data.token); 
+      localStorage.setItem("token", data.token);
     }
 
     return data;
   },
 
-  check: () => get("/auth/check"),
+  check: async () => {
+    const data = await get("/auth/check");
+
+    if (data?.success) {
+      window.currentUser = data.user;
+    } else {
+      window.currentUser = null;
+    }
+
+    return data;
+  },
 
   logout: async () => {
     clearToken();
@@ -105,13 +118,13 @@ const auth = {
   },
 };
 
+
 const users = {
   getAll: () => get("/users"),
   getById: (id) => get(`/users/${id}`),
   update: (id, body) => send(`/users/${id}`, "PUT", body),
   delete: (id) => send(`/users/${id}`, "DELETE"),
 };
-
 
 const whiskies = {
   getAll: () => get("/whiskies"),
@@ -121,7 +134,6 @@ const whiskies = {
   delete: (id) => send(`/whiskies/${id}`, "DELETE"),
 };
 
-
 const catalogue = {
   getAll: () => get("/catalogue"),
   getById: (id) => get(`/catalogue/${id}`),
@@ -130,13 +142,12 @@ const catalogue = {
   delete: (id) => send(`/catalogue/${id}`, "DELETE"),
 };
 
-
 const tastings = {
   getAll: () => get("/tastings"),
   getMine: () => get("/tastings/mine"),
   getById: (id) => get(`/tastings/${id}`),
   getByWhisky: (whiskyId) =>
-    get(`/tastings/whisky/${whiskyId}`),
+  get(`/tastings/whisky/${whiskyId}`),
   create: (body) => send("/tastings", "POST", body),
   update: (id, body) => send(`/tastings/${id}`, "PUT", body),
   delete: (id) => send(`/tastings/${id}`, "DELETE"),

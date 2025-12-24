@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadComponent("site-header", "../components/header/header.html");
   await loadComponent("site-footer", "../components/footer/footer.html");
 
-  console.log("Composants chcaveargés ✔");
+  console.log("Composants chargés ✔");
 
   document.dispatchEvent(new Event("header-loaded"));
 
@@ -53,6 +53,8 @@ async function initUserDisplay() {
     const result = await api.auth.check();
 
     if (!result.success || !result.user) {
+      window.currentUser = null;
+
       showLoggedOut();
       enableAdminFeatures(null);
       enableCatalogueActions(null);
@@ -61,12 +63,16 @@ async function initUserDisplay() {
 
     const user = result.user;
 
+    window.currentUser = user;
+
     showLoggedIn(user);
     enableAdminFeatures(user);
     enableCatalogueActions(user);
-    addAdminLink(user);  
+    addAdminLink(user);
 
   } catch (err) {
+    window.currentUser = null;
+
     showLoggedOut();
     enableAdminFeatures(null);
     enableCatalogueActions(null);
@@ -82,7 +88,6 @@ function showLoggedOut() {
 }
 
 function showLoggedIn(user) {
-  
   const info = document.getElementById("user-info");
   if (info) {
     document.getElementById("nav-login")?.classList.add("hidden");
@@ -199,3 +204,4 @@ document.addEventListener("DOMContentLoaded", () => {
     yearSpan.textContent = new Date().getFullYear();
   }
 });
+

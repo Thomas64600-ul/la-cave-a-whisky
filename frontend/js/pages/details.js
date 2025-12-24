@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadComponent("site-header", "../components/header/header.html");
   await loadComponent("site-footer", "../components/footer/footer.html");
 
+  if (api?.auth?.check) {
+    await api.auth.check();
+  }
+
   if (window.initThemeSystem) initThemeSystem();
   if (window.initHeader) initHeader();
 
@@ -113,7 +117,6 @@ function renderDetails(container, w) {
   `;
 }
 
-
 function renderError(container, message) {
   container.innerHTML = `
     <p class="error-message">${message}</p>
@@ -123,5 +126,4 @@ function renderError(container, message) {
 function isUserLoggedIn() {
   return !!window.currentUser;
 }
-
 
