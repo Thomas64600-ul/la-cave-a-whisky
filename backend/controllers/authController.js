@@ -54,6 +54,7 @@ export async function register(req, res) {
     return res.status(201).json({
       success: true,
       message: "Compte créé avec succès",
+      token,
       user: formatUser(user),
     });
   } catch (error) {
@@ -105,6 +106,7 @@ export async function login(req, res) {
     return res.status(200).json({
       success: true,
       message: "Connexion réussie",
+      token,
       user: formatUser(user),
     });
   } catch (error) {
