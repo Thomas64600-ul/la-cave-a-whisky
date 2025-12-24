@@ -20,7 +20,6 @@ import catalogueRoutes from "./routes/catalogueRoutes.js";
 dotenv.config();
 
 const app = express();
-
 const PORT = process.env.PORT || 5000;
 
 app.set("trust proxy", 1);
@@ -52,13 +51,13 @@ app.use(
   })
 );
 
-
-
 app.use(helmet());
 app.use(compression());
 app.use(express.json({ limit: "10mb" }));
 app.use(cookieParser());
-app.use(morgan(process.env.NODE_ENV === "development" ? "dev" : "combined"));
+app.use(
+  morgan(process.env.NODE_ENV === "development" ? "dev" : "combined")
+);
 app.use(generalLimiter);
 
 app.use("/api/auth", authRoutes);

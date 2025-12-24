@@ -44,20 +44,18 @@ export async function register(req, res) {
 
     const token = generateToken(user);
 
-   res.cookie("token", token, {
-  httpOnly: true,
-  secure: true,
-  sameSite: "none",
-  path: "/",
-});
-
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/",
+    });
 
     return res.status(201).json({
       success: true,
       message: "Compte créé avec succès",
       user: formatUser(user),
     });
-
   } catch (error) {
     console.error("Erreur register :", error);
     return res.status(500).json({
@@ -97,21 +95,18 @@ export async function login(req, res) {
 
     const token = generateToken(user);
 
-   res.cookie("token", token, {
-  httpOnly: true,
-  secure: true,
-  sameSite: "none",
-  path: "/",
-});
-
-
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/",
+    });
 
     return res.status(200).json({
       success: true,
       message: "Connexion réussie",
       user: formatUser(user),
     });
-
   } catch (error) {
     console.error("Erreur login :", error);
     return res.status(500).json({
@@ -133,7 +128,6 @@ export async function logout(req, res) {
       success: true,
       message: "Déconnexion effectuée",
     });
-
   } catch (error) {
     return res.status(500).json({
       success: false,
