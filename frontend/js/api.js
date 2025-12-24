@@ -9,10 +9,25 @@ const API_URL = isLocalhost
   ? "http://127.0.0.1:5000/api"
   : "https://cave-a-whisky-api.onrender.com/api";
 
+function getToken() {
+  return localStorage.getItem("token");
+}
+
 async function request(endpoint, options = {}) {
+  const token = getToken();
+
+  const headers = {
+    ...(options.headers || {}),
+  };
+
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+
   const res = await fetch(API_URL + endpoint, {
-    credentials: "include",
+    credentials: "include", 
     ...options,
+    headers,
   });
 
   const data = await res.json().catch(() => ({}));
@@ -49,10 +64,32 @@ function sendForm(endpoint, method, formData) {
 }
 
 const auth = {
-  register: (body) => send("/auth/register", "POST", body),
-  login: (body) => send("/auth/login", "POST", body),
+  register: async (body) => {
+    const data = await send("/auth/register", "POST", body);
+
+    if (data?.token) {
+      localStorage.setItem("token", data.token);
+    }
+
+    return data;
+  },
+
+  login: async (body) => {
+    const data = await send("/auth/login", "POST", body);
+
+    if (data?.token) {
+      localStorage.setItem("token", data.token);
+    }
+
+    return data;
+  },
+
   check: () => get("/auth/check"),
-  logout: () => send("/auth/logout", "POST"),
+
+  logout: async () => {
+    localStorage.removeItem("token");
+    return send("/auth/logout", "POST");
+  },
 };
 
 const users = {
@@ -62,6 +99,8 @@ const users = {
   delete: (id) => send(`/users/${id}`, "DELETE"),
 };
 
+
+
 const whiskies = {
   getAll: () => get("/whiskies"),
   getById: (id) => get(`/whiskies/${id}`),
@@ -69,7 +108,6 @@ const whiskies = {
   update: (id, body) => send(`/whiskies/${id}`, "PUT", body),
   delete: (id) => send(`/whiskies/${id}`, "DELETE"),
 };
-
 
 const catalogue = {
   getAll: () => get("/catalogue"),
@@ -83,7 +121,8 @@ const tastings = {
   getAll: () => get("/tastings"),
   getMine: () => get("/tastings/mine"),
   getById: (id) => get(`/tastings/${id}`),
-  getByWhisky: (whiskyId) => get(`/tastings/whisky/${whiskyId}`), 
+  getByWhisky: (whiskyId) =>
+    get(`/tastings/whisky/${whiskyId}`),
   create: (body) => send("/tastings", "POST", body),
   update: (id, body) => send(`/tastings/${id}`, "PUT", body),
   delete: (id) => send(`/tastings/${id}`, "DELETE"),
@@ -96,6 +135,3 @@ window.api = {
   catalogue,
   tastings,
 };
-
-
-
