@@ -136,3 +136,17 @@ body.dark .btn-secondary {
   }
 }
 
+.login-hint {
+  margin-top: 12px;
+  padding: 12px;
+  background: #f7f2ea;
+  border-left: 4px solid #a67c52;
+  border-radius: 6px;
+  font-style: italic;
+}
+
+.login-hint a {
+  color: #7a4a28;
+  font-weight: 600;
+  text-decoration: underline;
+}

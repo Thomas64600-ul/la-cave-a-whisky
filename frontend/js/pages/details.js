@@ -67,6 +67,20 @@ function renderDetails(container, w) {
     ? "api-whiskies.html"
     : "cave.html";
 
+  const tastingAction = isUserLoggedIn()
+    ? `
+        <a class="btn-primary" href="tasting.html?id=${w._id}">
+          Écrire une dégustation →
+        </a>
+      `
+    : `
+        <p class="login-hint">
+          🔒 Pour écrire une dégustation, veuillez
+          <a href="login.html">vous connecter</a> ou
+          <a href="register.html">créer un compte</a>.
+        </p>
+      `;
+
   container.innerHTML = `
     <div class="details-content">
 
@@ -90,10 +104,7 @@ function renderDetails(container, w) {
 
         <div class="details-buttons">
           <a class="btn-secondary" href="${backURL}">← Retour</a>
-
-          <a class="btn-primary" href="tasting.html?id=${w._id}">
-            Ecrire une dégustation →
-          </a>
+          ${tastingAction}
         </div>
 
       </div>
@@ -102,11 +113,15 @@ function renderDetails(container, w) {
   `;
 }
 
+
 function renderError(container, message) {
   container.innerHTML = `
     <p class="error-message">${message}</p>
   `;
 }
 
+function isUserLoggedIn() {
+  return !!window.currentUser;
+}
 
 
