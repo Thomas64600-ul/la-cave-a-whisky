@@ -9,8 +9,19 @@ const API_URL = isLocalhost
   ? "http://127.0.0.1:5000/api"
   : "https://cave-a-whisky-api.onrender.com/api";
 
+let memoryToken = null;
+
+function setToken(token) {
+  memoryToken = token;
+}
+
 function getToken() {
-  return localStorage.getItem("token");
+  return memoryToken || localStorage.getItem("token");
+}
+
+function clearToken() {
+  memoryToken = null;
+  localStorage.removeItem("token");
 }
 
 async function request(endpoint, options = {}) {
@@ -25,7 +36,7 @@ async function request(endpoint, options = {}) {
   }
 
   const res = await fetch(API_URL + endpoint, {
-    credentials: "include", 
+    credentials: "include",
     ...options,
     headers,
   });
@@ -68,7 +79,8 @@ const auth = {
     const data = await send("/auth/register", "POST", body);
 
     if (data?.token) {
-      localStorage.setItem("token", data.token);
+      setToken(data.token);
+      localStorage.setItem("token", data.token); 
     }
 
     return data;
@@ -78,7 +90,8 @@ const auth = {
     const data = await send("/auth/login", "POST", body);
 
     if (data?.token) {
-      localStorage.setItem("token", data.token);
+      setToken(data.token);
+      localStorage.setItem("token", data.token); 
     }
 
     return data;
@@ -87,7 +100,7 @@ const auth = {
   check: () => get("/auth/check"),
 
   logout: async () => {
-    localStorage.removeItem("token");
+    clearToken();
     return send("/auth/logout", "POST");
   },
 };
@@ -100,7 +113,6 @@ const users = {
 };
 
 
-
 const whiskies = {
   getAll: () => get("/whiskies"),
   getById: (id) => get(`/whiskies/${id}`),
@@ -109,6 +121,7 @@ const whiskies = {
   delete: (id) => send(`/whiskies/${id}`, "DELETE"),
 };
 
+
 const catalogue = {
   getAll: () => get("/catalogue"),
   getById: (id) => get(`/catalogue/${id}`),
@@ -116,6 +129,7 @@ const catalogue = {
   update: (id, body) => send(`/catalogue/${id}`, "PUT", body),
   delete: (id) => send(`/catalogue/${id}`, "DELETE"),
 };
+
 
 const tastings = {
   getAll: () => get("/tastings"),
