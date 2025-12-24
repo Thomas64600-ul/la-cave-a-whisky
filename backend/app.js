@@ -28,17 +28,30 @@ app.disable("x-powered-by");
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5500",
-      "http://127.0.0.1:5500",
-      "http://localhost:5501",
-      "http://127.0.0.1:5501",
-      "https://leafy-maamoul-ccc5a2.netlify.app",
-      "https://la-cave-a-whisky.vercel.app",
-    ],
+    origin: (origin, callback) => {
+      const allowed = [
+        "http://localhost:5500",
+        "http://127.0.0.1:5500",
+        "http://localhost:5501",
+        "http://127.0.0.1:5501",
+        "https://leafy-maamoul-ccc5a2.netlify.app",
+        "https://la-cave-a-whisky.vercel.app",
+      ];
+
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (allowed.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("CORS non autorisé : " + origin));
+    },
     credentials: true,
   })
 );
+
 
 
 app.use(helmet());
