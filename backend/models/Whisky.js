@@ -10,17 +10,17 @@ const whiskySchema = new mongoose.Schema(
     brand: {
       type: String,
       required: [true, "La marque du whisky est obligatoire"],
-      trim: true
+      trim: true,
     },
     country: {
       type: String,
       required: [true, "Le pays d'origine est obligatoire"],
-      trim: true
+      trim: true,
     },
     category: {
       type: String,
       required: [true, "La catégorie est obligatoire"],
-      trim: true
+      trim: true,
     },
     degree: {
       type: Number,
@@ -28,10 +28,27 @@ const whiskySchema = new mongoose.Schema(
       min: [0, "Le degré ne peut pas être négatif"],
       max: [100, "Le degré ne peut pas dépasser 100"],
     },
-    year: {
+
+    age: {
       type: Number,
-      default: null
+      default: null,
+      min: [0, "L'âge ne peut pas être négatif"],
+      max: [100, "L'âge ne peut pas dépasser 100"],
     },
+
+    price: {
+      type: Number,
+      required: [true, "Le prix est obligatoire"],
+      min: [0, "Le prix ne peut pas être négatif"],
+    },
+
+    purchasePlace: {
+      type: String,
+      required: [true, "Le lieu d'achat est obligatoire"],
+      trim: true,
+    },
+
+
     description: {
       type: String,
       trim: true,

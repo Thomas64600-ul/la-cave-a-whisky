@@ -9,7 +9,10 @@ export const whiskySchema = Joi.object({
 
   age: Joi.number().integer().min(0).max(100).allow(null),
 
-  year: Joi.number().integer().min(1800).max(2100).allow(null),
+  price: Joi.number().min(0).required(),
+
+  purchasePlace: Joi.string().min(2).max(100).required(),
+
 
   description: Joi.string().allow("").max(2000).optional(),
   image: Joi.string().allow("").allow(null).optional(),
@@ -27,7 +30,11 @@ export const whiskyUpdateSchema = Joi.object({
   degree: Joi.number().min(0).max(100).optional(),
 
   age: Joi.number().integer().min(0).max(100).allow(null),
-  year: Joi.number().integer().min(1800).max(2100).allow(null),
+
+  price: Joi.number().min(0).optional(),
+
+  purchasePlace: Joi.string().min(2).max(100).optional(),
+
 
   description: Joi.string().allow("").max(2000).optional(),
   image: Joi.string().allow("").allow(null).optional(),

@@ -44,9 +44,50 @@ export async function getWhiskyById(req, res) {
 
 export async function createWhisky(req, res) {
   try {
-    const { name } = req.body;
+    const {
+      name,
+      brand,
+      country,
+      category,
+      degree,
+      age = null,
+      price,
+      purchasePlace,
+      image,
+      description = "",
+    } = req.body;
 
-    const exists = await Whisky.findOne({ name });
+    // ✅ Validations simples (messages propres)
+    if (!name || !brand || !country || !category) {
+      return res.status(400).json({
+        success: false,
+        message: "Champs obligatoires manquants (nom, marque, pays, catégorie).",
+      });
+    }
+
+    if (degree === undefined || degree === null) {
+      return res.status(400).json({
+        success: false,
+        message: "Le degré (%) est obligatoire.",
+      });
+    }
+
+    if (price === undefined || price === null || Number(price) <= 0) {
+      return res.status(400).json({
+        success: false,
+        message: "Le prix (€) est obligatoire et doit être valide.",
+      });
+    }
+
+    if (!purchasePlace || String(purchasePlace).trim().length < 2) {
+      return res.status(400).json({
+        success: false,
+        message: "Le lieu d'achat est obligatoire.",
+      });
+    }
+
+    // ✅ Unicité du nom
+    const exists = await Whisky.findOne({ name: String(name).trim() });
     if (exists) {
       return res.status(400).json({
         success: false,
@@ -54,8 +95,23 @@ export async function createWhisky(req, res) {
       });
     }
 
+    // ✅ Whitelist des champs autorisés (sécurité)
     const newWhisky = await Whisky.create({
-      ...req.body,
+      name: String(name).trim(),
+      brand: String(brand).trim(),
+      country: String(country).trim(),
+      category: String(category).trim(),
+      degree: Number(degree),
+
+      age: age === null || age === "" ? null : Number(age),
+
+      price: Number(price),
+      purchasePlace: String(purchasePlace).trim(),
+
+      image: image?.trim() || undefined,
+      description: description?.trim() || "",
+
+      // ✅ Champs système (non modifiables par le client)
       inCave: false,
       bottleCount: 0,
       caveNotes: "",
@@ -81,7 +137,26 @@ export async function updateWhisky(req, res) {
   try {
     const { id } = req.params;
 
-    const whisky = await Whisky.findByIdAndUpdate(id, req.body, {
+    // ✅ On autorise uniquement certains champs à être modifiés
+    const allowedUpdates = [
+      "name",
+      "brand",
+      "country",
+      "category",
+      "degree",
+      "age",
+      "price",
+      "purchasePlace",
+      "image",
+      "description",
+    ];
+
+    const updates = {};
+    for (const key of allowedUpdates) {
+      if (req.body[key] !== undefined) updates[key] = req.body[key];
+    }
+
+    const whisky = await Whisky.findByIdAndUpdate(id, updates, {
       new: true,
       runValidators: true,
     });

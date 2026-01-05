@@ -9,7 +9,6 @@ export const catalogueWhiskySchema = Joi.object({
 
   age: Joi.number().integer().min(0).max(100).allow(null),
 
-  year: Joi.number().integer().min(1800).max(2100).allow(null),
 
   description: Joi.string().allow("", null),
   image: Joi.string().uri().allow("", null),

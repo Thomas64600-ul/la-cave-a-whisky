@@ -9,6 +9,25 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const jsonPath = path.join(__dirname, "..", "data", "whiskies.json");
 
+function pickCatalogueFields(payload = {}) {
+  const allowed = [
+    "name",
+    "brand",
+    "country",
+    "category",
+    "degree",
+    "age",
+    "description",
+    "image",
+  ];
+
+  const clean = {};
+  for (const key of allowed) {
+    if (payload[key] !== undefined) clean[key] = payload[key];
+  }
+  return clean;
+}
+
 export async function getAllCatalogue(req, res) {
   try {
     const data = await CatalogueWhisky.find().sort({ name: 1 });
@@ -39,7 +58,6 @@ export async function getCatalogueById(req, res) {
     }
 
     res.status(200).json({ success: true, data: whisky });
-
   } catch (error) {
     console.error("getCatalogueById error:", error);
     res.status(500).json({
@@ -52,9 +70,10 @@ export async function getCatalogueById(req, res) {
 export async function createCatalogueWhisky(req, res) {
   try {
    
-    const validated = await catalogueWhiskySchema.validateAsync(req.body);
+    const cleanedBody = pickCatalogueFields(req.body);
 
-    
+    const validated = await catalogueWhiskySchema.validateAsync(cleanedBody);
+
     const exists = await CatalogueWhisky.findOne({ name: validated.name });
     if (exists) {
       return res.status(400).json({
@@ -70,7 +89,6 @@ export async function createCatalogueWhisky(req, res) {
       message: "Whisky ajouté au catalogue.",
       data: created,
     });
-
   } catch (error) {
     console.error("createCatalogueWhisky error:", error);
     res.status(400).json({
@@ -83,13 +101,15 @@ export async function createCatalogueWhisky(req, res) {
 
 export async function updateCatalogueWhisky(req, res) {
   try {
-    
-    const validated = await catalogueWhiskySchema.validateAsync(req.body);
+  
+    const cleanedBody = pickCatalogueFields(req.body);
+
+    const validated = await catalogueWhiskySchema.validateAsync(cleanedBody);
 
     const updated = await CatalogueWhisky.findByIdAndUpdate(
       req.params.id,
       { $set: validated },
-      { new: true }
+      { new: true, runValidators: true }
     );
 
     if (!updated) {
@@ -104,7 +124,6 @@ export async function updateCatalogueWhisky(req, res) {
       message: "Whisky mis à jour.",
       data: updated,
     });
-
   } catch (error) {
     console.error("updateCatalogueWhisky error:", error);
     res.status(400).json({
@@ -130,7 +149,6 @@ export async function deleteCatalogueWhisky(req, res) {
       success: true,
       message: "Whisky supprimé du catalogue.",
     });
-
   } catch (error) {
     console.error("deleteCatalogueWhisky error:", error);
     res.status(500).json({
@@ -150,7 +168,10 @@ export async function importCatalogue(req, res) {
 
     for (const w of whiskies) {
       try {
-        const validated = await catalogueWhiskySchema.validateAsync(w);
+      
+        const cleanedW = pickCatalogueFields(w);
+
+        const validated = await catalogueWhiskySchema.validateAsync(cleanedW);
 
         const exists = await CatalogueWhisky.findOne({ name: validated.name });
         if (exists) {
@@ -160,7 +181,6 @@ export async function importCatalogue(req, res) {
 
         await CatalogueWhisky.create(validated);
         imported++;
-
       } catch (err) {
         skipped++;
         console.log("Whisky ignoré:", err.message);
@@ -173,7 +193,6 @@ export async function importCatalogue(req, res) {
       imported,
       skipped,
     });
-
   } catch (error) {
     console.error("importCatalogue error:", error);
     res.status(500).json({

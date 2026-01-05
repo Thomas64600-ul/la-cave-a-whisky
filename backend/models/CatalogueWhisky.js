@@ -7,7 +7,11 @@ const CatalogueWhiskySchema = new mongoose.Schema(
     country: { type: String, required: true },
     category: { type: String, required: true },
     degree: { type: Number, required: true },
-    year: { type: Number, default: null },
+
+    age: { type: Number, default: null },
+
+
+
     description: { type: String, default: "" },
     image: { type: String, default: "/images/placeholder-whisky.jpg" },
   },

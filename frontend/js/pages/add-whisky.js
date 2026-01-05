@@ -47,6 +47,26 @@ async function handleSubmit(e) {
 
   const newWhisky = collectFormData();
 
+  if (!newWhisky.name || !newWhisky.brand || !newWhisky.country || !newWhisky.category) {
+    alert("Veuillez remplir tous les champs obligatoires.");
+    return;
+  }
+
+  if (!Number.isFinite(newWhisky.degree) || newWhisky.degree < 0 || newWhisky.degree > 100) {
+    alert("Le degré doit être un nombre entre 0 et 100.");
+    return;
+  }
+
+  if (!Number.isFinite(newWhisky.price) || newWhisky.price <= 0) {
+    alert("Veuillez saisir un prix valide (ex : 45.90).");
+    return;
+  }
+
+  if (!newWhisky.purchasePlace) {
+    alert("Veuillez saisir un lieu d'achat.");
+    return;
+  }
+
   try {
     if (target === "cave") {
       await window.api.whiskies.create(newWhisky);
@@ -70,7 +90,7 @@ async function handleSubmit(e) {
 
 function collectFormData() {
   const rawAge = document.getElementById("age")?.value.trim() || "";
-  const rawYear = document.getElementById("year")?.value.trim() || "";
+  const rawPrice = document.getElementById("price")?.value.trim() || "";
 
   return {
     name: document.getElementById("name").value.trim(),
@@ -80,10 +100,11 @@ function collectFormData() {
     degree: Number(document.getElementById("degree").value),
 
     age: rawAge === "" ? null : Number(rawAge),
-    year: rawYear === "" ? null : Number(rawYear),
+
+    price: rawPrice === "" ? null : Number(rawPrice),
+    purchasePlace: document.getElementById("purchasePlace").value.trim(),
 
     image: document.getElementById("image").value.trim(),
     description: document.getElementById("description").value.trim(),
   };
 }
-
