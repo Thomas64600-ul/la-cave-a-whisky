@@ -116,3 +116,43 @@ body.dark .btn-submit {
 .auth-message.success {
   color: #3a8f3a;
 }
+
+.password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem; 
+}
+
+.password-field input {
+  margin-bottom: 0;
+  padding-right: 44px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 6px;
+  opacity: 0.85;
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.toggle-password:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.toggle-password:focus {
+  outline: 2px solid rgba(212, 175, 55, 0.55);
+  outline-offset: 2px;
+}
+
+body.dark .toggle-password {
+  opacity: 0.9;
+}
