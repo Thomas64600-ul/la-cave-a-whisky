@@ -1,3 +1,21 @@
+const DEFAULT_AVATAR = "/assets/images/logocave.png";
+
+function setAvatar(imgId, url) {
+  const img = document.getElementById(imgId);
+  if (!img) return;
+
+  const safeUrl =
+    typeof url === "string" && url.trim() !== "" ? url.trim() : DEFAULT_AVATAR;
+
+  img.onerror = null;
+  img.src = safeUrl;
+
+  img.onerror = () => {
+    img.onerror = null;
+    img.src = DEFAULT_AVATAR;
+  };
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   console.log("Page → initialisation…");
 
@@ -36,10 +54,7 @@ function initHeaderScripts() {
     const path = window.location.pathname;
     document.querySelectorAll("[data-link]").forEach((link) => {
       const name = link.getAttribute("data-link");
-      if (
-        path.includes(name) ||
-        (path.endsWith("index.html") && name === "index")
-      ) {
+      if (path.includes(name) || (path.endsWith("index.html") && name === "index")) {
         link.classList.add("active");
       }
     });
@@ -62,7 +77,6 @@ async function initUserDisplay() {
     }
 
     const user = result.user;
-
     window.currentUser = user;
 
     showLoggedIn(user);
@@ -93,9 +107,9 @@ function showLoggedIn(user) {
     document.getElementById("nav-login")?.classList.add("hidden");
     info.classList.remove("hidden");
 
-    document.getElementById("user-avatar").src = user.avatar;
-    document.getElementById("user-name").textContent = user.username;
+    setAvatar("user-avatar", user?.avatar);
 
+    document.getElementById("user-name").textContent = user.username;
     document.getElementById("logout-btn").onclick = logoutUser;
   }
 
@@ -104,9 +118,9 @@ function showLoggedIn(user) {
     document.getElementById("nav-login-mobile")?.classList.add("hidden");
     infoM.classList.remove("hidden");
 
-    document.getElementById("mobile-user-avatar").src = user.avatar;
-    document.getElementById("mobile-user-name").textContent = user.username;
+    setAvatar("mobile-user-avatar", user?.avatar);
 
+    document.getElementById("mobile-user-name").textContent = user.username;
     document.getElementById("mobile-logout-btn").onclick = logoutUser;
   }
 }
