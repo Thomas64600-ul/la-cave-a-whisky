@@ -37,10 +37,9 @@ const userSchema = new mongoose.Schema(
     },
 
     avatar: {
-      type: String,
-      default:
-        "https://res.cloudinary.com/demo/image/upload/v1700000000/default-avatar.png",
-    },
+  type: String,
+  default: "/assets/images/logocave.png",
+},
 
     isActive: {
       type: Boolean,
