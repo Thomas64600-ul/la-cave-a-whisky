@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Page Modifier un Whisky → Initialisation…");
-
   initEditWhiskyPage();
 });
 
@@ -15,7 +14,7 @@ function initEditWhiskyPage() {
 
   const params = new URLSearchParams(window.location.search);
   const whiskyId = params.get("id");
-  const type = params.get("type");
+  const type = params.get("type"); 
 
   if (!whiskyId || !type) {
     alert("Paramètres invalides.");
@@ -24,7 +23,6 @@ function initEditWhiskyPage() {
   }
 
   updateReturnLink(type, returnLink);
-
   loadWhiskyData(whiskyId, type);
 
   form.addEventListener("submit", (e) => handleEditSubmit(e, whiskyId, type));
@@ -33,15 +31,9 @@ function initEditWhiskyPage() {
 function updateReturnLink(type, link) {
   if (!link) return;
 
-  if (type === "cave") {
-    link.href = "admin.html";
-    link.textContent = "← Retour à la cave";
-  }
 
-  if (type === "catalogue") {
-    link.href = "admin.html";
-    link.textContent = "← Retour au catalogue";
-  }
+  link.href = "admin.html";
+  link.textContent = type === "cave" ? "← Retour à la cave" : "← Retour au catalogue";
 }
 
 async function loadWhiskyData(id, type) {
@@ -51,10 +43,9 @@ async function loadWhiskyData(id, type) {
         ? await api.catalogue.getById(id)
         : await api.whiskies.getById(id);
 
-    if (!res.success) throw new Error("API error");
+    if (!res?.success) throw new Error("API error");
 
     fillEditForm(res.data);
-
   } catch (err) {
     console.error("Erreur chargement whisky :", err);
     alert("Impossible de charger le whisky.");
@@ -63,38 +54,54 @@ async function loadWhiskyData(id, type) {
 }
 
 function fillEditForm(w) {
-  document.getElementById("name").value = w.name;
-  document.getElementById("brand").value = w.brand;
-  document.getElementById("country").value = w.country;
-  document.getElementById("category").value = w.category;
-  document.getElementById("degree").value = w.degree;
+  document.getElementById("name").value = w.name ?? "";
+  document.getElementById("brand").value = w.brand ?? "";
+  document.getElementById("country").value = w.country ?? "";
+  document.getElementById("category").value = w.category ?? "";
+  document.getElementById("degree").value = w.degree ?? "";
 
-  // NOUVEAUX CHAMPS
   document.getElementById("age").value = w.age ?? "";
-  document.getElementById("year").value = w.year ?? "";
 
-  document.getElementById("image").value = w.image;
+
+  const priceInput = document.getElementById("price");
+  const purchasePlaceInput = document.getElementById("purchasePlace");
+
+  if (priceInput) priceInput.value = w.price ?? "";
+  if (purchasePlaceInput) purchasePlaceInput.value = w.purchasePlace ?? "";
+
+  document.getElementById("image").value = w.image ?? "";
   document.getElementById("description").value = w.description ?? "";
 }
 
 function collectEditFormData() {
   const rawAge = document.getElementById("age").value.trim();
-  const rawYear = document.getElementById("year").value.trim();
+  const rawPrice = document.getElementById("price")?.value.trim() || "";
+  const purchasePlace = document.getElementById("purchasePlace")?.value.trim() || "";
 
-  return {
+  const payload = {
     name: document.getElementById("name").value.trim(),
     brand: document.getElementById("brand").value.trim(),
     country: document.getElementById("country").value.trim(),
     category: document.getElementById("category").value.trim(),
     degree: Number(document.getElementById("degree").value),
 
-    // NOUVEAUX CHAMPS
-    age: rawAge === "" ? null : Number(rawAge),
-    year: rawYear === "" ? null : Number(rawYear),
+
+    price: rawPrice === "" ? undefined : Number(rawPrice),
+    purchasePlace: purchasePlace === "" ? undefined : purchasePlace,
 
     image: document.getElementById("image").value.trim(),
     description: document.getElementById("description").value.trim(),
   };
+
+ 
+  if (rawAge !== "") payload.age = Number(rawAge);
+
+ 
+  Object.keys(payload).forEach((k) => {
+    if (payload[k] === "" || payload[k] === undefined) delete payload[k];
+  });
+
+  return payload;
 }
 
 async function handleEditSubmit(e, id, type) {
@@ -112,7 +119,6 @@ async function handleEditSubmit(e, id, type) {
     }
 
     window.location.href = "admin.html";
-
   } catch (error) {
     console.error("Erreur lors de la mise à jour :", error);
     alert("Erreur lors de l'enregistrement des modifications.");
